@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gießformkonfigurator.WindowsForms", "Gießformkonfigurator.WindowsForms\Gießformkonfigurator.WindowsForms.csproj", "{B7AA5BAA-369A-44B8-9696-1809F236A9BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gießformkonfigurator.WPF", "Gießformkonfigurator.WPF\Gießformkonfigurator.WPF.csproj", "{35737AEB-9150-4649-95B4-27528EE8DF40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7AA5BAA-369A-44B8-9696-1809F236A9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AA5BAA-369A-44B8-9696-1809F236A9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AA5BAA-369A-44B8-9696-1809F236A9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AA5BAA-369A-44B8-9696-1809F236A9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35737AEB-9150-4649-95B4-27528EE8DF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35737AEB-9150-4649-95B4-27528EE8DF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35737AEB-9150-4649-95B4-27528EE8DF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35737AEB-9150-4649-95B4-27528EE8DF40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C1B32D2-EFDD-4F4C-9AC2-DF061995F3C6}
+	EndGlobalSection
+EndGlobal
