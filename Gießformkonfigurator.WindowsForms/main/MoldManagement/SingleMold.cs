@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gießformkonfigurator.WindowsForms.main.castingMoldManagement
+namespace Gießformkonfigurator.WindowsForms.Main.CombinationAlgorithm
 {
-    public abstract class CastingMold
+    public class SingleMold : CastingMold
     {
+
     }
 }

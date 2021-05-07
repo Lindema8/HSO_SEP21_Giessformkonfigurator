@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B7AA5BAA-369A-44B8-9696-1809F236A9BA}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Gießformkonfigurator.WindowsForms</RootNamespace>
     <AssemblyName>Gießformkonfigurator.WindowsForms</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,23 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dataAccess\DBConnection.cs" />
+    <Compile Include="DataAccess\DBConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="main\castingMoldManagement\BasePlate.cs" />
-    <Compile Include="main\castingMoldManagement\Bolt.cs" />
-    <Compile Include="main\castingMoldManagement\CastingMold.cs" />
-    <Compile Include="main\castingMoldManagement\Component.cs" />
-    <Compile Include="main\castingMoldManagement\Core.cs" />
-    <Compile Include="main\castingMoldManagement\MultiMold.cs" />
-    <Compile Include="main\castingMoldManagement\Ring.cs" />
-    <Compile Include="main\castingMoldManagement\SingleMold.cs" />
-    <Compile Include="main\productMatching\CompareObject.cs" />
-    <Compile Include="main\productMatching\Product.cs" />
+    <Compile Include="Main\MoldManagement\BasePlate.cs" />
+    <Compile Include="Main\MoldManagement\Bolt.cs" />
+    <Compile Include="Main\MoldManagement\CastingMold.cs" />
+    <Compile Include="Main\MoldManagement\Component.cs" />
+    <Compile Include="Main\MoldManagement\Core.cs" />
+    <Compile Include="Main\MoldManagement\MultiMold.cs" />
+    <Compile Include="Main\MoldManagement\Ring.cs" />
+    <Compile Include="Main\MoldManagement\SingleMold.cs" />
+    <Compile Include="Main\productMatching\CompareObject.cs" />
+    <Compile Include="Main\productMatching\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -74,6 +77,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,6 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ressources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,9 @@
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\Gießformkonfigurator.WindowsForms.exe.config
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\Gießformkonfigurator.WindowsForms.exe
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\Gießformkonfigurator.WindowsForms.pdb
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csprojAssemblyReference.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Properties.Resources.resources
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.GenerateResource.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.exe
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gießformkonfigurator.WindowsForms.main.productMatching
+namespace Gießformkonfigurator.WindowsForms.Main.productMatching
 {
     public class Product
     {

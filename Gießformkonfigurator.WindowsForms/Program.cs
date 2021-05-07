@@ -1,22 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Gießformkonfigurator.WindowsForms
 {
-    static class Program
+    using System;
+    using Gießformkonfigurator.WindowsForms.DataAccess;
+
+    /// <summary>
+    /// Program Entry.
+    /// </summary>
+    public static class Program
     {
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            /*string server, name;
+            Console.WriteLine("Bitte Server-IP eingeben:");
+            server = Console.ReadLine();
+            Console.WriteLine("Bitte Anmeldename eingeben:");
+            name = Console.ReadLine();*/
+
+            DBConnection gießformDB = DBConnection.GetInstance();
+            gießformDB.EstablishConnection();
+            if (gießformDB.CheckConnection())
+            {
+                gießformDB.GetAllDataFromTable("Komponente.Grundplatte");
+            }
+
+            Console.ReadLine();
+
+            // Application.EnableVisualStyles();
+            // Application.SetCompatibleTextRenderingDefault(false);
+            // Application.Run(new Form1());
         }
     }
 }
