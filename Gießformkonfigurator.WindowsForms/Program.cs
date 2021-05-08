@@ -25,7 +25,7 @@ namespace Gießformkonfigurator.WindowsForms
             Console.WriteLine("Bitte Anmeldename eingeben:");
             name = Console.ReadLine();*/
 
-            DBConnection gießformDB = DBConnection.GetInstance();
+            DBConnection gießformDB = new DBConnection();
             gießformDB.EstablishConnection();
             if (gießformDB.CheckConnection())
             {

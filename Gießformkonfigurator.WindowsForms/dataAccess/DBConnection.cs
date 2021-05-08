@@ -15,24 +15,29 @@ namespace Gießformkonfigurator.WindowsForms.DataAccess
     /// </summary>
     public class DBConnection
     {
-        private static DBConnection instance = null;
+        private DBConnection instance = null;
         private SqlConnection connection = null;
         private string server;
         private string db;
         private string user;
         private string password;
         private string connectionProperties;
+        private bool lastConnectionFailed = false;
 
-        private DBConnection()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DBConnection"/> class.
+        /// Konstruktor zur Erstellung eines DBConnection Objekts. Bei Erstellung wird zugleich auch der erste Verbindungsversuch gestartet.
+        /// </summary>
+        public DBConnection()
         {
-            // Intentionally nothing.
+            //this.EstablishConnection();
         }
 
         /// <summary>
         /// Methode zur Rückgabe des DBConnection-Objekts.
         /// </summary>
         /// <returns>DBConnection instance.</returns>
-        public static DBConnection GetInstance()
+        /*public static DBConnection GetInstance()
         {
             if (instance == null)
             {
@@ -40,7 +45,7 @@ namespace Gießformkonfigurator.WindowsForms.DataAccess
             }
 
             return instance;
-        }
+        }*/
 
         /// <summary>
         /// Methode ermöglicht das setzen der Verbindunginformationen bei Anwendungsstart. Die übergebenen Informationen werden als Objektattribute gespeichert.
@@ -70,33 +75,42 @@ namespace Gießformkonfigurator.WindowsForms.DataAccess
         /// </summary>
         public void EstablishConnection()
         {
-            if (this.server == null)
+            /*if (this.server == null
+                || this.db == null
+                || this.user == null
+                || this.password == null)
             {
                 this.SetConnectionDetails(null, null, null, null);
                 this.EstablishConnection();
             }
             else
+            {*/
+            if (this.lastConnectionFailed == true)
             {
-                if (this.connection == null
-                    || this.connection.State.ToString() != "open")
+                this.SetConnectionDetails(null, null, null, null);
+                this.lastConnectionFailed = false;
+            }
+
+            if (this.connection == null
+                || this.connection.State.ToString() != "open")
+            {
+                try
                 {
-                    try
-                    {
-                        this.connectionProperties = @"Data Source=" + this.server + ";Initial Catalog=" + this.db + ";User ID=" + this.user + ";Password=" + this.password + ";";
-                        Console.WriteLine("Verbindung wird aufgebaut...!");
-                        this.connection = new SqlConnection(this.connectionProperties);
-                        this.connection.Open();
-                        Console.WriteLine("Connection Open!");
-                        Console.ReadLine();
-                    }
-                    catch (SqlException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        this.SetConnectionDetails(null, null, null, null);
-                        this.EstablishConnection();
-                    }
+                    this.connectionProperties = @"Data Source=" + this.server + ";Initial Catalog=" + this.db + ";User ID=" + this.user + ";Password=" + this.password + ";";
+                    this.connection = new SqlConnection(this.connectionProperties);
+                    Console.WriteLine("Verbindung wird aufgebaut...!");
+                    this.connection.Open();
+                    Console.WriteLine("Verbindung erfolgreich!");
+                    this.lastConnectionFailed = false;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    this.lastConnectionFailed = true;
+                    this.EstablishConnection();
                 }
             }
+            // }
         }
 
         /// <summary>
