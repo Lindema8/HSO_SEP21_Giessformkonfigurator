@@ -15,3 +15,5 @@ C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießfor
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Properties.Resources.resources
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.GenerateResource.cache
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csprojAssemblyReference.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.DataAccess.DBLogin_View.resources

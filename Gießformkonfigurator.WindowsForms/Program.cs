@@ -6,6 +6,7 @@
 namespace Gießformkonfigurator.WindowsForms
 {
     using System;
+    using System.Windows.Forms;
     using Gießformkonfigurator.WindowsForms.DataAccess;
 
     /// <summary>
@@ -25,7 +26,7 @@ namespace Gießformkonfigurator.WindowsForms
             Console.WriteLine("Bitte Anmeldename eingeben:");
             name = Console.ReadLine();*/
 
-            DBConnection gießformDB = new DBConnection();
+            DBConnectionConsole gießformDB = new DBConnectionConsole();
             gießformDB.EstablishConnection();
             if (gießformDB.CheckConnection())
             {
@@ -34,9 +35,9 @@ namespace Gießformkonfigurator.WindowsForms
 
             Console.ReadLine();
 
-            // Application.EnableVisualStyles();
-            // Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Form1());
+            /*Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new DBLogin_View());*/
         }
     }
 }

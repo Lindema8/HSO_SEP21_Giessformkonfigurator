@@ -1,0 +1,86 @@
+11.05.2021 12:35:02	Dieses Protokoll enthält Informationen über den Importvorgang eines Schemas in das Projekt "DatabaseGießformkonfigurator" auf dem Computer "MAURICE-PC" durch den Benutzer "rethm".
+11.05.2021 12:35:02	Der Import des Datenbankschemas wurde gestartet.
+11.05.2021 12:35:15	Datenbankanmeldeinformationen werden ermittelt.
+11.05.2021 12:35:15	Datenbankoptionen werden ermittelt.
+11.05.2021 12:35:15	Option zum Erfassen der generischen datenbankweit gültigen Konfiguration
+11.05.2021 12:35:15	Benutzer werden ermittelt.
+11.05.2021 12:35:15	Rollen werden ermittelt.
+11.05.2021 12:35:15	Anwendungsrollen werden ermittelt.
+11.05.2021 12:35:15	Rollenmitgliedschaften werden ermittelt.
+11.05.2021 12:35:15	Dateigruppen werden ermittelt.
+11.05.2021 12:35:15	Volltextkataloge werden ermittelt.
+11.05.2021 12:35:15	Assemblys werden ermittelt.
+11.05.2021 12:35:15	Zertifikate werden ermittelt.
+11.05.2021 12:35:15	Asymmetrische Schlüssel werden ermittelt.
+11.05.2021 12:35:15	Symmetrische Schlüssel werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte symmetrische Schlüssel werden ermittelt.
+11.05.2021 12:35:15	Schemas werden ermittelt.
+11.05.2021 12:35:15	XML-Schemaauflistungen werden ermittelt.
+11.05.2021 12:35:15	Benutzerdefinierte Datentypen werden ermittelt.
+11.05.2021 12:35:15	Benutzerdefinierte Typen werden ermittelt.
+11.05.2021 12:35:15	Tabellentypen werden ermittelt.
+11.05.2021 12:35:15	Eindeutige Schlüssel für Tabellentypen werden ermittelt
+11.05.2021 12:35:15	Primärschlüssel für Tabellentypen werden ermittelt.
+11.05.2021 12:35:15	Indizes für Tabellentypen werden ermittelt
+11.05.2021 12:35:15	CHECK-Einschränkungen für Tabellentypen werden ermittelt.
+11.05.2021 12:35:15	DEFAULT-Einschränkungen für Tabellentypen werden ermittelt.
+11.05.2021 12:35:15	Partitionsfunktionen werden ermittelt.
+11.05.2021 12:35:15	Partitionsschemas werden ermittelt.
+11.05.2021 12:35:15	Funktionen werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte Funktionen werden gesammelt.
+11.05.2021 12:35:15	Aggregate werden ermittelt.
+11.05.2021 12:35:15	Prozeduren werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte Prozeduren werden gesammelt.
+11.05.2021 12:35:15	Tabellen werden ermittelt.
+11.05.2021 12:35:15	Primärschlüssel werden ermittelt.
+11.05.2021 12:35:15	UNIQUE-Einschränkungen werden ermittelt.
+11.05.2021 12:35:15	Fremdschlüssel werden ermittelt.
+11.05.2021 12:35:15	Standardeinschränkungen werden ermittelt.
+11.05.2021 12:35:15	CHECK-Einschränkungen werden ermittelt.
+11.05.2021 12:35:15	Sichten werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte Sichten werden gesammelt.
+11.05.2021 12:35:15	Indizes werden ermittelt.
+11.05.2021 12:35:15	Statistiken werden ermittelt.
+11.05.2021 12:35:15	Volltextindex-Stopplisten werden ermittelt.
+11.05.2021 12:35:15	Sucheigenschaftenlisten werden ermittelt.
+11.05.2021 12:35:15	Sucheigenschaften werden ermittelt.
+11.05.2021 12:35:15	Volltextindizes werden ermittelt.
+11.05.2021 12:35:15	Columnstore-Indizes werden gesammelt
+11.05.2021 12:35:15	Räumliche Indizes werden ermittelt.
+11.05.2021 12:35:15	XML-Indizes werden ermittelt.
+11.05.2021 12:35:15	Selektive XML-Indexe werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte Trigger werden gesammelt.
+11.05.2021 12:35:15	Trigger werden ermittelt.
+11.05.2021 12:35:15	Verschlüsselte Trigger und CLR-DDL-Trigger werden ermittelt.
+11.05.2021 12:35:15	DDL-Trigger werden ermittelt.
+11.05.2021 12:35:15	Edgeeinschränkungen werden erstellt.
+11.05.2021 12:35:15	Synonyme werden ermittelt.
+11.05.2021 12:35:15	Standardwerte werden ermittelt.
+11.05.2021 12:35:15	UDDT-Bindungen für Dateneinschränkungen werden gesammelt.
+11.05.2021 12:35:15	Regeln werden ermittelt.
+11.05.2021 12:35:15	UDDT-Bindungen für Dateneinschränkungen werden gesammelt.
+11.05.2021 12:35:15	Nachrichtentypen werden ermittelt.
+11.05.2021 12:35:15	Warteschlangen werden ermittelt.
+11.05.2021 12:35:15	Verträge werden ermittelt.
+11.05.2021 12:35:15	Dienste werden ermittelt.
+11.05.2021 12:35:15	Ereignisbenachrichtigungen werden ermittelt.
+11.05.2021 12:35:15	Remotedienstbindungen werden ermittelt.
+11.05.2021 12:35:15	Broker-Prioritäten werden ermittelt.
+11.05.2021 12:35:15	Signaturen werden ermittelt.
+11.05.2021 12:35:15	Datenkomprimierungsoptionen werden ermittelt.
+11.05.2021 12:35:15	Sequenztypen werden ermittelt.
+11.05.2021 12:35:15	Sicherheitsrichtlinien werden ermittelt
+11.05.2021 12:35:15	Verschlüsselungsschlüssel für Spalten werden ermittelt
+11.05.2021 12:35:15	Hauptschlüssel für Spalten werden ermittelt
+11.05.2021 12:35:15	Externe Datenquellen werden gesammelt
+11.05.2021 12:35:15	Externe Dateiformate werden gesammelt
+11.05.2021 12:35:15	Externe Tabellen werden gesammelt
+11.05.2021 12:35:15	Erweiterte Eigenschaften werden ermittelt.
+11.05.2021 12:35:15	Anmeldeinformationen werden ermittelt.
+11.05.2021 12:35:15	Anmeldungen werden ermittelt.
+11.05.2021 12:35:15	Serverüberwachungen werden ermittelt.
+11.05.2021 12:35:16	Das Projekt wird auf doppelte Elemente überprüft.
+11.05.2021 12:35:16	Die Verarbeitung doppelter Elemente wurde abgeschlossen.
+11.05.2021 12:35:16	Datenbankimport abgeschlossen.
+11.05.2021 12:35:16	Eine Zusammenfassung des Importvorgangs wurde an folgendem Ort gespeichert: C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\DatabaseGießformkonfigurator\Schemaprotokolle importieren\DatabaseGießformkonf_20210511103502.log
+11.05.2021 12:35:16	Klicken Sie auf "Fertig stellen", um den Vorgang fortzusetzen...
