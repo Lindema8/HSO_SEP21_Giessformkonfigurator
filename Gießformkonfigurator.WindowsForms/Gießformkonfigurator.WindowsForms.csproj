@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,9 +38,20 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,16 +77,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\MoldManagement\BasePlate.cs" />
-    <Compile Include="Main\MoldManagement\Bolt.cs" />
-    <Compile Include="Main\MoldManagement\CastingMold.cs" />
-    <Compile Include="Main\MoldManagement\Component.cs" />
-    <Compile Include="Main\MoldManagement\Core.cs" />
-    <Compile Include="Main\MoldManagement\MultiMold.cs" />
-    <Compile Include="Main\MoldManagement\Ring.cs" />
-    <Compile Include="Main\MoldManagement\SingleMold.cs" />
-    <Compile Include="Main\productMatching\CompareObject.cs" />
-    <Compile Include="Main\productMatching\Product.cs" />
+    <Compile Include="Main\Gießformen\Einlegeplatte.cs" />
+    <Compile Include="Main\Gießformen\Grundplatte.cs" />
+    <Compile Include="Main\Gießformen\Bolzen.cs" />
+    <Compile Include="Main\Gießformen\Gießform.cs" />
+    <Compile Include="Main\Gießformen\Komponente.cs" />
+    <Compile Include="Main\Gießformen\Kern.cs" />
+    <Compile Include="Main\Gießformen\MGießform.cs" />
+    <Compile Include="Main\Gießformen\Ring.cs" />
+    <Compile Include="Main\Gießformen\EGießform.cs" />
+    <Compile Include="Main\Produktvergleiche\CompareObject.cs" />
+    <Compile Include="Main\Produktvergleiche\Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DataAccess\DBLogin_View.resx">
@@ -109,6 +123,9 @@
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
