@@ -14,7 +14,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 
         public Ring(int ID)
         {
-            SAP = ID;
+            SAPNr = ID;
         }
     }
 }
