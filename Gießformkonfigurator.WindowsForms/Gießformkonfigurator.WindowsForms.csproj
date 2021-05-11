@@ -41,6 +41,12 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -52,6 +58,8 @@
     </Reference>
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bolzen.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DatabaseModel.cs" />
     <Compile Include="DataAccess\DBConnection.cs" />
     <Compile Include="DataAccess\DBConnectionConsole.cs" />
     <Compile Include="DataAccess\DBLogin_View.cs">
@@ -71,14 +83,41 @@
     <Compile Include="DataAccess\DBLogin_View.Designer.cs">
       <DependentUpon>DBLogin_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Einlegeplatte.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GießformDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GießformDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GießformDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GießformDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GießformDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Grundplatte.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Innenkern.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lochkreis.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Main\Gießformen\Einlegeplatte.cs" />
-    <Compile Include="Main\Gießformen\Grundplatte.cs" />
+    <Compile Include="Main\Gießformen\baseplate.cs" />
     <Compile Include="Main\Gießformen\Bolzen.cs" />
     <Compile Include="Main\Gießformen\Gießform.cs" />
     <Compile Include="Main\Gießformen\Komponente.cs" />
@@ -88,8 +127,26 @@
     <Compile Include="Main\Gießformen\EGießform.cs" />
     <Compile Include="Main\Produktvergleiche\CompareObject.cs" />
     <Compile Include="Main\Produktvergleiche\Produkt.cs" />
+    <Compile Include="ProduktCup.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProduktDisc.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ring.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>GießformDB.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DataAccess\DBLogin_View.resx">
       <DependentUpon>DBLogin_View.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +159,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="GießformDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GießformDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GießformDB.edmx.diagram">
+      <DependentUpon>GießformDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,7 +189,20 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GießformDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GießformDB.edmx</DependentUpon>
+      <LastGenOutput>GießformDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GießformDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GießformDB.edmx</DependentUpon>
+      <LastGenOutput>GießformDB.cs</LastGenOutput>
+    </Content>
     <Content Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

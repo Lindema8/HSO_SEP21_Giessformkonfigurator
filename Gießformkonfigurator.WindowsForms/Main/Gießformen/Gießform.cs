@@ -7,5 +7,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     public abstract class Gießform
     {
+
     }
 }

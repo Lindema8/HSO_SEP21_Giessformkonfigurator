@@ -6,15 +6,10 @@
 namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     using System;
+    using System.Data.Entity;
+
     public abstract class Komponente
     {
-        public int SAPNr { get; set; }
 
-        public string Typ { get; set; }
-
-        public string printSAP()
-        {
-            return SAPNr.ToString();
-        }
     }
 }

@@ -6,11 +6,12 @@
 namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     using System;
+    using Gießformkonfigurator.WindowsForms.DataAccess;
     public class MGießform : Gießform
     {
         private MGießform mGießform;
 
-        public Grundplatte Grundplatte { get; set; }
+        public Grundplatte Grundplatte{ get; set; }
 
         public Ring Fuehrungsring { get; set; }
 
@@ -18,12 +19,9 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 
         public Kern Innenkern { get; set; }
 
-        public MGießform(Grundplatte gp, Ring fr, Einlegeplatte ep, Kern ik)
-        {
-            Grundplatte = gp;
-            Fuehrungsring = fr;
-            Einlegeplatte = ep;
-            Innenkern = ik;
+        public MGießform()
+        {  
+
         }
     }
 }

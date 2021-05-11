@@ -8,6 +8,7 @@ namespace Gießformkonfigurator.WindowsForms
 #pragma warning disable SA1519 // Braces should not be omitted from multi-line child statement
     using System;
     using System.Collections.Generic;
+    using System.Data.SqlClient;
     using System.Windows.Forms;
     using Gießformkonfigurator.WindowsForms.DataAccess;
     using Gießformkonfigurator.WindowsForms.Main.Gießformen;
@@ -24,7 +25,7 @@ namespace Gießformkonfigurator.WindowsForms
         [STAThread]
         public static void Main()
         {
-            List<MGießform> MultiMolds1 = new List<MGießform>();
+            /*List<MGießform> MultiMolds1 = new List<MGießform>();
             List<MGießform> MultiMolds2 = new List<MGießform>();
 
             List<Einlegeplatte> ep = new List<Einlegeplatte>();
@@ -169,14 +170,59 @@ namespace Gießformkonfigurator.WindowsForms
                 Console.WriteLine(mGießform.Fuehrungsring.printSAP());
                 Console.WriteLine(mGießform.Innenkern.printSAP());
             }
+
+            using (var db = new DatabaseModel())
+            {
+                var grundpl = new Grundplatte()
+                {
+                    SAP_Nr_ = 12321,
+                    Bezeichnung_RoCon = "Testgrundplatte0815",
+                    Außendurchmesser = 32,
+                    d
+
+                }
+                db.Grundplatten.Add(gp);
+
+            }
+
             Console.ReadLine();
+        }*/
+            using (var db = new DatabaseModel())
+            {
+                var gp = new Grundplatte()
+                {
+                    SAP_Nr_ = 23412,
+                    Bezeichnung_RoCon = "Testplatte",
+                    Außendurchmesser = 500,
+                    Innendurchmesser = 20,
+                    Hoehe = 15,
+                    Konus_Außen_Max = 480,
+                    Konus_Außen_Min = 470,
+                    Konus_Außen_Winkel = 45,
+                    Konus_Hoehe = 10,
+                    mit_Konusfuehrung = true,
+                    Konus_Innen_Max = 55,
+                    Konus_Innen_Min = 50,
+                    Konus_Innen_Winkel = 45,
+                    mit_Kern = false,
+                    mit_Lochfuehrung = false
+                };
+
+                db.Grundplatten.Add(gp);
+                db.SaveChanges();
+                Console.WriteLine("Added Baseplate!");
+
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
+            }
         }
 
+        // GUI-Stuff
+        /*Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new DBLogin_View());*/
     }
-
-    // GUI-Stuff
-    /*Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
-    Application.Run(new DBLogin_View());*/
 }
-

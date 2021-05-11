@@ -7,14 +7,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     public class Ring : Komponente
     {
-        public double konusHoehe;
-        public double konusWinkel;
-        public double konusMax;
-        public double konusMin;
-
-        public Ring(int ID)
-        {
-            SAPNr = ID;
-        }
+       
     }
 }

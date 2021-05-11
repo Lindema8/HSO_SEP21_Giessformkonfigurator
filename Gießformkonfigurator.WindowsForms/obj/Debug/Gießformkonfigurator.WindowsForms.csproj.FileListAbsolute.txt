@@ -20,3 +20,8 @@ C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießfor
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\Dapper.dll
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\Dapper.xml
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.CopyComplete
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\EntityFramework.dll
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\EntityFramework.xml
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\bin\Debug\de\EntityFramework.resources.dll

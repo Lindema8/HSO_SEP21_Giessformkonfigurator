@@ -7,5 +7,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     public class Bolzen : Komponente
     {
+
     }
 }
