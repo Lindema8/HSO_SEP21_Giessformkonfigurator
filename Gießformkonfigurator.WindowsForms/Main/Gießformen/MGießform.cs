@@ -6,7 +6,7 @@
 namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
 {
     using System;
-    using Gießformkonfigurator.WindowsForms.Main.DatabaseModel;
+    using Gießformkonfigurator.WindowsForms.Main.DatabaseManagement;
 
     public class MGießform : Gießform
     {

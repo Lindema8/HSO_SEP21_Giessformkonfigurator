@@ -1,4 +1,4 @@
-namespace Gießformkonfigurator.WindowsForms.Main.DatabaseModel
+namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
 {
     using System;
     using System.Collections.Generic;

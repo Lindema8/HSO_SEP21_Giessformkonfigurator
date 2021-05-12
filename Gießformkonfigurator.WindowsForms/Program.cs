@@ -10,7 +10,7 @@ namespace Gießformkonfigurator.WindowsForms
     using System.Collections.Generic;
     using System.Data.SqlClient;
     using System.Windows.Forms;
-    using Gießformkonfigurator.WindowsForms.Main.DatabaseModel;
+    using Gießformkonfigurator.WindowsForms.Main.DatabaseManagement;
 
     /// <summary>
     /// Program Entry.

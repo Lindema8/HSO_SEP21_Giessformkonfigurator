@@ -77,15 +77,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\DatabaseModel\Bolzen.cs" />
-    <Compile Include="Main\DatabaseModel\Einlegeplatte.cs" />
-    <Compile Include="Main\DatabaseModel\GießformDB.cs" />
-    <Compile Include="Main\DatabaseModel\Grundplatte.cs" />
-    <Compile Include="Main\DatabaseModel\Innenkern.cs" />
-    <Compile Include="Main\DatabaseModel\Lochkreis.cs" />
-    <Compile Include="Main\DatabaseModel\ProduktCup.cs" />
-    <Compile Include="Main\DatabaseModel\ProduktDisc.cs" />
-    <Compile Include="Main\DatabaseModel\Ring.cs" />
+    <Compile Include="Main\DatabaseClasses\Bolzen.cs" />
+    <Compile Include="Main\DatabaseClasses\Einlegeplatte.cs" />
+    <Compile Include="Main\DatabaseManagement\BolzenEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\GießformDB.cs" />
+    <Compile Include="Main\DatabaseClasses\Grundplatte.cs" />
+    <Compile Include="Main\DatabaseClasses\Innenkern.cs" />
+    <Compile Include="Main\DatabaseClasses\Lochkreis.cs" />
+    <Compile Include="Main\DatabaseClasses\ProduktCup.cs" />
+    <Compile Include="Main\DatabaseClasses\ProduktDisc.cs" />
+    <Compile Include="Main\DatabaseClasses\Ring.cs" />
+    <Compile Include="Main\DatabaseManagement\EinlegeplatteEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\GrundplatteEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\InnenkernEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\LochkreisEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\ProduktCupEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\ProduktDiscEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\RingEntityConfiguration.cs" />
     <Compile Include="Main\Gießformen\Gießform.cs" />
     <Compile Include="Main\Gießformen\MGießform.cs" />
     <Compile Include="Main\Gießformen\EGießform.cs" />
