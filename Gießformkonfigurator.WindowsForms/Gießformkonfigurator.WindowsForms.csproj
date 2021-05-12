@@ -80,7 +80,7 @@
     <Compile Include="Main\DBKlassen\Bolzen.cs" />
     <Compile Include="Main\DBKlassen\Einlegeplatte.cs" />
     <Compile Include="Main\Datenbankverwaltung\BolzenEntityConfiguration.cs" />
-    <Compile Include="Main\Datenbankverwaltung\DBConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\GießformDBContext.cs" />
     <Compile Include="Main\DBKlassen\Grundplatte.cs" />
     <Compile Include="Main\DBKlassen\Kern.cs" />
     <Compile Include="Main\DBKlassen\Lochkreis.cs" />
@@ -118,6 +118,18 @@
     <Compile Include="Migrations\202105120854070_RenameKern.Designer.cs">
       <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105121050511_fix.cs" />
+    <Compile Include="Migrations\202105121050511_fix.Designer.cs">
+      <DependentUpon>202105121050511_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121052363_fix2.cs" />
+    <Compile Include="Migrations\202105121052363_fix2.Designer.cs">
+      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121053187_fix3.cs" />
+    <Compile Include="Migrations\202105121053187_fix3.Designer.cs">
+      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +147,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105120854070_RenameKern.resx">
       <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121050511_fix.resx">
+      <DependentUpon>202105121050511_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121052363_fix2.resx">
+      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121053187_fix3.resx">
+      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,6 +176,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

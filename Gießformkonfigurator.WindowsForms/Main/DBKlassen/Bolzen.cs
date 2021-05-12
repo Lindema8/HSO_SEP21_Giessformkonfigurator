@@ -19,8 +19,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         [StringLength(100)]
         public string Bezeichnung_RoCon { get; set; }
 
-        public string hallotest { get; set; }
-
         public decimal Hoehe { get; set; }
 
         public decimal Außendurchmesser { get; set; }

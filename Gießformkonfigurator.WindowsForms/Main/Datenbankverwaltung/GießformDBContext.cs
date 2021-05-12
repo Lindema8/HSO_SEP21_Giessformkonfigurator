@@ -1,14 +1,15 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="DBConfiguration.cs" company="PlaceholderCompany">
+// <copyright file="GießformDBContext.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.Data.Entity;
-    public partial class DBConfiguration : DbContext
+    public partial class GießformDBContext : DbContext
+
     {
-        public DBConfiguration()
+        public GießformDBContext()
             : base("name=GießformDB")
         {
 

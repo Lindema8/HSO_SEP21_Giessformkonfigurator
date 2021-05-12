@@ -186,18 +186,18 @@ namespace Gießformkonfigurator.WindowsForms
 
             Console.ReadLine();
         }*/
-            using (var db = new DBConfiguration())
+            using (var db = new GießformDBContext())
             {
                 /*var gp = new Grundplatte()
                 {
-                    SAP_Nr_ = 23412,
-                    Bezeichnung_RoCon = "Testplatte",
-                    Außendurchmesser = 500,
-                    Innendurchmesser = 20,
-                    Hoehe = 15,
-                    Konus_Außen_Max = 480,
-                    Konus_Außen_Min = 470,
-                    Konus_Außen_Winkel = 45,
+                    SAP_Nr_ = 23413,
+                    Bezeichnung_RoCon = "Testplatte2",
+                    Außendurchmesser = 452,
+                    Innendurchmesser = 12,
+                    Hoehe = 32,
+                    Konus_Außen_Max = 321,
+                    Konus_Außen_Min = 442,
+                    Konus_Außen_Winkel = 33,
                     Konus_Hoehe = 10,
                     mit_Konusfuehrung = true,
                     Konus_Innen_Max = 55,

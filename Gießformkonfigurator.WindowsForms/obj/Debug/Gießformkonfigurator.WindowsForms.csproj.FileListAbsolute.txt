@@ -29,3 +29,6 @@ C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießfor
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.RevertTest2.resources
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.RenameRing.resources
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.RenameKern.resources
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.fix.resources
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.fix2.resources
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.fix3.resources
