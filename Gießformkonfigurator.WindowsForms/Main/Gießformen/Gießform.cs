@@ -3,9 +3,10 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
+namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
 {
     public abstract class Gießform
     {
+
     }
 }

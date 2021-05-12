@@ -41,6 +41,12 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -52,6 +58,8 @@
     </Reference>
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,35 +71,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\DBConnection.cs" />
-    <Compile Include="DataAccess\DBConnectionConsole.cs" />
-    <Compile Include="DataAccess\DBLogin_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DataAccess\DBLogin_View.Designer.cs">
-      <DependentUpon>DBLogin_View.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\Gießformen\Einlegeplatte.cs" />
-    <Compile Include="Main\Gießformen\Grundplatte.cs" />
-    <Compile Include="Main\Gießformen\Bolzen.cs" />
+    <Compile Include="Main\DBKlassen\Bolzen.cs" />
+    <Compile Include="Main\DBKlassen\Einlegeplatte.cs" />
+    <Compile Include="Main\Datenbankverwaltung\BolzenEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\GießformDBContext.cs" />
+    <Compile Include="Main\DBKlassen\Grundplatte.cs" />
+    <Compile Include="Main\DBKlassen\Kern.cs" />
+    <Compile Include="Main\DBKlassen\Lochkreis.cs" />
+    <Compile Include="Main\DBKlassen\ProduktCup.cs" />
+    <Compile Include="Main\DBKlassen\ProduktDisc.cs" />
+    <Compile Include="Main\DBKlassen\Ring.cs" />
+    <Compile Include="Main\Datenbankverwaltung\EinlegeplatteEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\GrundplatteEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\KernEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\LochkreisEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\ProduktCupEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\ProduktDiscEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\RingEntityConfiguration.cs" />
     <Compile Include="Main\Gießformen\Gießform.cs" />
-    <Compile Include="Main\Gießformen\Komponente.cs" />
-    <Compile Include="Main\Gießformen\Kern.cs" />
     <Compile Include="Main\Gießformen\MGießform.cs" />
-    <Compile Include="Main\Gießformen\Ring.cs" />
     <Compile Include="Main\Gießformen\EGießform.cs" />
-    <Compile Include="Main\Produktvergleiche\CompareObject.cs" />
-    <Compile Include="Main\Produktvergleiche\Produkt.cs" />
+    <Compile Include="Main\Logik\CompareObject.cs" />
+    <Compile Include="Migrations\202105120803542_Testmigration.cs" />
+    <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
+      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120808308_Revert Test.cs" />
+    <Compile Include="Migrations\202105120808308_Revert Test.Designer.cs">
+      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120813053_RevertTest2.cs" />
+    <Compile Include="Migrations\202105120813053_RevertTest2.Designer.cs">
+      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120852492_RenameRing.cs" />
+    <Compile Include="Migrations\202105120852492_RenameRing.Designer.cs">
+      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120854070_RenameKern.cs" />
+    <Compile Include="Migrations\202105120854070_RenameKern.Designer.cs">
+      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121050511_fix.cs" />
+    <Compile Include="Migrations\202105121050511_fix.Designer.cs">
+      <DependentUpon>202105121050511_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121052363_fix2.cs" />
+    <Compile Include="Migrations\202105121052363_fix2.Designer.cs">
+      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121053187_fix3.cs" />
+    <Compile Include="Migrations\202105121053187_fix3.Designer.cs">
+      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataAccess\DBLogin_View.resx">
-      <DependentUpon>DBLogin_View.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105120803542_Testmigration.resx">
+      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120808308_Revert Test.resx">
+      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120813053_RevertTest2.resx">
+      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120852492_RenameRing.resx">
+      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120854070_RenameKern.resx">
+      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121050511_fix.resx">
+      <DependentUpon>202105121050511_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121052363_fix2.resx">
+      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121053187_fix3.resx">
+      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,11 +176,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DatabaseManagement\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Ressources\" />
   </ItemGroup>
@@ -125,7 +191,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Migrations\MigrationsREADME.txt" />
     <Content Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

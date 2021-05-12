@@ -1,0 +1,54 @@
+﻿//-----------------------------------------------------------------------
+// <copyright file="GrundplatteEntityConfiguration.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
+{
+    using System.Data.Entity.ModelConfiguration;
+    class GrundplatteEntityConfiguration : EntityTypeConfiguration<Grundplatte>
+    {
+        public GrundplatteEntityConfiguration()
+        {
+            this.Property(e => e.Bezeichnung_RoCon)
+            .IsUnicode(false);
+
+            this.Property(e => e.Außendurchmesser)
+            .HasPrecision(10, 2);
+
+            this.Property(e => e.Hoehe)
+            .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Außen_Max)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Außen_Min)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Außen_Winkel)
+                .HasPrecision(5, 2);
+
+            this.Property(e => e.Konus_Hoehe)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Innen_Max)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Innen_Min)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Konus_Innen_Winkel)
+                .HasPrecision(5, 2);
+
+            this.Property(e => e.Innendurchmesser)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Toleranz_Innendurchmesser)
+                .IsUnicode(false);
+
+            this.HasOptional(e => e.Lochkreis)
+                .WithRequired(e => e.Grundplatte);
+        }
+    }
+
+}
