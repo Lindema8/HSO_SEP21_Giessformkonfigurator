@@ -8,9 +8,9 @@ namespace Gießformkonfigurator.WindowsForms
 #pragma warning disable SA1519 // Braces should not be omitted from multi-line child statement
     using System;
     using System.Collections.Generic;
+    using System.Data.SqlClient;
     using System.Windows.Forms;
-    using Gießformkonfigurator.WindowsForms.DataAccess;
-    using Gießformkonfigurator.WindowsForms.Main.Gießformen;
+    using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
 
     /// <summary>
     /// Program Entry.
@@ -21,10 +21,10 @@ namespace Gießformkonfigurator.WindowsForms
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
-        [STAThread]
+        //[STAThread]
         public static void Main()
         {
-            List<MGießform> MultiMolds1 = new List<MGießform>();
+            /*List<MGießform> MultiMolds1 = new List<MGießform>();
             List<MGießform> MultiMolds2 = new List<MGießform>();
 
             List<Einlegeplatte> ep = new List<Einlegeplatte>();
@@ -169,6 +169,21 @@ namespace Gießformkonfigurator.WindowsForms
                 Console.WriteLine(mGießform.Fuehrungsring.printSAP());
                 Console.WriteLine(mGießform.Innenkern.printSAP());
             }
+
+            using (var db = new DatabaseModel())
+            {
+                var grundpl = new Grundplatte()
+                {
+                    SAP_Nr_ = 12321,
+                    Bezeichnung_RoCon = "Testgrundplatte0815",
+                    Außendurchmesser = 32,
+                    d
+
+                }
+                db.Grundplatten.Add(gp);
+
+            }
+
             Console.ReadLine();
         }*/
             using (var db = new GießformDBContext())
@@ -208,11 +223,17 @@ namespace Gießformkonfigurator.WindowsForms
                 }
                 Console.ReadLine();
 
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
+            }
+        }
+
+        // GUI-Stuff
+        /*Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new DBLogin_View());*/
     }
-
-    // GUI-Stuff
-    /*Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
-    Application.Run(new DBLogin_View());*/
 }
-

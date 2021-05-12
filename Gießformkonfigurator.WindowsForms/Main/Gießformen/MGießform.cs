@@ -3,14 +3,16 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
+namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
 {
     using System;
+    using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
+
     public class MGießform : Gießform
     {
         private MGießform mGießform;
 
-        public Grundplatte Grundplatte { get; set; }
+        public Grundplatte Grundplatte{ get; set; }
 
         public Ring Fuehrungsring { get; set; }
 
@@ -18,12 +20,9 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 
         public Kern Innenkern { get; set; }
 
-        public MGießform(Grundplatte gp, Ring fr, Einlegeplatte ep, Kern ik)
-        {
-            Grundplatte = gp;
-            Fuehrungsring = fr;
-            Einlegeplatte = ep;
-            Innenkern = ik;
+        public MGießform()
+        {  
+
         }
     }
 }

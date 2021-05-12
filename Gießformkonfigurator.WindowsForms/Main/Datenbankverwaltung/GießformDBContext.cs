@@ -7,6 +7,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.Data.Entity;
     public partial class GießformDBContext : DbContext
+
     {
         public GießformDBContext()
             : base("name=GießformDB")
