@@ -8,6 +8,7 @@ namespace Gießformkonfigurator.WindowsForms
 #pragma warning disable SA1519 // Braces should not be omitted from multi-line child statement
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity.Infrastructure;
     using System.Data.SqlClient;
     using System.Windows.Forms;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
@@ -188,28 +189,35 @@ namespace Gießformkonfigurator.WindowsForms
         }*/
             using (var db = new GießformDBContext())
             {
-                var gp = new Grundplatte()
+                try
                 {
-                    SAP_Nr_ = 23413,
-                    Bezeichnung_RoCon = "Testplatte2",
-                    Außendurchmesser = 452,
-                    Innendurchmesser = 12,
-                    Hoehe = 32,
-                    Konus_Außen_Max = 321,
-                    Konus_Außen_Min = 442,
-                    Konus_Außen_Winkel = 33,
-                    Konus_Hoehe = 10,
-                    mit_Konusfuehrung = true,
-                    Konus_Innen_Max = 55,
-                    Konus_Innen_Min = 50,
-                    Konus_Innen_Winkel = 45,
-                    mit_Kern = false,
-                    mit_Lochfuehrung = false
-                };
+                    var gp = new Grundplatte()
+                    {
+                        SAP_Nr_ = 23413,
+                        Bezeichnung_RoCon = "Testplatte2",
+                        Außendurchmesser = 452,
+                        Innendurchmesser = 12,
+                        Hoehe = 32,
+                        Konus_Außen_Max = 321,
+                        Konus_Außen_Min = 442,
+                        Konus_Außen_Winkel = 33,
+                        Konus_Hoehe = 10,
+                        mit_Konusfuehrung = true,
+                        Konus_Innen_Max = 55,
+                        Konus_Innen_Min = 50,
+                        Konus_Innen_Winkel = 45,
+                        mit_Kern = false,
+                        mit_Lochfuehrung = false
+                    };
 
                 db.Grundplatten.Add(gp);
                 db.SaveChanges();
                 Console.WriteLine("Added Baseplate!");
+                } 
+                catch (DbUpdateException ex)
+                {
+                Console.WriteLine(ex.Message);
+                }
 
                 foreach (var baseplate in db.Grundplatten)
                 {
