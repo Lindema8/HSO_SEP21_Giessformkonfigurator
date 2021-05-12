@@ -1,9 +1,9 @@
 ﻿namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
 {
     using System.Data.Entity.ModelConfiguration;
-    class InnenkernEntityConfiguration : EntityTypeConfiguration<Innenkern>
+    class KernEntityConfiguration : EntityTypeConfiguration<Kern>
     {
-        public InnenkernEntityConfiguration()
+        public KernEntityConfiguration()
         {
             this.Property(e => e.Bezeichnung_RoCon)
             .IsUnicode(false);

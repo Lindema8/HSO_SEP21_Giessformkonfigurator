@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
 {
-    public partial class GießformDB : DbContext
+    public partial class DBConfiguration : DbContext
     {
-        public GießformDB()
+        public DBConfiguration()
             : base("name=GießformDB")
         {
         }
@@ -15,7 +15,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
         public virtual DbSet<Bolzen> Bolzen { get; set; }
         public virtual DbSet<Einlegeplatte> Einlegeplatten { get; set; }
         public virtual DbSet<Grundplatte> Grundplatten { get; set; }
-        public virtual DbSet<Innenkern> Innenkerne { get; set; }
+        public virtual DbSet<Kern> Innenkerne { get; set; }
         public virtual DbSet<Lochkreis> Lochkreise { get; set; }
         public virtual DbSet<ProduktCup> ProduktCups { get; set; }
         public virtual DbSet<ProduktDisc> ProduktDiscs { get; set; }
@@ -29,7 +29,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
 
             modelBuilder.Configurations.Add(new BolzenEntityConfiguration());
 
-            modelBuilder.Configurations.Add(new InnenkernEntityConfiguration());
+            modelBuilder.Configurations.Add(new KernEntityConfiguration());
 
             modelBuilder.Configurations.Add(new LochkreisEntityConfiguration());
 

@@ -80,16 +80,16 @@
     <Compile Include="Main\DatabaseClasses\Bolzen.cs" />
     <Compile Include="Main\DatabaseClasses\Einlegeplatte.cs" />
     <Compile Include="Main\DatabaseManagement\BolzenEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\GießformDB.cs" />
+    <Compile Include="Main\DatabaseManagement\DBConfiguration.cs" />
     <Compile Include="Main\DatabaseClasses\Grundplatte.cs" />
-    <Compile Include="Main\DatabaseClasses\Innenkern.cs" />
+    <Compile Include="Main\DatabaseClasses\Kern.cs" />
     <Compile Include="Main\DatabaseClasses\Lochkreis.cs" />
     <Compile Include="Main\DatabaseClasses\ProduktCup.cs" />
     <Compile Include="Main\DatabaseClasses\ProduktDisc.cs" />
     <Compile Include="Main\DatabaseClasses\Ring.cs" />
     <Compile Include="Main\DatabaseManagement\EinlegeplatteEntityConfiguration.cs" />
     <Compile Include="Main\DatabaseManagement\GrundplatteEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\InnenkernEntityConfiguration.cs" />
+    <Compile Include="Main\DatabaseManagement\KernEntityConfiguration.cs" />
     <Compile Include="Main\DatabaseManagement\LochkreisEntityConfiguration.cs" />
     <Compile Include="Main\DatabaseManagement\ProduktCupEntityConfiguration.cs" />
     <Compile Include="Main\DatabaseManagement\ProduktDiscEntityConfiguration.cs" />
@@ -111,6 +111,14 @@
     <Compile Include="Migrations\202105120813053_RevertTest2.Designer.cs">
       <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105120852492_RenameRing.cs" />
+    <Compile Include="Migrations\202105120852492_RenameRing.Designer.cs">
+      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120854070_RenameKern.cs" />
+    <Compile Include="Migrations\202105120854070_RenameKern.Designer.cs">
+      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105120813053_RevertTest2.resx">
       <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120852492_RenameRing.resx">
+      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120854070_RenameKern.resx">
+      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

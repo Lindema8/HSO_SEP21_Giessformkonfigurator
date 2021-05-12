@@ -186,7 +186,7 @@ namespace Gießformkonfigurator.WindowsForms
 
             Console.ReadLine();
         }*/
-            using (var db = new GießformDB())
+            using (var db = new DBConfiguration())
             {
                 /*var gp = new Grundplatte()
                 {

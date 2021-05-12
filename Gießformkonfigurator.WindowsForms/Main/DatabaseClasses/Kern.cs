@@ -6,8 +6,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Innenkern")]
-    public partial class Innenkern
+    [Table("Kern")]
+    public partial class Kern
     {
         [Key]
         [Column("SAP-Nr.")]

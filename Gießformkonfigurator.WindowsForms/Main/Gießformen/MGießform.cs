@@ -18,7 +18,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
 
         public Einlegeplatte Einlegeplatte { get; set; }
 
-        public Innenkern Innenkern { get; set; }
+        public Kern Innenkern { get; set; }
 
         public MGießform()
         {  

@@ -5,14 +5,14 @@ namespace Gießformkonfigurator.WindowsForms.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Gießformkonfigurator.WindowsForms.Main.DatabaseManagement.GießformDB>
+    internal sealed class Configuration : DbMigrationsConfiguration<Gießformkonfigurator.WindowsForms.Main.DatabaseManagement.DBConfiguration>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Gießformkonfigurator.WindowsForms.Main.DatabaseManagement.GießformDB context)
+        protected override void Seed(Gießformkonfigurator.WindowsForms.Main.DatabaseManagement.DBConfiguration context)
         {
             //  This method will be called after migrating to the latest version.
 
