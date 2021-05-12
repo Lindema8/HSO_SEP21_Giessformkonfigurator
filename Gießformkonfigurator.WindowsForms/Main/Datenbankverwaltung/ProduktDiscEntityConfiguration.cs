@@ -1,4 +1,9 @@
-﻿namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
+﻿//-----------------------------------------------------------------------
+// <copyright file="ProduktDiscEntityConfiguration.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.Data.Entity.ModelConfiguration;
     class ProduktDiscEntityConfiguration : EntityTypeConfiguration<ProduktDisc>

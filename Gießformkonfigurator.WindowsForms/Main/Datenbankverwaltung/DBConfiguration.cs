@@ -1,24 +1,33 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-
-namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
+﻿//-----------------------------------------------------------------------
+// <copyright file="DBConfiguration.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
+    using System.Data.Entity;
     public partial class DBConfiguration : DbContext
     {
         public DBConfiguration()
             : base("name=GießformDB")
         {
+
         }
 
         public virtual DbSet<Bolzen> Bolzen { get; set; }
+
         public virtual DbSet<Einlegeplatte> Einlegeplatten { get; set; }
+
         public virtual DbSet<Grundplatte> Grundplatten { get; set; }
+
         public virtual DbSet<Kern> Innenkerne { get; set; }
+
         public virtual DbSet<Lochkreis> Lochkreise { get; set; }
+
         public virtual DbSet<ProduktCup> ProduktCups { get; set; }
+
         public virtual DbSet<ProduktDisc> ProduktDiscs { get; set; }
+
         public virtual DbSet<Ring> Ringe { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

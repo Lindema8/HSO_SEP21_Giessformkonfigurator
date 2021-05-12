@@ -77,28 +77,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\DatabaseClasses\Bolzen.cs" />
-    <Compile Include="Main\DatabaseClasses\Einlegeplatte.cs" />
-    <Compile Include="Main\DatabaseManagement\BolzenEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\DBConfiguration.cs" />
-    <Compile Include="Main\DatabaseClasses\Grundplatte.cs" />
-    <Compile Include="Main\DatabaseClasses\Kern.cs" />
-    <Compile Include="Main\DatabaseClasses\Lochkreis.cs" />
-    <Compile Include="Main\DatabaseClasses\ProduktCup.cs" />
-    <Compile Include="Main\DatabaseClasses\ProduktDisc.cs" />
-    <Compile Include="Main\DatabaseClasses\Ring.cs" />
-    <Compile Include="Main\DatabaseManagement\EinlegeplatteEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\GrundplatteEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\KernEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\LochkreisEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\ProduktCupEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\ProduktDiscEntityConfiguration.cs" />
-    <Compile Include="Main\DatabaseManagement\RingEntityConfiguration.cs" />
+    <Compile Include="Main\DBKlassen\Bolzen.cs" />
+    <Compile Include="Main\DBKlassen\Einlegeplatte.cs" />
+    <Compile Include="Main\Datenbankverwaltung\BolzenEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\DBConfiguration.cs" />
+    <Compile Include="Main\DBKlassen\Grundplatte.cs" />
+    <Compile Include="Main\DBKlassen\Kern.cs" />
+    <Compile Include="Main\DBKlassen\Lochkreis.cs" />
+    <Compile Include="Main\DBKlassen\ProduktCup.cs" />
+    <Compile Include="Main\DBKlassen\ProduktDisc.cs" />
+    <Compile Include="Main\DBKlassen\Ring.cs" />
+    <Compile Include="Main\Datenbankverwaltung\EinlegeplatteEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\GrundplatteEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\KernEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\LochkreisEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\ProduktCupEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\ProduktDiscEntityConfiguration.cs" />
+    <Compile Include="Main\Datenbankverwaltung\RingEntityConfiguration.cs" />
     <Compile Include="Main\Gießformen\Gießform.cs" />
     <Compile Include="Main\Gießformen\MGießform.cs" />
     <Compile Include="Main\Gießformen\EGießform.cs" />
-    <Compile Include="Main\Produkte\CompareObject.cs" />
-    <Compile Include="Main\Produkte\Produkt.cs" />
+    <Compile Include="Main\Logik\CompareObject.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
       <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>

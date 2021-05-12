@@ -1,26 +1,25 @@
-namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
+//-----------------------------------------------------------------------
+// <copyright file="Grundplatte.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table("Einlegeplatte")]
-    public partial class Einlegeplatte
+    [Table("Grundplatte")]
+    public partial class Grundplatte
     {
         [Key]
         [Column("SAP-Nr.")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SAP_Nr_ { get; set; }
 
-        [StringLength(100)]
+        [StringLength(255)]
         public string Bezeichnung_RoCon { get; set; }
 
         public decimal Außendurchmesser { get; set; }
-
-        [StringLength(5)]
-        public string Toleranz_Außendurchmesser { get; set; }
 
         public decimal Hoehe { get; set; }
 
@@ -44,7 +43,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
 
         public decimal? Innendurchmesser { get; set; }
 
-        [StringLength(5)]
+        [StringLength(10)]
         public string Toleranz_Innendurchmesser { get; set; }
 
         public bool mit_Kern { get; set; }

@@ -1,10 +1,12 @@
-namespace Gießformkonfigurator.WindowsForms.Main.DatabaseManagement
+//-----------------------------------------------------------------------
+// <copyright file="Kern.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Kern")]
     public partial class Kern
