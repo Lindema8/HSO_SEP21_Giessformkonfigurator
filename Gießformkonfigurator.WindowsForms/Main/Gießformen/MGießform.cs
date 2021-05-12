@@ -3,10 +3,11 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
+namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
 {
     using System;
-    using Gießformkonfigurator.WindowsForms.DataAccess;
+    using Gießformkonfigurator.WindowsForms.Main.DatabaseModel;
+
     public class MGießform : Gießform
     {
         private MGießform mGießform;
@@ -17,7 +18,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 
         public Einlegeplatte Einlegeplatte { get; set; }
 
-        public Kern Innenkern { get; set; }
+        public Innenkern Innenkern { get; set; }
 
         public MGießform()
         {  

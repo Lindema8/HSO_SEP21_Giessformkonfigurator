@@ -1,12 +1,11 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="CompareObject.cs" company="PlaceholderCompany">
+// <copyright file="Produkt.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.productMatching
+namespace Gießformkonfigurator.WindowsForms.Main.Produkte
 {
-    public class CompareObject
+    public class Produkt
     {
-
     }
 }

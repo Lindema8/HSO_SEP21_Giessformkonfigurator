@@ -10,8 +10,7 @@ namespace Gießformkonfigurator.WindowsForms
     using System.Collections.Generic;
     using System.Data.SqlClient;
     using System.Windows.Forms;
-    using Gießformkonfigurator.WindowsForms.DataAccess;
-    using Gießformkonfigurator.WindowsForms.Main.Gießformen;
+    using Gießformkonfigurator.WindowsForms.Main.DatabaseModel;
 
     /// <summary>
     /// Program Entry.
@@ -22,7 +21,7 @@ namespace Gießformkonfigurator.WindowsForms
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
-        [STAThread]
+        //[STAThread]
         public static void Main()
         {
             /*List<MGießform> MultiMolds1 = new List<MGießform>();
@@ -187,9 +186,9 @@ namespace Gießformkonfigurator.WindowsForms
 
             Console.ReadLine();
         }*/
-            using (var db = new DatabaseModel())
+            using (var db = new GießformDB())
             {
-                var gp = new Grundplatte()
+                /*var gp = new Grundplatte()
                 {
                     SAP_Nr_ = 23412,
                     Bezeichnung_RoCon = "Testplatte",
@@ -210,7 +209,19 @@ namespace Gießformkonfigurator.WindowsForms
 
                 db.Grundplatten.Add(gp);
                 db.SaveChanges();
-                Console.WriteLine("Added Baseplate!");
+                Console.WriteLine("Added Baseplate!");*/
+
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
+
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
 
                 foreach (var baseplate in db.Grundplatten)
                 {

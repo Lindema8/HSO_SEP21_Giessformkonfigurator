@@ -1,12 +1,12 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Ring.cs" company="PlaceholderCompany">
+// <copyright file="CompareObject.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
+namespace Gießformkonfigurator.WindowsForms.Main.Produkte
 {
-    public class Ring : Komponente
+    public class CompareObject
     {
-       
+
     }
 }
