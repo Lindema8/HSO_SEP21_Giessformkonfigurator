@@ -170,7 +170,43 @@ namespace Gießformkonfigurator.WindowsForms
                 Console.WriteLine(mGießform.Innenkern.printSAP());
             }
             Console.ReadLine();
-        }
+        }*/
+            using (var db = new GießformDBContext())
+            {
+                var gp = new Grundplatte()
+                {
+                    SAP_Nr_ = 23413,
+                    Bezeichnung_RoCon = "Testplatte2",
+                    Außendurchmesser = 452,
+                    Innendurchmesser = 12,
+                    Hoehe = 32,
+                    Konus_Außen_Max = 321,
+                    Konus_Außen_Min = 442,
+                    Konus_Außen_Winkel = 33,
+                    Konus_Hoehe = 10,
+                    mit_Konusfuehrung = true,
+                    Konus_Innen_Max = 55,
+                    Konus_Innen_Min = 50,
+                    Konus_Innen_Winkel = 45,
+                    mit_Kern = false,
+                    mit_Lochfuehrung = false
+                };
+
+                db.Grundplatten.Add(gp);
+                db.SaveChanges();
+                Console.WriteLine("Added Baseplate!");
+
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
+
+                foreach (var baseplate in db.Grundplatten)
+                {
+                    Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
+                }
+                Console.ReadLine();
 
     }
 
