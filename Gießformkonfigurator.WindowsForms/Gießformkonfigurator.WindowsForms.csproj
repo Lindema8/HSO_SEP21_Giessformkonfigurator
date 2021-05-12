@@ -71,14 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\DBConnection.cs" />
-    <Compile Include="DataAccess\DBConnectionConsole.cs" />
-    <Compile Include="DataAccess\DBLogin_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DataAccess\DBLogin_View.Designer.cs">
-      <DependentUpon>DBLogin_View.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,10 +91,29 @@
     <Compile Include="Main\Gießformen\EGießform.cs" />
     <Compile Include="Main\Produkte\CompareObject.cs" />
     <Compile Include="Main\Produkte\Produkt.cs" />
+    <Compile Include="Migrations\202105120803542_Testmigration.cs" />
+    <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
+      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120808308_Revert Test.cs" />
+    <Compile Include="Migrations\202105120808308_Revert Test.Designer.cs">
+      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105120813053_RevertTest2.cs" />
+    <Compile Include="Migrations\202105120813053_RevertTest2.Designer.cs">
+      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataAccess\DBLogin_View.resx">
-      <DependentUpon>DBLogin_View.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105120803542_Testmigration.resx">
+      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120808308_Revert Test.resx">
+      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105120813053_RevertTest2.resx">
+      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +139,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DatabaseManagement\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Ressources\" />
   </ItemGroup>
@@ -136,6 +148,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Migrations\MigrationsREADME.txt" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
