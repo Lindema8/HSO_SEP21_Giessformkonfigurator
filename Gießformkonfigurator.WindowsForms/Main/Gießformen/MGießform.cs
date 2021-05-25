@@ -3,7 +3,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Gießformkonfigurator.WindowsForms.Main.Komponenten
+namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 {
     using System;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;

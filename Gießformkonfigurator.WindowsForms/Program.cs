@@ -9,9 +9,9 @@ namespace Gießformkonfigurator.WindowsForms
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Infrastructure;
-    using System.Data.SqlClient;
-    using System.Windows.Forms;
+    using System.Linq;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
+    using Gießformkonfigurator.WindowsForms.Main.Gießformen;
 
     /// <summary>
     /// Program Entry.
@@ -19,29 +19,31 @@ namespace Gießformkonfigurator.WindowsForms
     public static class Program
     {
         public static int Pause { get; set; }
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
-        //[STAThread]
+        [STAThread]
         public static void Main()
         {
-            /*List<MGießform> MultiMolds1 = new List<MGießform>();
+            List<MGießform> MultiMolds1 = new List<MGießform>();
             List<MGießform> MultiMolds2 = new List<MGießform>();
-
+            /*
             List<Einlegeplatte> ep = new List<Einlegeplatte>();
-            ep.Add(new Einlegeplatte(1, "Typ-1", 110, 120, 50, 70, 80, 50));
-            ep.Add(new Einlegeplatte(2, "Typ-1", 120, 130, 60, 110, 120, 50));
-            ep.Add(new Einlegeplatte(3, "Typ-1", 90, 120, 25, 70, 80, 50));
-            ep.Add(new Einlegeplatte(4, "Typ-1", 70, 80, 50, 110, 120, 50));
-            ep.Add(new Einlegeplatte(5, "Typ-1", 60, 80, 40, 110, 120, 50));
-
+            ep.Add(new Einlegeplatte() {1, "Typ-1", 110, 120, 50, 70, 80, 50};
+            ep.Add(new Einlegeplatte() {2, "Typ-1", 120, 130, 60, 110, 120, 50};
+            ep.Add(new Einlegeplatte() {3, "Typ-1", 90, 120, 25, 70, 80, 50};
+            ep.Add(new Einlegeplatte() {4, "Typ-1", 70, 80, 50, 110, 120, 50};
+            ep.Add(new Einlegeplatte() {5, "Typ-1", 60, 80, 40, 110, 120, 50};
+            */
+            /*
             List<Grundplatte> gp = new List<Grundplatte>();
             gp.Add(new Grundplatte(6, "Typ-1", 111, 122, 51, 342, 347.89, 15, 11, 15));
             gp.Add(new Grundplatte(7, "Typ-1", 121, 131, 61, 430.11, 435.99, 15, 11, 16));
             gp.Add(new Grundplatte(8, "Typ-1", 121, 131, 61, 479.69, 485.58, 15, 11, 17));
             gp.Add(new Grundplatte(9, "Typ-2", 0.0, 0.0, 0.0, 529.69, 535.58, 15, 11, 18));
             gp.Add(new Grundplatte(10, "Typ-1", 61, 81, 41, 430.11, 435.99, 15, 11, 0.0));
-
+            /*
             List<Ring> fr = new List<Ring>();
             fr.Add(new Ring(21734) { konusMin = 342.21, konusMax = 345.43, konusWinkel = 15, konusHoehe = 6 });
             fr.Add(new Ring(21899) { konusMin = 640, konusMax = 643.22, konusWinkel = 15, konusHoehe = 6 });
@@ -54,6 +56,49 @@ namespace Gießformkonfigurator.WindowsForms
             kerne.Add(new Kern(21728, "Typ-1", 41.4, 40.6, 79, 69, 49, 15, 15, 25.6));
             kerne.Add(new Kern(21725, "Typ-1", 41.4, 40.6, 0, 0, 0, 15, 15, 25.6));
             kerne.Add(new Kern(42640, "Typ-2", 409, 52, 350, 344.11, 15, 15, 18, 41));
+            */
+            List<Grundplatte> listGrundplatten = new List<Grundplatte>();
+            List<Ring> listRinge = new List<Ring>();
+            List<Einlegeplatte> listEinlegeplatten = new List<Einlegeplatte>();
+            List<Kern> listKerne = new List<Kern>();
+            List<Lochkreis> listLochkreise = new List<Lochkreis>();
+            List<Bolzen> listBolzen = new List<Bolzen>();
+
+            using (var db = new GießformDBContext())
+            {
+                foreach (var grundplatte in db.Grundplatten)
+                {
+                    listGrundplatten.Add(grundplatte);
+                }
+
+                foreach (var ring in db.Ringe)
+                {
+                    listRinge.Add(ring);
+                }
+
+                foreach (var einlegeplatte in db.Einlegeplatten)
+                {
+                    listEinlegeplatten.Add(einlegeplatte);
+                }
+
+                foreach (var innenkern in db.Innenkerne)
+                {
+                    listKerne.Add(innenkern);
+                }
+
+                foreach (var lochkreis in db.Lochkreise)
+                {
+                    listLochkreise.Add(lochkreis);
+                }
+
+                foreach (var bolzen in db.Bolzen)
+                {
+                    listBolzen.Add(bolzen);
+                }
+            }
+            Console.ReadLine();
+            
+            /*
 
             // Grundplatte und Fuehrungsring matchen
             for (int i = 0; i < gp.Count; i++)
@@ -186,15 +231,16 @@ namespace Gießformkonfigurator.WindowsForms
             }
 
             Console.ReadLine();
-        }*/
+        }
+
             using (var db = new GießformDBContext())
             {
                 try
                 {
                     var gp = new Grundplatte()
                     {
-                        SAP_Nr_ = 23413,
-                        Bezeichnung_RoCon = "Testplatte2",
+                        SAP_Nr_ = 23419,
+                        Bezeichnung_RoCon = "Testplatte4",
                         Außendurchmesser = 452,
                         Innendurchmesser = 12,
                         Hoehe = 32,
@@ -207,24 +253,35 @@ namespace Gießformkonfigurator.WindowsForms
                         Konus_Innen_Min = 50,
                         Konus_Innen_Winkel = 45,
                         mit_Kern = false,
-                        mit_Lochfuehrung = false
+                        mit_Lochfuehrung = false,
                     };
 
-                db.Grundplatten.Add(gp);
-                db.SaveChanges();
-                Console.WriteLine("Added Baseplate!");
-                } 
+                    db.Grundplatten.Add(gp);
+                    db.SaveChanges();
+                    Console.WriteLine("Added Baseplate!");
+                }
                 catch (DbUpdateException ex)
                 {
                 Console.WriteLine(ex.Message);
+                }
+
+                using (var context = new GießformDBContext())
+                {
+                    var grundplatte = context.Grundplatten
+                        .Single(b => b.SAP_Nr_ == 23414);
+                    Console.WriteLine(grundplatte);
+                    Console.ReadLine();
+
                 }
 
                 foreach (var baseplate in db.Grundplatten)
                 {
                     Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
                 }
+
                 Console.ReadLine();
 
+                
                 foreach (var baseplate in db.Grundplatten)
                 {
                     Console.WriteLine("SAP-Nr.: {0}, Bezeichnung_RoCon: {1}", baseplate.SAP_Nr_, baseplate.Bezeichnung_RoCon);
@@ -238,10 +295,13 @@ namespace Gießformkonfigurator.WindowsForms
                 Console.ReadLine();
             }
         }
-
+        
         // GUI-Stuff
-        /*Application.EnableVisualStyles();
+        Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new DBLogin_View());*/
+        Application.Run(new DBLogin_View());
+        
+        */
+        }
     }
-}
+} 

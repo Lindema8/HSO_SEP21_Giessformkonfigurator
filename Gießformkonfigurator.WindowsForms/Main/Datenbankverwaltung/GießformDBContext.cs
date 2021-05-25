@@ -6,13 +6,19 @@
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.Data.Entity;
-    public partial class GießformDBContext : DbContext
 
+    /// <summary>
+    /// Implementiert die Klasse DbContext. Konfiguration der DB Grundstruktur.
+    /// </summary>
+    public partial class GießformDBContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GießformDBContext"/> class.
+        /// Stellt DB Verbindung her. Connection String befindet sich in der App.Config.
+        /// </summary>
         public GießformDBContext()
             : base("name=GießformDB")
         {
-
         }
 
         public virtual DbSet<Bolzen> Bolzen { get; set; }
@@ -31,6 +37,10 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public virtual DbSet<Ring> Ringe { get; set; }
 
+        /// <summary>
+        /// Initialisiert die EntityConfigurations für alle DB-Objekte.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new GrundplatteEntityConfiguration());
