@@ -26,13 +26,13 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal Hoehe { get; set; }
 
-        public decimal Konus_Außen_Max { get; set; }
+        public decimal? Konus_Außen_Max { get; set; }
 
-        public decimal Konus_Außen_Min { get; set; }
+        public decimal? Konus_Außen_Min { get; set; }
 
-        public decimal Konus_Außen_Winkel { get; set; }
+        public decimal? Konus_Außen_Winkel { get; set; }
 
-        public decimal Konus_Hoehe { get; set; }
+        public decimal? Konus_Hoehe { get; set; }
 
         public bool mit_Konusfuehrung { get; set; }
 

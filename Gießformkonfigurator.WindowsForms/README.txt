@@ -2,3 +2,4 @@
 
 StyleCop.Analyzers
 
+Entity Framework

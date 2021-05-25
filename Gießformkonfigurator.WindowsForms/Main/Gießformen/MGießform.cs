@@ -20,9 +20,12 @@ namespace Gießformkonfigurator.WindowsForms.Main.Gießformen
 
         public Kern Innenkern { get; set; }
 
-        public MGießform()
-        {  
-
+        public MGießform(Grundplatte gp, Ring fr, Einlegeplatte el, Kern ik)
+        {
+            this.Grundplatte = gp;
+            this.Fuehrungsring = fr;
+            this.Einlegeplatte = el;
+            this.Innenkern = ik;
         }
     }
 }
