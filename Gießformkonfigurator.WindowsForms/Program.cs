@@ -75,11 +75,7 @@ namespace Gießformkonfigurator.WindowsForms
             {
                 for (int j = 0; j < listRinge.Count; j++)
                 {
-                    if (listRinge[j].Konus_Min > listGrundplatten[i].Konus_Außen_Min
-                        && listRinge[j].Konus_Min < listGrundplatten[i].Konus_Außen_Max
-                        && listRinge[j].Konus_Winkel == listGrundplatten[i].Konus_Außen_Winkel
-                        && listRinge[j].Konus_Hoehe < listGrundplatten[i].Konus_Hoehe
-                        && listRinge[j].Konus_Max < listGrundplatten[i].Konus_Außen_Max)
+                    if (listGrundplatten[i].Kombiniere(listRinge[j]))
                     {
                         MultiMolds1.Add(new MGießform(listGrundplatten[i], listRinge[j], null, null));
                     }
@@ -90,18 +86,11 @@ namespace Gießformkonfigurator.WindowsForms
             Grenze = MultiMolds1.Count;
             for (int i = 0; i < Grenze; i++)
             {
-                if (Convert.ToDouble(MultiMolds1[i].Grundplatte.Konus_Außen_Max) != 0.0 ||
-                    Convert.ToDouble(MultiMolds1[i].Grundplatte.Konus_Innen_Min) != 0.0 ||
-                    Convert.ToDouble(MultiMolds1[i].Grundplatte.Konus_Innen_Winkel) != 0.0)
+                if (MultiMolds1[i].Grundplatte.mit_Konusfuehrung)
                 {
                     for (int j = 0; j < listEinlegeplatten.Count; j++)
                     {
-                        if (MultiMolds1[i].Grundplatte.Konus_Innen_Max > listEinlegeplatten[j].Konus_Außen_Max &&
-                            (MultiMolds1[i].Grundplatte.Konus_Innen_Max - 5) < listEinlegeplatten[j].Konus_Außen_Max &&
-                            MultiMolds1[i].Grundplatte.Konus_Innen_Min > listEinlegeplatten[j].Konus_Außen_Min &&
-                            (MultiMolds1[i].Grundplatte.Konus_Innen_Min - 5) < listEinlegeplatten[j].Konus_Außen_Min &&
-                            MultiMolds1[i].Grundplatte.Konus_Innen_Winkel > listEinlegeplatten[j].Konus_Außen_Winkel &&
-                            (MultiMolds1[i].Grundplatte.Konus_Innen_Winkel - 5) < listEinlegeplatten[j].Konus_Außen_Winkel)
+                        if (MultiMolds1[i].Grundplatte.Kombiniere(listEinlegeplatten[j]))
                         {
                             MultiMolds1.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, listEinlegeplatten[j], null));
                         }
@@ -148,23 +137,19 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int j = 0; j < listKerne.Count; j++)
                         {
-                            if (MultiMolds1[i].Grundplatte.Konus_Innen_Max > listKerne[j].Konus_Außen_Max
-                            && (MultiMolds1[i].Grundplatte.Konus_Innen_Max - 5) < listKerne[j].Konus_Außen_Max
-                            && MultiMolds1[i].Grundplatte.Konus_Innen_Min > listKerne[j].Konus_Außen_Min
-                            && (MultiMolds1[i].Grundplatte.Konus_Innen_Min - 5) < listKerne[j].Konus_Außen_Min
-                            && MultiMolds1[i].Grundplatte.Konus_Innen_Winkel > listKerne[i].Konus_Außen_Winkel
-                            && (MultiMolds1[i].Grundplatte.Konus_Innen_Winkel - 5) < listKerne[j].Konus_Außen_Winkel)
+                            if (MultiMolds1[i].Grundplatte.Kombiniere(listKerne[j]))
                             {
                                 MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, null, listKerne[j]));
                             }
                         }
                     }
+
                     // Grundplatten vom Typ-2 (Stiftfuehrung) mit Innenkernen kombinieren
                     else if (MultiMolds1[i].Grundplatte.mit_Lochfuehrung == true)
                     {
                         for (int j = 0; j < listKerne.Count; j++)
                         {
-                            if (MultiMolds1[i].Grundplatte.Innendurchmesser == listKerne[j].Durchmesser_Fuehrung)
+                            if (MultiMolds1[i].Grundplatte.Kombiniere(listKerne[j]))
                             {
                                 MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, null, listKerne[j]));
                             }
