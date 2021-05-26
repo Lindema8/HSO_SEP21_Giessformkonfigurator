@@ -53,11 +53,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public virtual Lochkreis Lochkreis { get; set; }
 
-        public bool Kombiniere(Ring fuehrungsring)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public bool Kombiniere(Kern kern)
         {
             if (this.mit_Konusfuehrung)

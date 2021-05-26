@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Grundplatte")]
-    public partial class Grundplatte : Komponente
+    public partial class Grundplatte
     {
         [Key]
         [Column("SAP-Nr.")]
@@ -49,11 +49,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public bool mit_Kern { get; set; }
 
         public virtual Lochkreis Lochkreis { get; set; }
-
-        public bool Kombiniere()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public bool Kombiniere(Ring fuehrungsring)
         {

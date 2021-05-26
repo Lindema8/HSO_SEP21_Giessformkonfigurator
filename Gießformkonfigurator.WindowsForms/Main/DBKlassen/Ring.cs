@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Ring")]
-    public partial class Ring : Komponente
+    public partial class Ring
     {
         [Key]
         [Column("SAP-Nr.")]
@@ -44,15 +44,5 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public decimal? Konus_Hoehe { get; set; }
 
         public bool ohne_Konusfuehrung { get; set; }
-
-        public bool Kombiniere()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Kombiniere(Kern kern)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
