@@ -49,5 +49,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public bool mit_Kern { get; set; }
 
         public virtual Lochkreis Lochkreis { get; set; }
+
     }
 }
