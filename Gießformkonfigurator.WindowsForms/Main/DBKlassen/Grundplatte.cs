@@ -63,6 +63,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
                 && fuehrungsring.Konus_Hoehe < this.Konus_Hoehe
                 && fuehrungsring.Konus_Max < this.Konus_Außen_Max;
         }
+
         public bool Kombiniere(Einlegeplatte einlegeplatte)
         {
             return this.Konus_Innen_Max > einlegeplatte.Konus_Außen_Max

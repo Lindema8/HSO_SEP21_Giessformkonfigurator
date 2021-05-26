@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
-    class Komponente
+    public abstract class Komponente
     {
+        public abstract bool Kombiniere(Komponente);
     }
 }

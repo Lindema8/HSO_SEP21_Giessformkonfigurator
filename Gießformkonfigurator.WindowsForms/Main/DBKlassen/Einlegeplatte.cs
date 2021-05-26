@@ -52,5 +52,31 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public bool mit_Kern { get; set; }
 
         public virtual Lochkreis Lochkreis { get; set; }
+
+        public bool Kombiniere(Ring fuehrungsring)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Kombiniere(Kern kern)
+        {
+            if (this.mit_Konusfuehrung)
+            {
+                return this.Konus_Innen_Max > kern.Konus_Außen_Max
+                            && (this.Konus_Innen_Max - 5) < kern.Konus_Außen_Max
+                            && this.Konus_Innen_Min > kern.Konus_Außen_Min
+                            && (this.Konus_Innen_Min - 5) < kern.Konus_Außen_Min
+                            && this.Konus_Innen_Winkel > kern.Konus_Außen_Winkel
+                            && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
+            }
+            else if (this.mit_Lochfuehrung)
+            {
+                return this.Innendurchmesser == kern.Durchmesser_Fuehrung;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

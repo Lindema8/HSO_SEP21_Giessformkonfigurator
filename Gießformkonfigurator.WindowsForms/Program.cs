@@ -109,12 +109,7 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int j = 0; j < listKerne.Count; j++)
                         {
-                            if (MultiMolds1[i].Einlegeplatte.Konus_Innen_Max > listKerne[j].Konus_Außen_Max
-                            && (MultiMolds1[i].Einlegeplatte.Konus_Innen_Max - 5) < listKerne[j].Konus_Außen_Max
-                            && MultiMolds1[i].Einlegeplatte.Konus_Innen_Min > listKerne[j].Konus_Außen_Min
-                            && (MultiMolds1[i].Einlegeplatte.Konus_Innen_Min - 5) < listKerne[j].Konus_Außen_Min
-                            && MultiMolds1[i].Einlegeplatte.Konus_Innen_Winkel > listKerne[j].Konus_Außen_Winkel
-                            && (MultiMolds1[i].Einlegeplatte.Konus_Innen_Winkel - 5) < listKerne[j].Konus_Außen_Winkel)
+                            if (MultiMolds1[i].Einlegeplatte.Kombiniere(listKerne[j]))
                             {
                                 MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, MultiMolds1[i].Einlegeplatte, listKerne[j]));
                             }
@@ -126,10 +121,14 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int j = 0; j < listKerne.Count; j++)
                         {
-                            // TODO: Kombinationsalgorithmus einfügen
+                            if (MultiMolds1[i].Einlegeplatte.Kombiniere(listKerne[j]))
+                            {
+                                MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, MultiMolds1[i].Einlegeplatte, listKerne[j]));
+                            }
                         }
                     }
                 }
+
                 // Grundplatten vom Typ-1 (Konusfuehrung) mit Innenkernen kombinieren
                 else
                 {
