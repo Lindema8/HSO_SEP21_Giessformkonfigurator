@@ -84,6 +84,7 @@
     <Compile Include="Main\Datenbankverwaltung\GießformDBContext.cs" />
     <Compile Include="Main\DBKlassen\Grundplatte.cs" />
     <Compile Include="Main\DBKlassen\Kern.cs" />
+    <Compile Include="Main\DBKlassen\Komponente.cs" />
     <Compile Include="Main\DBKlassen\Lochkreis.cs" />
     <Compile Include="Main\DBKlassen\ProduktCup.cs" />
     <Compile Include="Main\DBKlassen\ProduktDisc.cs" />

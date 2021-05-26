@@ -164,11 +164,15 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int j = 0; j < listKerne.Count; j++)
                         {
-                            if (Convert.ToDouble(MultiMolds1[i].Grundplatte.Innendurchmesser) == Convert.ToDouble(listKerne[j].Durchmesser_Fuehrung))
+                            if (MultiMolds1[i].Grundplatte.Innendurchmesser == listKerne[j].Durchmesser_Fuehrung)
                             {
                                 MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, null, listKerne[j]));
                             }
                         }
+                    }
+                    else if (MultiMolds1[i].Grundplatte.mit_Kern == true)
+                    {
+                        MultiMoldsFinal.Add(new MGießform(MultiMolds1[i].Grundplatte, MultiMolds1[i].Fuehrungsring, null, null));
                     }
                 }
             }
