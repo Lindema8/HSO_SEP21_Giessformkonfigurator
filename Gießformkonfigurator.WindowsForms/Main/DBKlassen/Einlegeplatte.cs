@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Einlegeplatte")]
-    public partial class Einlegeplatte : Komponente
+    public partial class Einlegeplatte
     {
         [Key]
         [Column("SAP-Nr.")]

@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Bolzen")]
-    public partial class Bolzen : Komponente
+    public partial class Bolzen
     {
         [Key]
         [Column("SAP-Nr.")]

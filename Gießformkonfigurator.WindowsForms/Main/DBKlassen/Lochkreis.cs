@@ -8,7 +8,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Lochkreis : Komponente
+    public partial class Lochkreis
     {
         [Key]
         [Column("SAP-Nr.")]
