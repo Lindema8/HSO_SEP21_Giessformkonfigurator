@@ -3,6 +3,8 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+#pragma warning disable SA1600 // Elements should be documented
+#pragma warning disable SA1601 // Partial elements should be documented
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.ComponentModel.DataAnnotations;
@@ -29,7 +31,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal Gießhoehe_Max { get; set; }
 
-        public bool mit_Konusfuehrung { get; set; }
+        public bool Mit_Konusfuehrung { get; set; }
 
         public decimal? Konus_Außen_Max { get; set; }
 
@@ -39,7 +41,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal? Konus_Hoehe { get; set; }
 
-        public bool mit_Fuehrungsstift { get; set; }
+        public bool Mit_Fuehrungsstift { get; set; }
 
         public decimal? Hoehe_Fuehrung { get; set; }
 
@@ -47,7 +49,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal? Toleranz_Durchmesser_Fuehrung { get; set; }
 
-        public bool mit_Lochfuehrung { get; set; }
+        public bool Mit_Lochfuehrung { get; set; }
 
         public decimal? Durchmesser_Adapter { get; set; }
     }

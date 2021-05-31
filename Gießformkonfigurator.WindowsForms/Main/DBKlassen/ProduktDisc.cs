@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("ProduktDisc")]
-    public partial class ProduktDisc
+    public partial class ProduktDisc : Produkt
     {
         [Key]
         [Column("SAP-Nr.")]

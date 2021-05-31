@@ -3,6 +3,8 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+#pragma warning disable SA1600 // Elements should be documented
+#pragma warning disable SA1601 // Partial elements should be documented
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
     using System.ComponentModel.DataAnnotations;
@@ -31,7 +33,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal Konus_Hoehe { get; set; }
 
-        public bool mit_Konusfuehrung { get; set; }
+        public bool Mit_Konusfuehrung { get; set; }
 
         public decimal? Konus_Innen_Max { get; set; }
 
@@ -39,17 +41,22 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal? Konus_Innen_Winkel { get; set; }
 
-        public bool mit_Lochfuehrung { get; set; }
+        public bool Mit_Lochfuehrung { get; set; }
 
         public decimal? Innendurchmesser { get; set; }
 
         [StringLength(10)]
         public string Toleranz_Innendurchmesser { get; set; }
 
-        public bool mit_Kern { get; set; }
+        public bool Mit_Kern { get; set; }
 
         public virtual Lochkreis Lochkreis { get; set; }
 
+        /// <summary>
+        /// Ruft die Methode Kombiniere() des Objekts auf. Beinhaltet die Parameter, welche mit der übergebenen Komponente verglichen werden.
+        /// </summary>
+        /// <param name="fuehrungsring">Vergleichskomponente</param>
+        /// <returns>Gibt einen True zurück, wenn die Komponenten kombiniert werden können.</returns>
         public bool Kombiniere(Ring fuehrungsring)
         {
             return fuehrungsring.Konus_Min > this.Konus_Außen_Min
@@ -71,7 +78,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public bool Kombiniere(Kern kern)
         {
-            if (this.mit_Konusfuehrung)
+            if (this.Mit_Konusfuehrung)
             {
                 return this.Konus_Innen_Max > kern.Konus_Außen_Max
                         && (this.Konus_Innen_Max - 5) < kern.Konus_Außen_Max
@@ -80,7 +87,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
                         && this.Konus_Innen_Winkel > kern.Konus_Außen_Winkel
                         && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
             }
-            else if (this.mit_Lochfuehrung)
+            else if (this.Mit_Lochfuehrung)
             {
                 return this.Innendurchmesser == kern.Durchmesser_Fuehrung;
             }

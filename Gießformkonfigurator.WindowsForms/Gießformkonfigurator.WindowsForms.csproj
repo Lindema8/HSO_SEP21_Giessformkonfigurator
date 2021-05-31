@@ -85,6 +85,7 @@
     <Compile Include="Main\DBKlassen\Grundplatte.cs" />
     <Compile Include="Main\DBKlassen\Kern.cs" />
     <Compile Include="Main\DBKlassen\Lochkreis.cs" />
+    <Compile Include="Main\DBKlassen\Produkt.cs" />
     <Compile Include="Main\DBKlassen\ProduktCup.cs" />
     <Compile Include="Main\DBKlassen\ProduktDisc.cs" />
     <Compile Include="Main\DBKlassen\Ring.cs" />
@@ -98,7 +99,8 @@
     <Compile Include="Main\Gießformen\Gießform.cs" />
     <Compile Include="Main\Gießformen\MGießform.cs" />
     <Compile Include="Main\Gießformen\EGießform.cs" />
-    <Compile Include="Main\Logik\CompareObject.cs" />
+    <Compile Include="Main\Logik\KombinationsObjekt.cs" />
+    <Compile Include="Main\Logik\VergleichsObjekt.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
       <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
