@@ -10,7 +10,7 @@ namespace Gießformkonfigurator.UnitTests
         public void Kombiniere_grundplatteEinlegeplatte_returnsTrue()
         {
             // Arrange
-            var grundplatte = new Grundplatte() { Konus_Innen_Max = 200.00m, Konus_Innen_Min = 195.00m, Konus_Innen_Winkel = 15.00m } ;
+            var grundplatte = new Grundplatte() { Konus_Innen_Max = 200.00m, Konus_Innen_Min = 195.00m, Konus_Innen_Winkel = 15.00m };
             var einlegeplatte = new Einlegeplatte() { Konus_Außen_Max = 199.00m, Konus_Außen_Min = 194.00m, Konus_Außen_Winkel = 15.00m };
 
             // Act

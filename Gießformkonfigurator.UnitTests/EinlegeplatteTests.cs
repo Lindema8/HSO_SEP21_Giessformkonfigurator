@@ -3,7 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Gießformkonfigurator.UnitTests
 {
-    class EinlegeplatteTests
+    [TestClass]
+    public class EinlegeplatteTests
     {
         [TestMethod]
         public void Kombiniere_konusEinlegeplatteKern_returnsTrue()

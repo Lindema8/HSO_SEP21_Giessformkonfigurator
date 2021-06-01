@@ -242,6 +242,5 @@ namespace Gießformkonfigurator.WindowsForms
 
             return mGießformenTemp02;
         }
-
     }
 }
