@@ -160,7 +160,7 @@ namespace Gießformkonfigurator.WindowsForms
             // Grundplatten mit den vorhandenen Fuehrungsringen kombinieren.
             for (int iGP = 0; iGP < this.listGrundplatten.Count; iGP++)
             {
-                for (int iRinge = 0; iRinge < listRinge.Count; iRinge++)
+                for (int iRinge = 0; iRinge < this.listRinge.Count; iRinge++)
                 {
                     if (this.listGrundplatten[iGP].Kombiniere(this.listRinge[iRinge]))
                     {
@@ -175,11 +175,11 @@ namespace Gießformkonfigurator.WindowsForms
             {
                 if (mGießformenTemp[iTemp].Grundplatte.Mit_Konusfuehrung)
                 {
-                    for (int iEP = 0; iEP < listEinlegeplatten.Count; iEP++)
+                    for (int iEP = 0; iEP < this.listEinlegeplatten.Count; iEP++)
                     {
-                        if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(listEinlegeplatten[iEP]))
+                        if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(this.listEinlegeplatten[iEP]))
                         {
-                            mGießformenTemp.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, listEinlegeplatten[iEP], null));
+                            mGießformenTemp.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, this.listEinlegeplatten[iEP], null));
                         }
                     }
                 }
@@ -194,11 +194,11 @@ namespace Gießformkonfigurator.WindowsForms
                     // Einlegeplatten mit Konusfuehrung mit Kernen kombinieren.
                     if (mGießformenTemp[iTemp].Einlegeplatte.Mit_Konusfuehrung == true)
                     {
-                        for (int iKerne = 0; iKerne < listKerne.Count; iKerne++)
+                        for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp[iTemp].Einlegeplatte.Kombiniere(listKerne[iKerne]))
+                            if (mGießformenTemp[iTemp].Einlegeplatte.Kombiniere(this.listKerne[iKerne]))
                             {
-                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, mGießformenTemp[iTemp].Einlegeplatte, listKerne[iKerne]));
+                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, mGießformenTemp[iTemp].Einlegeplatte, this.listKerne[iKerne]));
                             }
                         }
                     }
@@ -206,11 +206,11 @@ namespace Gießformkonfigurator.WindowsForms
                     // Einlegeplatten mit Lochfuehrung mit Kernen kombinieren.
                     else if (mGießformenTemp[iTemp].Einlegeplatte.Mit_Lochfuehrung == true)
                     {
-                        for (int iKerne = 0; iKerne < listKerne.Count; iKerne++)
+                        for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp[iTemp].Einlegeplatte.Kombiniere(listKerne[iKerne]))
+                            if (mGießformenTemp[iTemp].Einlegeplatte.Kombiniere(this.listKerne[iKerne]))
                             {
-                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, mGießformenTemp[iTemp].Einlegeplatte, listKerne[iKerne]));
+                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, mGießformenTemp[iTemp].Einlegeplatte, this.listKerne[iKerne]));
                             }
                         }
                     }
@@ -221,11 +221,11 @@ namespace Gießformkonfigurator.WindowsForms
                 {
                     if (mGießformenTemp[iTemp].Grundplatte.Mit_Konusfuehrung == true)
                     {
-                        for (int iKerne = 0; iKerne < listKerne.Count; iKerne++)
+                        for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(listKerne[iKerne]))
+                            if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(this.listKerne[iKerne]))
                             {
-                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, null, listKerne[iKerne]));
+                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, null, this.listKerne[iKerne]));
                             }
                         }
                     }
@@ -233,11 +233,11 @@ namespace Gießformkonfigurator.WindowsForms
                     // Grundplatten mit Lochfuehrung mit Kernen kombinieren.
                     else if (mGießformenTemp[iTemp].Grundplatte.Mit_Lochfuehrung == true)
                     {
-                        for (int iKerne = 0; iKerne < listKerne.Count; iKerne++)
+                        for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(listKerne[iKerne]))
+                            if (mGießformenTemp[iTemp].Grundplatte.Kombiniere(this.listKerne[iKerne]))
                             {
-                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, null, listKerne[iKerne]));
+                                mGießformenFinal.Add(new MGießform(mGießformenTemp[iTemp].Grundplatte, mGießformenTemp[iTemp].Fuehrungsring, null, this.listKerne[iKerne]));
                             }
                         }
                     }
