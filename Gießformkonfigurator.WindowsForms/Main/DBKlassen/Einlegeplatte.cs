@@ -68,7 +68,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
             }
             else if (this.Mit_Lochfuehrung)
             {
-                return this.Innendurchmesser == kern.Durchmesser_Fuehrung;
+                return this.Innendurchmesser == kern.Durchmesser_Fuehrung
+                    && this.Hoehe >= kern.Hoehe_Fuehrung;
             }
             else
             {

@@ -31,7 +31,6 @@ namespace Gießformkonfigurator.WindowsForms
         public static void Main()
         {
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
-            List<MGießform> mGießformenTemp = new List<MGießform>();
             List<MGießform> mGießformenFinal = new List<MGießform>();
 
             KombinationsObjekt co = new KombinationsObjekt(null);
@@ -41,9 +40,9 @@ namespace Gießformkonfigurator.WindowsForms
             foreach (MGießform mGießform in mGießformenFinal)
             {
                 Console.Write(mGießform.ToString() + ": ");
-                Console.Write(mGießform.Grundplatte?.Bezeichnung_RoCon + ", ");
-                Console.Write(mGießform.Einlegeplatte?.Bezeichnung_RoCon + ", ");
-                Console.Write(mGießform.Fuehrungsring?.Bezeichnung_RoCon + ", ");
+                Console.Write(mGießform.Grundplatte?.Bezeichnung_RoCon + "  ");
+                Console.Write(mGießform.Einlegeplatte?.Bezeichnung_RoCon + "  ");
+                Console.Write(mGießform.Fuehrungsring?.Bezeichnung_RoCon + "  ");
                 Console.WriteLine(mGießform.Innenkern?.Bezeichnung_RoCon);
             }
 

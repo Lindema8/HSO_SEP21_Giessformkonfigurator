@@ -69,11 +69,11 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public bool Kombiniere(Einlegeplatte einlegeplatte)
         {
             return this.Konus_Innen_Max > einlegeplatte.Konus_Außen_Max
-                    && (this.Konus_Innen_Max - 5) < einlegeplatte.Konus_Außen_Max
+                    && (this.Konus_Innen_Max - 1) < einlegeplatte.Konus_Außen_Max
                     && this.Konus_Innen_Min > einlegeplatte.Konus_Außen_Min
-                    && (this.Konus_Innen_Min - 5) < einlegeplatte.Konus_Außen_Min
+                    && (this.Konus_Innen_Min - 1) < einlegeplatte.Konus_Außen_Min
                     && this.Konus_Innen_Winkel > einlegeplatte.Konus_Außen_Winkel
-                    && (this.Konus_Innen_Winkel - 5) < einlegeplatte.Konus_Außen_Winkel;
+                    && (this.Konus_Innen_Winkel - 1) < einlegeplatte.Konus_Außen_Winkel;
         }
 
         public bool Kombiniere(Kern kern)
