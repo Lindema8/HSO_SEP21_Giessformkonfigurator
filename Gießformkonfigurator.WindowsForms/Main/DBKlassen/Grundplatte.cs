@@ -87,9 +87,16 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
                         && this.Konus_Innen_Winkel > kern.Konus_Außen_Winkel
                         && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
             }
-            else if (this.Mit_Lochfuehrung)
+
+            // Grundplatte mit Lochführung akzeptiert einen Kern mit Fuehrungsstift oder Lochfuehrung
+            else if (this.Mit_Lochfuehrung && kern.Mit_Fuehrungsstift)
             {
-                return this.Innendurchmesser == kern.Durchmesser_Fuehrung;
+                return this.Innendurchmesser == kern.Durchmesser_Fuehrung
+                    && this.Hoehe >= kern.Hoehe_Fuehrung;
+            }
+            else if (this.Mit_Lochfuehrung && kern.Mit_Lochfuehrung)
+            {
+                return false;
             }
             else
             {

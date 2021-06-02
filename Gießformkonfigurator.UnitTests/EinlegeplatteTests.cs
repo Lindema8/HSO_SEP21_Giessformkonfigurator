@@ -6,12 +6,13 @@ namespace Gießformkonfigurator.UnitTests
     [TestClass]
     public class EinlegeplatteTests
     {
+        // Produktivbeispiel eingefügt.
         [TestMethod]
         public void Kombiniere_konusEinlegeplatteKern_returnsTrue()
         {
             // Arrange
-            var einlegeplatte = new Grundplatte() { Konus_Innen_Max = 200.00m, Konus_Innen_Min = 195.00m, Konus_Innen_Winkel = 15.00m, Mit_Konusfuehrung = true };
-            var kern = new Kern() { Konus_Außen_Max = 199.00m, Konus_Außen_Min = 194.00m, Konus_Außen_Winkel = 15.00m };
+            var einlegeplatte = new Grundplatte() { Konus_Innen_Max = 265.31m, Konus_Innen_Min = 259.42m, Konus_Innen_Winkel = 15.00m, Mit_Konusfuehrung = true };
+            var kern = new Kern() { Konus_Außen_Max = 210.00m, Konus_Außen_Min = 206.78m, Konus_Außen_Winkel = 15.00m };
 
             // Act
             var result = einlegeplatte.Kombiniere(kern);
@@ -20,6 +21,7 @@ namespace Gießformkonfigurator.UnitTests
             Assert.IsTrue(result);
         }
 
+        // Noch keine Testdaten vorhanden.
         [TestMethod]
         public void Kombiniere_lochEinlegeplatteKern_returnsTrue()
         {
