@@ -59,16 +59,17 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         {
             if (this.Mit_Konusfuehrung)
             {
-                return this.Konus_Innen_Max > kern.Konus_Außen_Max
-                            && (this.Konus_Innen_Max - 5) < kern.Konus_Außen_Max
+                return kern.Mit_Konusfuehrung == true
+                            && this.Konus_Innen_Max > kern.Konus_Außen_Max
+                            && (this.Konus_Innen_Max - 1) <= kern.Konus_Außen_Max
                             && this.Konus_Innen_Min > kern.Konus_Außen_Min
-                            && (this.Konus_Innen_Min - 5) < kern.Konus_Außen_Min
-                            && this.Konus_Innen_Winkel > kern.Konus_Außen_Winkel
-                            && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
+                            && (this.Konus_Innen_Min - 1) <= kern.Konus_Außen_Min
+                            && this.Konus_Innen_Winkel == kern.Konus_Außen_Winkel;
             }
             else if (this.Mit_Lochfuehrung)
             {
-                return this.Innendurchmesser == kern.Durchmesser_Fuehrung
+                return kern.Mit_Fuehrungsstift == true
+                    && this.Innendurchmesser == kern.Durchmesser_Fuehrung
                     && this.Hoehe >= kern.Hoehe_Fuehrung;
             }
             else

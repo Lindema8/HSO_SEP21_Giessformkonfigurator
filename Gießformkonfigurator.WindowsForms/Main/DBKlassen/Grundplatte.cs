@@ -66,32 +66,36 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
                 && fuehrungsring.Konus_Max < this.Konus_Außen_Max;
         }
 
+        // TODO: Wie groß muss der Größenunterschied sein, damit die Platten ineinander passen?
         public bool Kombiniere(Einlegeplatte einlegeplatte)
         {
             return this.Konus_Innen_Max > einlegeplatte.Konus_Außen_Max
-                    && (this.Konus_Innen_Max - 1) < einlegeplatte.Konus_Außen_Max
+                    && (this.Konus_Innen_Max - 1) <= einlegeplatte.Konus_Außen_Max
                     && this.Konus_Innen_Min > einlegeplatte.Konus_Außen_Min
-                    && (this.Konus_Innen_Min - 1) < einlegeplatte.Konus_Außen_Min
-                    && this.Konus_Innen_Winkel > einlegeplatte.Konus_Außen_Winkel
-                    && (this.Konus_Innen_Winkel - 1) < einlegeplatte.Konus_Außen_Winkel;
+                    && (this.Konus_Innen_Min - 1) <= einlegeplatte.Konus_Außen_Min
+                    && this.Konus_Innen_Winkel == einlegeplatte.Konus_Außen_Winkel;
+                    // && (this.Konus_Innen_Winkel - 1) < einlegeplatte.Konus_Außen_Winkel;
         }
 
         public bool Kombiniere(Kern kern)
         {
             if (this.Mit_Konusfuehrung)
             {
-                return this.Konus_Innen_Max > kern.Konus_Außen_Max
-                        && (this.Konus_Innen_Max - 5) < kern.Konus_Außen_Max
+                return kern.Mit_Konusfuehrung == true
+                        && this.Konus_Innen_Max > kern.Konus_Außen_Max
+                        && (this.Konus_Innen_Max - 1) <= kern.Konus_Außen_Max
                         && this.Konus_Innen_Min > kern.Konus_Außen_Min
-                        && (this.Konus_Innen_Min - 5) < kern.Konus_Außen_Min
-                        && this.Konus_Innen_Winkel > kern.Konus_Außen_Winkel
-                        && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
+                        && (this.Konus_Innen_Min - 1) <= kern.Konus_Außen_Min
+                        && this.Konus_Innen_Winkel == kern.Konus_Außen_Winkel;
+                        // && (this.Konus_Innen_Winkel - 5) < kern.Konus_Außen_Winkel;
             }
 
             // Grundplatte mit Lochführung akzeptiert einen Kern mit Fuehrungsstift oder Lochfuehrung
             else if (this.Mit_Lochfuehrung && kern.Mit_Fuehrungsstift)
             {
-                return this.Innendurchmesser == kern.Durchmesser_Fuehrung
+                // TODO: Genaue Abweichung zwischen Innendurchmesser und Fuehrungsdurchmesser festlegen.
+                return this.Innendurchmesser >= kern.Durchmesser_Fuehrung
+                    && (this.Innendurchmesser - 2) <= kern.Durchmesser_Fuehrung
                     && this.Hoehe >= kern.Hoehe_Fuehrung;
             }
             else if (this.Mit_Lochfuehrung && kern.Mit_Lochfuehrung)

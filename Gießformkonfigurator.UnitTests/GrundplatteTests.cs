@@ -12,7 +12,7 @@ namespace Gießformkonfigurator.UnitTests
         {
             // Arrange
             var grundplatte = new Grundplatte() { Konus_Innen_Max = 265.31m, Konus_Innen_Min = 259.42m, Konus_Innen_Winkel = 15.00m };
-            var einlegeplatte = new Einlegeplatte() { Konus_Außen_Max = 265.00m, Konus_Außen_Min = 295.11m, Konus_Außen_Winkel = 15.00m };
+            var einlegeplatte = new Einlegeplatte() { Konus_Außen_Max = 265.00m, Konus_Außen_Min = 259.11m, Konus_Außen_Winkel = 15.00m };
 
             // Act
             var result = grundplatte.Kombiniere(einlegeplatte);
@@ -44,8 +44,8 @@ namespace Gießformkonfigurator.UnitTests
         public void Kombiniere_grundplatteKernKonus_returnsTrue()
         {
             // Arrange
-            var grundplatte = new Grundplatte() { Konus_Innen_Max = 200.00m, Konus_Innen_Min = 195.00m, Konus_Innen_Winkel = 15.00m };
-            var kern = new Kern() { Konus_Außen_Max = 199.00m, Konus_Außen_Min = 194.00m, Konus_Außen_Winkel = 15.00m };
+            var grundplatte = new Grundplatte() { Mit_Konusfuehrung = true, Konus_Innen_Max = 200.00m, Konus_Innen_Min = 195.00m, Konus_Innen_Winkel = 15.00m };
+            var kern = new Kern() { Mit_Konusfuehrung = true, Konus_Außen_Max = 199.00m, Konus_Außen_Min = 194.00m, Konus_Außen_Winkel = 15.00m };
 
             // Act
             var result = grundplatte.Kombiniere(kern);
@@ -59,8 +59,8 @@ namespace Gießformkonfigurator.UnitTests
         public void Kombiniere_grundplatteKernFuehrungsstift_returnsTrue()
         {
             // Arrange
-            var grundplatte = new Grundplatte() { Innendurchmesser =  15, Hoehe = 11};
-            var kern = new Kern() { Durchmesser_Fuehrung = 15, Hoehe_Fuehrung = 15};
+            var grundplatte = new Grundplatte() { Mit_Lochfuehrung = true, Innendurchmesser =  15.00m, Hoehe = 20.00m };
+            var kern = new Kern() { Mit_Fuehrungsstift = true, Durchmesser_Fuehrung = 15.00m, Hoehe_Fuehrung = 15.00m };
 
             // Act
             var result = grundplatte.Kombiniere(kern);
