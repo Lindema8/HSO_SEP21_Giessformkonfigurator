@@ -36,13 +36,13 @@ namespace Gießformkonfigurator.WindowsForms
                     Ring fr1 = new Ring() { SAP_Nr_ = 10 + i, Bezeichnung_RoCon = "FRTest" + 10 + i, Konus_Max = 345.43m, Konus_Min = 342.21m, Konus_Winkel = 15.00m, Konus_Hoehe = 6 };
                     Kern k1 = new Kern() { SAP_Nr_ = 10 + i, Bezeichnung_RoCon = "KTest" + 10 + i, Konus_Außen_Max = 265.00m, Konus_Außen_Min = 259.20m, Konus_Außen_Winkel = 15.00m, Mit_Konusfuehrung = true };
 
+                    Console.ReadLine();
+
                     db.Grundplatten.Add(gp1);
                     db.Einlegeplatten.Add(ep1);
                     db.Ringe.Add(fr1);
                     db.Innenkerne.Add(k1);
                     db.SaveChanges();
-                    Console.WriteLine("Datensätze eingefügt");
-                    Console.ReadLine();
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace Gießformkonfigurator.WindowsForms
         public static void Main()
         {
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
-            /*List<MGießform> mGießformenFinal = new List<MGießform>();
+            List<MGießform> mGießformenFinal = new List<MGießform>();
 
             KombinationsObjekt co = new KombinationsObjekt(null);
             co.FiltereDiscDB();
@@ -70,8 +70,8 @@ namespace Gießformkonfigurator.WindowsForms
             }
 
             Console.Write("Am Ende");
-            Console.ReadLine();*/
-            fillDatabase();
+            Console.ReadLine();
+            // fillDatabase();
         }
 
         /*
