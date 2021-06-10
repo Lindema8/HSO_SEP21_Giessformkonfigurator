@@ -3,3 +3,5 @@
 StyleCop.Analyzers
 
 Entity Framework
+
+Test
