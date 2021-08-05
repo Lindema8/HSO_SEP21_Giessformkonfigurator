@@ -13,6 +13,7 @@ namespace Gießformkonfigurator.WindowsForms
     using System.Linq;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
     using Gießformkonfigurator.WindowsForms.Main.Gießformen;
+    using Gießformkonfigurator.WindowsForms.Main.Logik;
 
     /// <summary>
     /// Objekt zur Kombination der Komponenten zur Erstellung der mehrteiligen Gießformen (MGießformen).
@@ -148,19 +149,21 @@ namespace Gießformkonfigurator.WindowsForms
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
             List<MGießform> mGießformenTemp01 = new List<MGießform>();
             List<MGießform> mGießformenTemp02 = new List<MGießform>();
+            var combinationRuleSet = new CombinationRuleSet();
 
             // Grundplatten mit den vorhandenen Fuehrungsringen kombinieren.
             for (int iGP = 0; iGP < this.listGrundplatten.Count; iGP++)
             {
                 for (int iRinge = 0; iRinge < this.listRinge.Count; iRinge++)
                 {
-                    if (this.listGrundplatten[iGP].Kombiniere(this.listRinge[iRinge]))
+                    //var combinations = combinationRuleSet.Combine(this.listGrundplatten[iGP], this.listRinge[iRinge]);
+                    if (combinationRuleSet.Combine(this.listGrundplatten[iGP], this.listRinge[iRinge]))
                     {
                         mGießformenTemp01.Add(new MGießform(this.listGrundplatten[iGP], this.listRinge[iRinge], null, null));
                     }
                     else
                     {
-                        Console.WriteLine(this.listGrundplatten[iGP].Bezeichnung_RoCon + " und " + this.listRinge[iRinge].Bezeichnung_RoCon + "passen nicht zusammen!");
+                        //Console.WriteLine(this.listGrundplatten[iGP].Bezeichnung_RoCon + " und " + this.listRinge[iRinge].Bezeichnung_RoCon + " passen nicht zusammen!");
                     }
                 }
             }
@@ -179,7 +182,7 @@ namespace Gießformkonfigurator.WindowsForms
                         }
                         else
                         {
-                            Console.WriteLine(mGießformenTemp01[iTemp].Grundplatte.Bezeichnung_RoCon + " und " + this.listEinlegeplatten[iEP].Bezeichnung_RoCon + "passen nicht zusammen!");
+                            //Console.WriteLine(mGießformenTemp01[iTemp].Grundplatte.Bezeichnung_RoCon + " und " + this.listEinlegeplatten[iEP].Bezeichnung_RoCon + " passen nicht zusammen!");
                         }
                     }
                 }
@@ -202,7 +205,7 @@ namespace Gießformkonfigurator.WindowsForms
                             }
                             else
                             {
-                                Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
+                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
@@ -218,7 +221,7 @@ namespace Gießformkonfigurator.WindowsForms
                             }
                             else
                             {
-                                Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
+                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
@@ -237,7 +240,7 @@ namespace Gießformkonfigurator.WindowsForms
                             }
                             else
                             {
-                                Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
+                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
@@ -253,7 +256,7 @@ namespace Gießformkonfigurator.WindowsForms
                             }
                             else
                             {
-                                Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
+                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
                             }
                         }
                     }

@@ -11,7 +11,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Grundplatte")]
-    public partial class Grundplatte
+    public partial class Grundplatte : Component
     {
         [Key]
         [Column("SAP-Nr.")]

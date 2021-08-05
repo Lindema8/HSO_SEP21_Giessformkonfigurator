@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 {
-    public abstract class Produkt
+    public abstract class Produkt : Component
     {
 
     }

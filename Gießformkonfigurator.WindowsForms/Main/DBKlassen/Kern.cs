@@ -11,7 +11,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Kern")]
-    public partial class Kern
+    public partial class Kern : Component
     {
         [Key]
         [Column("SAP-Nr.")]

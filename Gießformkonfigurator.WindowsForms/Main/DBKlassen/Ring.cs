@@ -9,7 +9,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Ring")]
-    public partial class Ring
+    public partial class Ring : Component
     {
         [Key]
         [Column("SAP-Nr.")]
