@@ -161,10 +161,6 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         mGießformenTemp01.Add(new MGießform(this.listGrundplatten[iGP], this.listRinge[iRinge], null, null));
                     }
-                    else
-                    {
-                        //Console.WriteLine(this.listGrundplatten[iGP].Bezeichnung_RoCon + " und " + this.listRinge[iRinge].Bezeichnung_RoCon + " passen nicht zusammen!");
-                    }
                 }
             }
 
@@ -176,13 +172,9 @@ namespace Gießformkonfigurator.WindowsForms
                 {
                     for (int iEP = 0; iEP < this.listEinlegeplatten.Count; iEP++)
                     {
-                        if (mGießformenTemp01[iTemp].Grundplatte.Kombiniere(this.listEinlegeplatten[iEP]))
+                        if (combinationRuleSet.Combine(mGießformenTemp01[iTemp].Grundplatte, this.listEinlegeplatten[iEP]))
                         {
                             mGießformenTemp01.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, this.listEinlegeplatten[iEP], null));
-                        }
-                        else
-                        {
-                            //Console.WriteLine(mGießformenTemp01[iTemp].Grundplatte.Bezeichnung_RoCon + " und " + this.listEinlegeplatten[iEP].Bezeichnung_RoCon + " passen nicht zusammen!");
                         }
                     }
                 }
@@ -199,13 +191,9 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp01[iTemp].Einlegeplatte.Kombiniere(this.listKerne[iKerne]))
+                            if (combinationRuleSet.Combine(mGießformenTemp01[iTemp].Einlegeplatte, this.listKerne[iKerne]))
                             {
                                 mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, mGießformenTemp01[iTemp].Einlegeplatte, this.listKerne[iKerne]));
-                            }
-                            else
-                            {
-                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
@@ -215,13 +203,9 @@ namespace Gießformkonfigurator.WindowsForms
                     {
                         for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp01[iTemp].Einlegeplatte.Kombiniere(this.listKerne[iKerne]))
+                            if (combinationRuleSet.Combine(mGießformenTemp01[iTemp].Einlegeplatte, this.listKerne[iKerne]))
                             {
                                 mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, mGießformenTemp01[iTemp].Einlegeplatte, this.listKerne[iKerne]));
-                            }
-                            else
-                            {
-                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
@@ -230,36 +214,32 @@ namespace Gießformkonfigurator.WindowsForms
                 // Grundplatten mit Konusfuehrung mit Kernen kombinieren.
                 else
                 {
-                    if (mGießformenTemp01[iTemp].Grundplatte.Mit_Konusfuehrung == true)
+                    if (mGießformenTemp01[iTemp].Grundplatte.Mit_Konusfuehrung == true || mGießformenTemp01[iTemp].Grundplatte.Mit_Lochfuehrung == true)
                     {
                         for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp01[iTemp].Grundplatte.Kombiniere(this.listKerne[iKerne]))
+                            if (combinationRuleSet.Combine(mGießformenTemp01[iTemp].Grundplatte, this.listKerne[iKerne]))
                             {
                                 mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, null, this.listKerne[iKerne]));
-                            }
-                            else
-                            {
-                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + " passen nicht zusammen!");
                             }
                         }
                     }
 
                     // Grundplatten mit Lochfuehrung mit Kernen kombinieren.
-                    else if (mGießformenTemp01[iTemp].Grundplatte.Mit_Lochfuehrung == true)
+                    /*else if (mGießformenTemp01[iTemp].Grundplatte.Mit_Lochfuehrung == true)
                     {
                         for (int iKerne = 0; iKerne < this.listKerne.Count; iKerne++)
                         {
-                            if (mGießformenTemp01[iTemp].Grundplatte.Kombiniere(this.listKerne[iKerne]))
+                            if (combinationRuleSet.Combine(mGießformenTemp01[iTemp].Einlegeplatte, this.listKerne[iKerne]))
                             {
                                 mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, null, this.listKerne[iKerne]));
                             }
                             else
                             {
-                                //Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
+                                // Console.WriteLine(mGießformenTemp01[iTemp].Einlegeplatte.Bezeichnung_RoCon + " und " + this.listKerne[iKerne].Bezeichnung_RoCon + "passen nicht zusammen!");
                             }
                         }
-                    }
+                    }*/
                     else if (mGießformenTemp01[iTemp].Grundplatte.Mit_Kern == true)
                     {
                         mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, null, null));

@@ -19,6 +19,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
         public GießformDBContext()
             : base("name=GießformDB")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Bolzen> Bolzen { get; set; }
