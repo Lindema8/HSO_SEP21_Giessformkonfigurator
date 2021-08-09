@@ -34,7 +34,8 @@ namespace Gießformkonfigurator.WindowsForms
             List<MGießform> mGießformenFinal = new List<MGießform>();
 
             KombinationsObjekt co = new KombinationsObjekt(null);
-            co.FiltereDiscDB();
+            //co.FiltereDiscDB();
+            co.ArraysTestData();
             mGießformenFinal = co.KombiniereMGießformen();
 
             foreach (MGießform mGießform in mGießformenFinal)

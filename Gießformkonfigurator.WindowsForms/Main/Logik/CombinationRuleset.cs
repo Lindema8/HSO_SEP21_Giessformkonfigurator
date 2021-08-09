@@ -5,11 +5,11 @@
     using System.Linq;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
 
-    class CombinationRuleSet
+    public class CombinationRuleset
     {
         private IEnumerable<CombinationRule> CombinationRules { get; set; }
 
-        public CombinationRuleSet()
+        public CombinationRuleset()
         {
             // hier müssen alle Regeln registriert werden, damit sie verwendet werden.
             this.CombinationRules = new CombinationRule[]

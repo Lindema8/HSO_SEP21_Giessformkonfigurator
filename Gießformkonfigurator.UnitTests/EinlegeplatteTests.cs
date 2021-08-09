@@ -7,6 +7,7 @@ namespace Gießformkonfigurator.UnitTests
     public class EinlegeplatteTests
     {
         // Noch keine Testdaten vorhanden.
+        /*
         [TestMethod]
         public void Kombiniere_konusEinlegeplatteKern_returnsTrue()
         {
@@ -34,6 +35,6 @@ namespace Gießformkonfigurator.UnitTests
 
             // Assert
             Assert.IsTrue(result);
-        }
+        }*/
     }
 }

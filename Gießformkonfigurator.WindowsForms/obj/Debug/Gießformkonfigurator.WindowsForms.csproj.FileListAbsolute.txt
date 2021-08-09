@@ -34,3 +34,4 @@ C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießfor
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.exe
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.pdb
 C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.csproj.AssemblyReference.cache
+C:\Users\rethm\iCloudDrive\Documents\VisualStudio\Gießformkonfigurator\Gießformkonfigurator.WindowsForms\obj\Debug\Gießformkonfigurator.WindowsForms.Migrations.NeueAttributeProductDisc.resources

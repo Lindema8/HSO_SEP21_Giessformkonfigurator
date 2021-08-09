@@ -7,6 +7,7 @@ namespace Gießformkonfigurator.UnitTests
     public class GrundplatteTests
     {
         // Produktivbeispiel eingefügt.
+        /*
         [TestMethod]
         public void Kombiniere_grundplatteEinlegeplatte_returnsTrue()
         {
@@ -67,6 +68,6 @@ namespace Gießformkonfigurator.UnitTests
 
             // Assert
             Assert.IsTrue(result);
-        }
+        }*/
     }
 }

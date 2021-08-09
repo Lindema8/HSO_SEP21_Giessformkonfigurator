@@ -22,6 +22,24 @@ namespace Gießformkonfigurator.WindowsForms.Main.DBKlassen
 
         public decimal Innendurchmesser { get; set; }
 
+        public decimal Lk1Durchmesser { get; set; }
+
+        public decimal Lk1Bohrungen { get; set; }
+
+        public string Lk1Gewinde { get; set; }
+
+        public decimal Lk2Durchmesser { get; set; }
+
+        public decimal Lk2Bohrungen { get; set; }
+
+        public string Lk2Gewinde { get; set; }
+
+        public decimal Lk3Durchmesser { get; set; }
+
+        public decimal Lk3Bohrungen { get; set; }
+
+        public string Lk3Gewinde { get; set; }
+
         [Required]
         [StringLength(4)]
         public string LK { get; set; }

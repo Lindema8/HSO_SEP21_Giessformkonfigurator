@@ -60,6 +60,8 @@
     <Compile Include="GrundplatteTests.cs" />
     <Compile Include="KombinationStressTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CombinationRulesetTests.cs" />
+    <Compile Include="KombinationsObjektTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
