@@ -14,7 +14,7 @@
         public void KombiniereMGießformen_allComponents_returnsMGießform()
         {
             // Arrange
-            var ko = new KombinationsObjekt(null);
+            var ko = new CombinationJob(null);
             ko.ArraysTestData();
 
             // Act
