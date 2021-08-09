@@ -12,7 +12,7 @@ namespace Gieﬂformkonfigurator.WindowsForms.Main.Logik
 
         public virtual bool Akzeptiert(Type teilTyp)
         {
-            if (!teilTyp.IsSubclassOf(typeof(Produkt)) || (typeof(Gieﬂform))
+            if (!teilTyp.IsSubclassOf(typeof(Produkt)) || !teilTyp.IsSubclassOf(typeof(Gieﬂform)))
             {
                 return false;
             }
@@ -23,43 +23,58 @@ namespace Gieﬂformkonfigurator.WindowsForms.Main.Logik
         public abstract bool Compare(Produkt a, Gieﬂform b);
     }
 
+    // TODO: Not finished
     class ProduktCupCompare : CompareRule
     {
         protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Gieﬂform) };
 
         public override bool Compare(Produkt a, Gieﬂform b)
         {
-            var components = new[] { a, b };
-            var product = components.OfType<Produkt>().Single();
-            var cup = components.OfType<Gieﬂform>().Single();
+            object[] compareElements = new object[] { a, b };
+            var product = compareElements.OfType<ProduktCup>().Single();
+            var gieﬂform = compareElements.OfType<MGieﬂform>().Single();
 
-            return product.Grund_Cup == cup.Grund_Cup
+            // TODO: Cup hinzuf¸gen
+            /*return product.Grund_Cup == cup.Grund_Cup
                         && (product.Innendurchmesser + 1) <= cup.Innendurchmesser
                         && product.Innendurchmesser > cup.Innendurchmesser
-                        && product.LK == cup.LK;
+                        && product.LK == cup.LK;*/
+            return false;
         }
     }
 
-    class ProduktMGieﬂformCompare : CompareRule
+    // TODO: Not finished
+    class ProduktDiscCompare : CompareRule
     {
         protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Gieﬂform) };
 
         public override bool Compare(Produkt a, Gieﬂform b)
         {
-            var components = new[] { a, b };
-            var product = components.OfType<Produkt>().Single();
-            var gieﬂform = components.OfType<Gieﬂform>().Single();
+            object[] compareElements = new object[] { a, b };
+            var product = compareElements.OfType<ProduktDisc>().Single();
+            var gieﬂform = compareElements.OfType<MGieﬂform>().Single();
 
-            if (product.Lk1Durchmesser != null)
-            {
-                return product.Auﬂendurchmesser <= gieﬂform.Fuehrungsring.Auﬂendruchmesser
-                    && (product.Auﬂendurchmesser + 1) > gieﬂform.Fuehrungsring.Auﬂendruchmesser
-                    && product.Innendurchmesser > gieﬂform.Innenkern.Innendurchmesser
-                    && (product.Innendurchmesser + 1) < gieﬂform.Innenkern.Innendurchmesser
-                    && product.Lk1Durchmesser <= gieﬂform.Grundplatte.grˆﬂe;
-            }
+            // TODO: Innenring als Attribut hinzuf¸gen
+            //if (gieﬂform.Innenring == null)
+            //{
+                if (product.Lk1Durchmesser != null)
+                {
+                    return product.Auﬂendurchmesser <= gieﬂform.Fuehrungsring.Auﬂendurchmesser
+                        && (product.Auﬂendurchmesser + 1) > gieﬂform.Fuehrungsring.Auﬂendurchmesser
+                        && product.Innendurchmesser > gieﬂform.Innenkern.Auﬂendurchmesser
+                        && (product.Innendurchmesser + 1) < gieﬂform.Innenkern.Auﬂendurchmesser
+                        && product.Lk1Durchmesser <= gieﬂform.Grundplatte.Hoehe;
+                }
+                else
+                {
+                    return false;
+                }
+            //}
+            //else
+            //{
+                // TODO
+            //    return false;
+            //}
         }
     }
-
-
 }

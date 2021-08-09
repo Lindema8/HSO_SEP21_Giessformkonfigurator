@@ -4,6 +4,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Logik
     using System.Collections.Generic;
     using System.Linq;
     using Gießformkonfigurator.WindowsForms.Main.DBKlassen;
+    using Gießformkonfigurator.WindowsForms.Main.Gießformen;
 
     class CompareRuleSet
     {
@@ -18,7 +19,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Logik
                     };
         }
 
-        public bool Compare(Component a, Component b)
+        public bool Compare(Produkt a, Gießform b)
         {
             var passendeKombinationen = this.CompareRules.Where(k => k.Akzeptiert(a.GetType()) && k.Akzeptiert(b.GetType()));
 

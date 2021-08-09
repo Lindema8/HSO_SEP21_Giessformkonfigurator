@@ -1,23 +1,19 @@
 ﻿<Properties StartupConfiguration="{B7AA5BAA-369A-44B8-9696-1809F236A9BA}|Default">
   <MonoDevelop.Ide.ItemProperties.Gießformkonfigurator.WindowsForms PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gießformkonfigurator.WindowsForms/DataAccess/DBConnection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gießformkonfigurator.WindowsForms/Program.cs">
     <Files>
-      <File FileName="Gießformkonfigurator.WindowsForms/DataAccess/DBConnection.cs" Line="24" Column="45" />
-      <File FileName="Gießformkonfigurator.WindowsForms/Program.cs" Line="29" Column="49" />
+      <File FileName="Gießformkonfigurator.WindowsForms/Program.cs" Line="29" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Gießformkonfigurator" expanded="True">
             <Node name="Gießformkonfigurator.WindowsForms" expanded="True">
-              <Node name="DataAccess" expanded="True">
-                <Node name="DBConnection.cs" selected="True" />
-              </Node>
               <Node name="Main" expanded="True">
-                <Node name="MoldManagement" expanded="True" />
-                <Node name="productMatching" expanded="True" />
+                <Node name="Logik" expanded="True" />
               </Node>
               <Node name="Properties" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
