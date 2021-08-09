@@ -74,11 +74,24 @@
             var baseplate = components.OfType<Grundplatte>().Single();
             var insertPlate = components.OfType<Einlegeplatte>().Single();
 
-            return baseplate.Konus_Innen_Max > insertPlate.Konus_Außen_Max
-                            && (baseplate.Konus_Innen_Max - 1) <= insertPlate.Konus_Außen_Max
-                            && baseplate.Konus_Innen_Min > insertPlate.Konus_Außen_Min
-                            && (baseplate.Konus_Innen_Min - 1) <= insertPlate.Konus_Außen_Min
-                            && baseplate.Konus_Innen_Winkel == insertPlate.Konus_Außen_Winkel;
+            if (baseplate.Mit_Lochfuehrung && insertPlate.Konus_Außen_Max == 0)
+            {
+                return baseplate.Innendurchmesser > insertPlate.Außendurchmesser
+                    && (baseplate.Innendurchmesser - 1) <= insertPlate.Außendurchmesser
+                    && baseplate.Hoehe == insertPlate.Hoehe;
+            }
+            else if (baseplate.Mit_Konusfuehrung && insertPlate.Außendurchmesser != 0)
+            {
+                return baseplate.Konus_Innen_Max > insertPlate.Konus_Außen_Max
+                    && (baseplate.Konus_Innen_Max - 1) <= insertPlate.Konus_Außen_Max
+                    && baseplate.Konus_Innen_Min > insertPlate.Konus_Außen_Min
+                    && (baseplate.Konus_Innen_Min - 1) <= insertPlate.Konus_Außen_Min
+                    && baseplate.Konus_Innen_Winkel == insertPlate.Konus_Außen_Winkel;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
@@ -129,6 +142,21 @@
             {
                 return false;
             }
+        }
+    }
+
+    // TODO: Fertigstellen
+    class InnerRingAddition : CombinationRule
+    {
+        protected override IEnumerable<Type> Typen => new[] { typeof(Einlegeplatte), typeof(Kern) };
+
+        public override bool Combine(Component a, Component b)
+        {
+            var components = new[] { a, b };
+            var fuehrungsring = components.OfType<Ring>().Single();
+            var innerRing = components.OfType<Ring>().Single();
+
+            return false;
         }
     }
 }
