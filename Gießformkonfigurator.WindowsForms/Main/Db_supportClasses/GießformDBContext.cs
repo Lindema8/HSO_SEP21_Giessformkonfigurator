@@ -40,6 +40,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
 
         public virtual DbSet<Ring> Ringe { get; set; }
 
+        public virtual DbSet<Cupform> Cupform { get; set; }
+
         /// <summary>
         /// Initialisiert die EntityConfigurations für alle DB-Objekte.
         /// </summary>

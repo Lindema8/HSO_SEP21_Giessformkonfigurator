@@ -14,6 +14,7 @@ namespace Gießformkonfigurator.WindowsForms
     using Gießformkonfigurator.WindowsForms.Main.Db_components;
     using Gießformkonfigurator.WindowsForms.Main.Db_molds;
     using Gießformkonfigurator.WindowsForms.Main.Db_products;
+    using Gießformkonfigurator.WindowsForms.Main.Db_supportClasses;
 
     /// <summary>
     /// Program Entry.
