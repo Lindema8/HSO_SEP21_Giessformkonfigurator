@@ -82,6 +82,8 @@
     <Compile Include="Main\Db_components\Bolzen.cs" />
     <Compile Include="Main\Db_components\Component.cs" />
     <Compile Include="Main\Db_components\Einlegeplatte.cs" />
+    <Compile Include="Main\Db_components\Cupform.cs" />
+    <Compile Include="Main\Db_supportClasses\CupformEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\BolzenEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\GießformDBContext.cs" />
     <Compile Include="Main\Db_components\Grundplatte.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Main\Logic\CompareRuleset.cs" />
     <Compile Include="Main\Logic\CombinationJob.cs" />
     <Compile Include="Main\Logic\CompareJob.cs" />
+    <Compile Include="Main\Logic\RankingJob.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.cs" />
     <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
       <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
@@ -147,6 +150,14 @@
     <Compile Include="Migrations\202108091114427_Neue Attribute ProductDisc.Designer.cs">
       <DependentUpon>202108091114427_Neue Attribute ProductDisc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108121107516_Cupform.cs" />
+    <Compile Include="Migrations\202108121107516_Cupform.Designer.cs">
+      <DependentUpon>202108121107516_Cupform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108121118200_Cupform1.cs" />
+    <Compile Include="Migrations\202108121118200_Cupform1.Designer.cs">
+      <DependentUpon>202108121118200_Cupform1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108091114427_Neue Attribute ProductDisc.resx">
       <DependentUpon>202108091114427_Neue Attribute ProductDisc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121107516_Cupform.resx">
+      <DependentUpon>202108121107516_Cupform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121118200_Cupform1.resx">
+      <DependentUpon>202108121118200_Cupform1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

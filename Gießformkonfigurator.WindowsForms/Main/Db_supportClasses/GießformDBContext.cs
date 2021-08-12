@@ -61,6 +61,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
             modelBuilder.Configurations.Add(new ProduktDiscEntityConfiguration());
 
             modelBuilder.Configurations.Add(new RingEntityConfiguration());
+
+            modelBuilder.Configurations.Add(new CupformEntityConfiguration());
         }
     }
 }
