@@ -79,16 +79,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Db_components\BoltCircleType.cs" />
     <Compile Include="Main\Db_components\Bolzen.cs" />
     <Compile Include="Main\Db_components\Component.cs" />
     <Compile Include="Main\Db_components\Einlegeplatte.cs" />
     <Compile Include="Main\Db_components\Cupform.cs" />
+    <Compile Include="Main\Db_supportClasses\BoltCircleTypeEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\CupformEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\BolzenEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\GießformDBContext.cs" />
     <Compile Include="Main\Db_components\Grundplatte.cs" />
     <Compile Include="Main\Db_components\Kern.cs" />
-    <Compile Include="Main\Db_components\Lochkreis.cs" />
     <Compile Include="Main\Db_products\Produkt.cs" />
     <Compile Include="Main\Db_products\ProduktCup.cs" />
     <Compile Include="Main\Db_products\ProduktDisc.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Main\Db_supportClasses\EinlegeplatteEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\GrundplatteEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\KernEntityConfiguration.cs" />
-    <Compile Include="Main\Db_supportClasses\LochkreisEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\ProduktCupEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\ProduktDiscEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\RingEntityConfiguration.cs" />
@@ -110,92 +110,15 @@
     <Compile Include="Main\Logic\CombinationJob.cs" />
     <Compile Include="Main\Logic\CompareJob.cs" />
     <Compile Include="Main\Logic\RankingJob.cs" />
-    <Compile Include="Migrations\202105120803542_Testmigration.cs" />
-    <Compile Include="Migrations\202105120803542_Testmigration.Designer.cs">
-      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105120808308_Revert Test.cs" />
-    <Compile Include="Migrations\202105120808308_Revert Test.Designer.cs">
-      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105120813053_RevertTest2.cs" />
-    <Compile Include="Migrations\202105120813053_RevertTest2.Designer.cs">
-      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105120852492_RenameRing.cs" />
-    <Compile Include="Migrations\202105120852492_RenameRing.Designer.cs">
-      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105120854070_RenameKern.cs" />
-    <Compile Include="Migrations\202105120854070_RenameKern.Designer.cs">
-      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105121050511_fix.cs" />
-    <Compile Include="Migrations\202105121050511_fix.Designer.cs">
-      <DependentUpon>202105121050511_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105121052363_fix2.cs" />
-    <Compile Include="Migrations\202105121052363_fix2.Designer.cs">
-      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105121053187_fix3.cs" />
-    <Compile Include="Migrations\202105121053187_fix3.Designer.cs">
-      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105251526588_Neue Null-Attribute.cs" />
-    <Compile Include="Migrations\202105251526588_Neue Null-Attribute.Designer.cs">
-      <DependentUpon>202105251526588_Neue Null-Attribute.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108091114427_Neue Attribute ProductDisc.cs" />
-    <Compile Include="Migrations\202108091114427_Neue Attribute ProductDisc.Designer.cs">
-      <DependentUpon>202108091114427_Neue Attribute ProductDisc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121107516_Cupform.cs" />
-    <Compile Include="Migrations\202108121107516_Cupform.Designer.cs">
-      <DependentUpon>202108121107516_Cupform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108121118200_Cupform1.cs" />
-    <Compile Include="Migrations\202108121118200_Cupform1.Designer.cs">
-      <DependentUpon>202108121118200_Cupform1.cs</DependentUpon>
+    <Compile Include="Migrations\202108121423106_initial.cs" />
+    <Compile Include="Migrations\202108121423106_initial.Designer.cs">
+      <DependentUpon>202108121423106_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202105120803542_Testmigration.resx">
-      <DependentUpon>202105120803542_Testmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105120808308_Revert Test.resx">
-      <DependentUpon>202105120808308_Revert Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105120813053_RevertTest2.resx">
-      <DependentUpon>202105120813053_RevertTest2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105120852492_RenameRing.resx">
-      <DependentUpon>202105120852492_RenameRing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105120854070_RenameKern.resx">
-      <DependentUpon>202105120854070_RenameKern.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105121050511_fix.resx">
-      <DependentUpon>202105121050511_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105121052363_fix2.resx">
-      <DependentUpon>202105121052363_fix2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105121053187_fix3.resx">
-      <DependentUpon>202105121053187_fix3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251526588_Neue Null-Attribute.resx">
-      <DependentUpon>202105251526588_Neue Null-Attribute.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108091114427_Neue Attribute ProductDisc.resx">
-      <DependentUpon>202108091114427_Neue Attribute ProductDisc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121107516_Cupform.resx">
-      <DependentUpon>202108121107516_Cupform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121118200_Cupform1.resx">
-      <DependentUpon>202108121118200_Cupform1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108121423106_initial.resx">
+      <DependentUpon>202108121423106_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

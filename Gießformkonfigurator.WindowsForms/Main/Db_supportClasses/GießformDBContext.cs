@@ -32,8 +32,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
 
         public virtual DbSet<Kern> Innenkerne { get; set; }
 
-        public virtual DbSet<Lochkreis> Lochkreise { get; set; }
-
         public virtual DbSet<ProduktCup> ProduktCups { get; set; }
 
         public virtual DbSet<ProduktDisc> ProduktDiscs { get; set; }
@@ -41,6 +39,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
         public virtual DbSet<Ring> Ringe { get; set; }
 
         public virtual DbSet<Cupform> Cupform { get; set; }
+
+        public virtual DbSet<BoltCircleType> BoltCircleType { get; set; }
 
         /// <summary>
         /// Initialisiert die EntityConfigurations für alle DB-Objekte.
@@ -56,8 +56,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
 
             modelBuilder.Configurations.Add(new KernEntityConfiguration());
 
-            modelBuilder.Configurations.Add(new LochkreisEntityConfiguration());
-
             modelBuilder.Configurations.Add(new ProduktCupEntityConfiguration());
 
             modelBuilder.Configurations.Add(new ProduktDiscEntityConfiguration());
@@ -65,6 +63,8 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
             modelBuilder.Configurations.Add(new RingEntityConfiguration());
 
             modelBuilder.Configurations.Add(new CupformEntityConfiguration());
+
+            modelBuilder.Configurations.Add(new BoltCircleTypeEntityConfiguration());
         }
     }
 }

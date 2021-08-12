@@ -156,8 +156,9 @@
             var fuehrungsring = components.OfType<Ring>().Single();
             var innerRing = components.OfType<Ring>().Single();
 
-            return innerRing.Außendurchmesser - 0.1m <= fuehrungsring.Innendurchmesser
-                && innerRing.Außendurchmesser >= fuehrungsring.Innendurchmesser + 0.5m;
+            // Der Innenring darf nicht zu groß und nicht zu klein sein.
+            return innerRing.Außendurchmesser <= fuehrungsring.Innendurchmesser - 0.1m
+                && innerRing.Außendurchmesser >= fuehrungsring.Innendurchmesser - 0.5m;
         }
     }
 }

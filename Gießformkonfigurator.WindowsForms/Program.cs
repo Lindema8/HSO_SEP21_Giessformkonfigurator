@@ -45,6 +45,8 @@ namespace Gießformkonfigurator.WindowsForms
                 Console.Write(mGießform.Grundplatte?.Bezeichnung_RoCon + " + ");
                 Console.Write(mGießform.Einlegeplatte?.Bezeichnung_RoCon + " + ");
                 Console.Write(mGießform.Fuehrungsring?.Bezeichnung_RoCon + " + ");
+                Console.Write(mGießform.ListInnerRings[0].Bezeichnung_RoCon + " + ");
+                Console.Write(mGießform.ListInnerRings[1].Bezeichnung_RoCon + " + ");
                 Console.WriteLine(mGießform.Innenkern?.Bezeichnung_RoCon);
             }
 

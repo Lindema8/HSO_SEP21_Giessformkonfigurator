@@ -50,7 +50,23 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_components
 
         public bool Mit_Kern { get; set; }
 
-        public virtual Lochkreis Lochkreis { get; set; }
+        public decimal Lk1Durchmesser { get; set; }
+
+        public decimal Lk1Bohrungen { get; set; }
+
+        public string Lk1Gewinde { get; set; }
+
+        public decimal Lk2Durchmesser { get; set; }
+
+        public decimal Lk2Bohrungen { get; set; }
+
+        public string Lk2Gewinde { get; set; }
+
+        public decimal Lk3Durchmesser { get; set; }
+
+        public decimal Lk3Bohrungen { get; set; }
+
+        public string Lk3Gewinde { get; set; }
 
         /// <summary>
         /// Ruft die Methode Kombiniere() des Objekts auf. Beinhaltet die Parameter, welche mit der übergebenen Komponente verglichen werden.

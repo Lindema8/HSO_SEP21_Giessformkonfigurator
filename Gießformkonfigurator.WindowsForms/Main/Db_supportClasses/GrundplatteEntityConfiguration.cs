@@ -48,8 +48,24 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
             this.Property(e => e.Toleranz_Innendurchmesser)
                 .IsUnicode(false);
 
-            this.HasOptional(e => e.Lochkreis)
-                .WithRequired(e => e.Grundplatte);
+            this.Property(e => e.Lk1Bohrungen)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Lk1Durchmesser)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Lk2Bohrungen)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Lk2Durchmesser)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Lk3Bohrungen)
+                .HasPrecision(10, 2);
+
+            this.Property(e => e.Lk3Durchmesser)
+                .HasPrecision(10, 2);
+
         }
     }
 

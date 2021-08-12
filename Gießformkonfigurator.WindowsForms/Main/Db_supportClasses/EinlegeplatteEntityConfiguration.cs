@@ -51,9 +51,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
 
             this.Property(e => e.Toleranz_Innendurchmesser)
                 .IsUnicode(false);
-
-            this.HasOptional(e => e.Lochkreis)
-                .WithRequired(e => e.Einlegeplatte);
         }
     }
 }

@@ -7,13 +7,13 @@ namespace Gießformkonfigurator.WindowsForms.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class NeueAttributeProductDisc : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NeueAttributeProductDisc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108091114427_Neue Attribute ProductDisc"; }
+            get { return "202108121423106_initial"; }
         }
         
         string IMigrationMetadata.Source

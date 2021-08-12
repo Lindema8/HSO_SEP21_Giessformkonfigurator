@@ -53,8 +53,6 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_components
 
         public bool Mit_Kern { get; set; }
 
-        public virtual Lochkreis Lochkreis { get; set; }
-
         public bool Kombiniere(Kern kern)
         {
             if (this.Mit_Konusfuehrung)

@@ -9,6 +9,7 @@ namespace Gießformkonfigurator.WindowsForms
 #pragma warning disable SA1623 // Property summary documentation should match accessors
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Gießformkonfigurator.WindowsForms.Main.Db_components;
     using Gießformkonfigurator.WindowsForms.Main.Db_molds;
     using Gießformkonfigurator.WindowsForms.Main.Db_products;
@@ -24,7 +25,6 @@ namespace Gießformkonfigurator.WindowsForms
         private List<Ring> listRinge = new List<Ring>();
         private List<Einlegeplatte> listEinlegeplatten = new List<Einlegeplatte>();
         private List<Kern> listKerne = new List<Kern>();
-        private List<Lochkreis> listLochkreise = new List<Lochkreis>();
         private List<Bolzen> listBolzen = new List<Bolzen>();
 
         // Frage: Wie kann man das universell umsetzen?
@@ -56,6 +56,8 @@ namespace Gießformkonfigurator.WindowsForms
             this.listEinlegeplatten.Add(new Einlegeplatte() { Bezeichnung_RoCon = "Einsatz fuer Grundplatte 22in-24in", Außendurchmesser = 265.00m, Hoehe = 20.00m, Konus_Außen_Max = 265.00m, Konus_Außen_Min = 259.11m, Konus_Außen_Winkel = 15.00m, Konus_Hoehe = 11.00m, Innendurchmesser = 30.00m, Mit_Lochfuehrung = true });
             this.listRinge.Add(new Ring() { Bezeichnung_RoCon = "Form ring", Außendurchmesser = 375.00m, Hoehe = 31.6m, Konus_Max = 345.43m, Konus_Min = 342.21m, Konus_Winkel = 15.00m, Konus_Hoehe = 6.00m, Innendurchmesser = 315.3m, Gießhoehe_Max = 25.00m, mit_Konusfuehrung = true });
             this.listRinge.Add(new Ring() { Bezeichnung_RoCon = "Formring Dichtscheibe d 324", Außendurchmesser = 375.00m, Hoehe = 21.6m, Konus_Max = 345.52m, Konus_Min = 342.3m, Konus_Winkel = 15.00m, Konus_Hoehe = 6.00m, Innendurchmesser = 330.6m, Gießhoehe_Max = 15.00m, mit_Konusfuehrung = true });
+            this.listRinge.Add(new Ring() { Bezeichnung_RoCon = "Innenring01", Außendurchmesser = 374.7m, Hoehe = 21.6m, Innendurchmesser = 330.3m, Gießhoehe_Max = 15.00m, mit_Konusfuehrung = false });
+            this.listRinge.Add(new Ring() { Bezeichnung_RoCon = "Innenring02", Außendurchmesser = 374.4m, Hoehe = 21.6m, Innendurchmesser = 330.1m, Gießhoehe_Max = 15.00m, mit_Konusfuehrung = false });
             this.listKerne.Add(new Kern() { Bezeichnung_RoCon = "Einsatz fuer Innendurchmesser d 40", Außendurchmesser = 41.4m, Hoehe = 40.6m, Konus_Hoehe = 15.00m, Durchmesser_Fuehrung = 15.00m, Gießhoehe_Max = 25.6m, Mit_Fuehrungsstift = true });
             this.listKerne.Add(new Kern() { Bezeichnung_RoCon = "Einsatz fuer Innendurchmesser d219", Außendurchmesser = 224.4m, Hoehe = 42.00m, Konus_Außen_Max = 210.00m, Konus_Außen_Min = 206.78m, Konus_Außen_Winkel = 15.00m, Konus_Hoehe = 6.00m, Gießhoehe_Max = 36.00m, Mit_Konusfuehrung = true });
             this.listKerne.Add(new Kern() { Bezeichnung_RoCon = "Einsatz fuer Innendurchmesser d=82", Außendurchmesser = 84.1m, Hoehe = 40.6m, Konus_Hoehe = 15.00m, Durchmesser_Fuehrung = 15.00m, Gießhoehe_Max = 25.6m, Hoehe_Fuehrung = 20.00m, Mit_Fuehrungsstift = true });
@@ -100,11 +102,6 @@ namespace Gießformkonfigurator.WindowsForms
                         }
                     }
 
-                    foreach (var lochkreis in db.Lochkreise)
-                    {
-                        this.listLochkreise.Add(lochkreis);
-                    }
-
                     foreach (var bolzen in db.Bolzen)
                     {
                         // TODO: Abgleich hinzufügen. Produkt besitzt aktuell nur das Attribut Lochkreis, welches keine Vergleichseigenschaft besitzt. Durchmesser der Löcher benötigt.
@@ -138,11 +135,6 @@ namespace Gießformkonfigurator.WindowsForms
                         this.listKerne.Add(innenkern);
                     }
 
-                    foreach (var lochkreis in db.Lochkreise)
-                    {
-                        this.listLochkreise.Add(lochkreis);
-                    }
-
                     foreach (var bolzen in db.Bolzen)
                     {
                         this.listBolzen.Add(bolzen);
@@ -163,7 +155,7 @@ namespace Gießformkonfigurator.WindowsForms
             List<MGießform> mGießformenTemp02 = new List<MGießform>();
             var combinationRuleSet = new CombinationRuleset();
 
-            // Grundplatten mit den vorhandenen Fuehrungsringen kombinieren.
+            // Grundplatten --> Fuehrungsringe
             for (int iGP = 0; iGP < this.listGrundplatten.Count; iGP++)
             {
                 for (int iRinge = 0; iRinge < this.listRinge.Count; iRinge++)
@@ -226,6 +218,48 @@ namespace Gießformkonfigurator.WindowsForms
                         else if (mGießformenTemp01[iTemp].Grundplatte.Mit_Kern == true)
                         {
                             mGießformenTemp02.Add(new MGießform(mGießformenTemp01[iTemp].Grundplatte, mGießformenTemp01[iTemp].Fuehrungsring, null, null));
+                        }
+                    }
+                }
+            }
+
+            // Mehrteilige Gießformen --> Innenringe
+            this.Index = mGießformenTemp02.Count;
+
+            // Aktuell drei feste Durchläufe --> tbd.
+            for (int i = 0; i < 3; i++)
+            {
+                for (int iTemp = 0; iTemp < this.Index; iTemp++)
+                {
+                    if (mGießformenTemp02[iTemp].Fuehrungsring != null)
+                    {
+                        for (int iRinge = 0; iRinge < this.listRinge.Count; iRinge++)
+                        {
+                            // Betrachtet nur Ringe ohne Konusfuehrung
+                            if (this.listRinge[iRinge].mit_Konusfuehrung == false)
+                            {
+                                // Neuer Ring muss größer als der vorhandene Kern sein
+                                if (this.listRinge[iRinge].Innendurchmesser > mGießformenTemp02[iTemp].Innenkern.Außendurchmesser)
+                                {
+                                    // Bereits Innenringe vorhanden --> Kombination mit letztem Innenring
+                                    if (mGießformenTemp02[iTemp].ListInnerRings.Count > 0)
+                                    {
+                                        if (combinationRuleSet.Combine(mGießformenTemp02[iTemp].ListInnerRings.Last(), this.listRinge[iRinge]))
+                                        {
+                                            mGießformenTemp02[iTemp].ListInnerRings.Add(this.listRinge[iRinge]);
+                                        }
+                                    }
+
+                                    // Keine Innenringe vorhanden --> Kombination mit Fuehrungsring
+                                    else
+                                    {
+                                        if (combinationRuleSet.Combine(mGießformenTemp02[iTemp].Fuehrungsring, this.listRinge[iRinge]))
+                                        {
+                                            mGießformenTemp02[iTemp].ListInnerRings.Add(this.listRinge[iRinge]);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
