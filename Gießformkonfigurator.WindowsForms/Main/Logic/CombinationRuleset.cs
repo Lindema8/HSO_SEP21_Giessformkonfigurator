@@ -17,6 +17,7 @@
                     new BaseplateInsertPlateCombination(),
                     new BaseplateRingCombination(),
                     new InsertPlateCoreCombination(),
+                    new InnerRingAddition(),
                     };
         }
 

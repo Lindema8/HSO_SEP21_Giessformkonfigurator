@@ -148,7 +148,7 @@
     // TODO: Fertigstellen
     class InnerRingAddition : CombinationRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Einlegeplatte), typeof(Kern) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Ring), typeof(Ring) };
 
         public override bool Combine(Component a, Component b)
         {

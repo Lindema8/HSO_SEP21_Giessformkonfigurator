@@ -244,7 +244,8 @@ namespace Gießformkonfigurator.WindowsForms
                                     // Bereits Innenringe vorhanden --> Kombination mit letztem Innenring
                                     if (mGießformenTemp02[iTemp].ListInnerRings.Count > 0)
                                     {
-                                        if (combinationRuleSet.Combine(mGießformenTemp02[iTemp].ListInnerRings.Last(), this.listRinge[iRinge]))
+                                        int indexer = mGießformenTemp02[iTemp].ListInnerRings.Count - 1;
+                                        if (combinationRuleSet.Combine(mGießformenTemp02[iTemp].ListInnerRings[indexer], this.listRinge[iRinge]))
                                         {
                                             mGießformenTemp02[iTemp].ListInnerRings.Add(this.listRinge[iRinge]);
                                         }
