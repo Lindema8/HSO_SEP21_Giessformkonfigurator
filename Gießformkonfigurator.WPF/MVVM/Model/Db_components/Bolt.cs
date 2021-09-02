@@ -36,5 +36,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
         public decimal? Hoehe_Fuehrung { get; set; }
 
         public decimal? Außendurchmesser_Fuehrung { get; set; }
+
+        public override string ToString()
+        {
+            return SAP_Nr_.ToString() + " " + Bezeichnung_RoCon;
+        }
     }
 }

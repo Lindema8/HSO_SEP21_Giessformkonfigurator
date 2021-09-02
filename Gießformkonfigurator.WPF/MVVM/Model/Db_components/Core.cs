@@ -52,5 +52,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
         public bool Mit_Lochfuehrung { get; set; }
 
         public decimal? Durchmesser_Adapter { get; set; }
+
+        public override string ToString()
+        {
+            return SAP_Nr_.ToString() + " " + Bezeichnung_RoCon;
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
 #pragma warning disable SA1623 // Property summary documentation should match accessors
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
     using Gießformkonfigurator.WPF.MVVM.Model.Db_components;
     using Gießformkonfigurator.WPF.MVVM.Model.Db_molds;

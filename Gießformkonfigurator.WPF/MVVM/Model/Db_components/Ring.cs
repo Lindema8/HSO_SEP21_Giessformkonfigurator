@@ -42,5 +42,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
         public decimal? Konus_Winkel { get; set; }
 
         public decimal? Konus_Hoehe { get; set; }
+
+        public override string ToString()
+        {
+            return SAP_Nr_.ToString() + " " + Bezeichnung_RoCon;
+        }
     }
 }

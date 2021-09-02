@@ -93,5 +93,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
                 return false;
             }
         }
+
+        public override string ToString()
+        {
+            return SAP_Nr_.ToString() + " " + Bezeichnung_RoCon;
+        }
     }
 }

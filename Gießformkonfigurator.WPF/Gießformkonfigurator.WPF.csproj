@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5674D79B-26A3-45B5-9CFC-B79795235897}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Gießformkonfigurator.WPF</RootNamespace>
     <AssemblyName>Gießformkonfigurator.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Gießformkonfigurator.WPF.Program</StartupObject>
+    <StartupObject>Gießformkonfigurator.WPF.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\SearchCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -181,6 +182,7 @@
     <Compile Include="MVVM\Model\Logic\CompareRule.cs" />
     <Compile Include="MVVM\Model\Logic\CompareRuleset.cs" />
     <Compile Include="MVVM\Model\Logic\RankingJob.cs" />
+    <Compile Include="MVVM\ViewModel\BaseViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BausatzHinzufuegenViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BauteilHinzufuegenViewModel.cs" />
     <Compile Include="MVVM\ViewModel\CupHinzufuegenViewModel.cs" />

@@ -5,8 +5,8 @@ namespace Gießformkonfigurator.WPF.Core
 {
     class RelayCommand : ICommand 
     {
-        private Action<object> _execute;
-        private Func<object, bool> _canExecute;
+        private Action<object> _execute { get; set; }
+        private Func<object, bool> _canExecute { get; set; }
 
         public event EventHandler CanExecuteChanged
         {

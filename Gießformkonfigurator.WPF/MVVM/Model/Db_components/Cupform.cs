@@ -40,5 +40,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
         public bool Mit_Lochfuehrung { get; set; }
 
         public bool Mit_Innenkern { get; set; }
+
+        public override string ToString()
+        {
+            return SAP_Nr_.ToString() + " " + Bezeichnung_RoCon;
+        }
     }
 }

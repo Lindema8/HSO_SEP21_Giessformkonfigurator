@@ -28,5 +28,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
         public decimal HolepairAngle { get; set; }
 
         public decimal HoleDiameter { get; set; }
+
+        public override string ToString()
+        {
+            return TypeDescription;
+        }
     }
 }

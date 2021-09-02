@@ -59,45 +59,12 @@
                 Margin="10"
                 FontSize="15" 
                 Grid.Column="1"
-                Click="ProduktID_Click">
+                Command="{Binding searchCommand}">
         </Button>
-        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="90,0,10,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="Gießformen"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Foreground="Black" FontSize="22"
-                       Grid.Row="0"            
-                       />
-            <TextBlock Name="SuchePopUp"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Margin="10"
-                       Grid.Row="1">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                
-                                
-                                <StackPanel Orientation="Vertical"
-                                            x:Name="SuchenAusgabe"  
-                                            Height="auto" 
-                                            Width="auto"/>
-                                
-                                <StackPanel Orientation="Vertical"
-                                            x:Name="SuchenAusgabe2" 
-                                            Height="auto" 
-                                            Width="auto"
-                                            Grid.Column="1"/>
-                            </Grid>
-                        </ScrollViewer>
-            </TextBlock>
+        <Grid Grid.Row="2" Grid.Column="2" Margin="0,0,0,0">
+            <DataGrid Name="combinationJobOutput" IsReadOnly="True" ItemsSource="{Binding mGießformenFinal, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" >
+                
+            </DataGrid>
         </Grid>
     </Grid>
 </UserControl>

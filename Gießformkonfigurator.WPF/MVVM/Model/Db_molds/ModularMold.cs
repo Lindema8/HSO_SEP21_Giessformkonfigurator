@@ -40,5 +40,10 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_molds
             this.Cupform = cf;
             this.Innenkern = ik;
         }
+
+        /*public override string ToString()
+        {
+            return this.Grundplatte this.Fuehrungsring, this.Einlegeplatte, this.Innenkern, this.Cupform, this.ListInnerRings[0], this.ListInnerRings[1], this.ListInnerRings[2];
+        }*/
     }
 }
