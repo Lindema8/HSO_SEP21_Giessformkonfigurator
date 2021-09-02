@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5674D79B-26A3-45B5-9CFC-B79795235897}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Gießformkonfigurator.WPF</RootNamespace>
+    <AssemblyName>Gießformkonfigurator.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Gießformkonfigurator.WPF.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MVVM\View\BausatzHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\BauteileHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\CupHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EinlegeplatteHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\FormHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\FuehrungsringHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\GrundplatteHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\HinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\InnenkernHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\InnenringHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\KernringHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ScheibeHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\StehbolzenHinzufuegenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SuchenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\TextboxTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MVVM\Model\Db_components\Baseplate.cs" />
+    <Compile Include="MVVM\Model\Db_components\Bolt.cs" />
+    <Compile Include="MVVM\Model\Db_components\BoltCircleType.cs" />
+    <Compile Include="MVVM\Model\Db_components\Component.cs" />
+    <Compile Include="MVVM\Model\Db_components\Core.cs" />
+    <Compile Include="MVVM\Model\Db_components\Cupform.cs" />
+    <Compile Include="MVVM\Model\Db_components\InsertPlate.cs" />
+    <Compile Include="MVVM\Model\Db_components\Ring.cs" />
+    <Compile Include="MVVM\Model\Db_molds\ModularMold.cs" />
+    <Compile Include="MVVM\Model\Db_molds\Mold.cs" />
+    <Compile Include="MVVM\Model\Db_molds\SingleMold.cs" />
+    <Compile Include="MVVM\Model\Db_products\Product.cs" />
+    <Compile Include="MVVM\Model\Db_products\ProductCup.cs" />
+    <Compile Include="MVVM\Model\Db_products\ProductDisc.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\BaseplateEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\BoltCircleTypeEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\BoltEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\CoreEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\CupformEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\GießformDBContext.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\InsertPlateEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\ProductCupEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\ProductDiscEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Db_supportClasses\RingEntityConfiguration.cs" />
+    <Compile Include="MVVM\Model\Logic\CombinationJob.cs" />
+    <Compile Include="MVVM\Model\Logic\CombinationRule.cs" />
+    <Compile Include="MVVM\Model\Logic\CombinationRuleset.cs" />
+    <Compile Include="MVVM\Model\Logic\CompareJob.cs" />
+    <Compile Include="MVVM\Model\Logic\CompareObject.cs" />
+    <Compile Include="MVVM\Model\Logic\CompareRule.cs" />
+    <Compile Include="MVVM\Model\Logic\CompareRuleset.cs" />
+    <Compile Include="MVVM\Model\Logic\RankingJob.cs" />
+    <Compile Include="MVVM\ViewModel\BausatzHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\BauteilHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\CupHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\EinlegeplatteHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\FormHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\FuehrungsringHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\GrundplatteHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\HinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\InnenkernHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\InnenringHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\KernringHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ScheibeHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\StehbolzenHinzufuegenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SuchenViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\View\BausatzHinzufuegenView.xaml.cs">
+      <DependentUpon>BausatzHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\BauteileHinzufuegenView.xaml.cs">
+      <DependentUpon>BauteileHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\CupHinzufuegenView.xaml.cs">
+      <DependentUpon>CupHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EinlegeplatteHinzufuegenView.xaml.cs">
+      <DependentUpon>EinlegeplatteHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\FormHinzufuegenView.xaml.cs">
+      <DependentUpon>FormHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\FuehrungsringHinzufuegenView.xaml.cs">
+      <DependentUpon>FuehrungsringHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\GrundplatteHinzufuegenView.xaml.cs">
+      <DependentUpon>GrundplatteHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\HinzufuegenView.xaml.cs">
+      <DependentUpon>HinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\InnenkernHinzufuegenView.xaml.cs">
+      <DependentUpon>InnenkernHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\InnenringHinzufuegenView.xaml.cs">
+      <DependentUpon>InnenringHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\KernringHinzufuegenView.xaml.cs">
+      <DependentUpon>KernringHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ScheibeHinzufuegenView.xaml.cs">
+      <DependentUpon>ScheibeHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\StehbolzenHinzufuegenView.xaml.cs">
+      <DependentUpon>StehbolzenHinzufuegenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SuchenView.xaml.cs">
+      <DependentUpon>SuchenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rosen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -80,31 +80,32 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Db_components\BoltCircleType.cs" />
-    <Compile Include="Main\Db_components\Bolzen.cs" />
+    <Compile Include="Main\Db_components\Bolt.cs" />
     <Compile Include="Main\Db_components\Component.cs" />
-    <Compile Include="Main\Db_components\Einlegeplatte.cs" />
+    <Compile Include="Main\Db_components\InsertPlate.cs" />
     <Compile Include="Main\Db_components\Cupform.cs" />
     <Compile Include="Main\Db_supportClasses\BoltCircleTypeEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\CupformEntityConfiguration.cs" />
-    <Compile Include="Main\Db_supportClasses\BolzenEntityConfiguration.cs" />
+    <Compile Include="Main\Db_supportClasses\BoltEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\GießformDBContext.cs" />
-    <Compile Include="Main\Db_components\Grundplatte.cs" />
-    <Compile Include="Main\Db_components\Kern.cs" />
+    <Compile Include="Main\Db_components\Baseplate.cs" />
+    <Compile Include="Main\Db_components\Core.cs" />
     <Compile Include="Main\Db_products\Produkt.cs" />
     <Compile Include="Main\Db_products\ProduktCup.cs" />
     <Compile Include="Main\Db_products\ProduktDisc.cs" />
     <Compile Include="Main\Db_components\Ring.cs" />
-    <Compile Include="Main\Db_supportClasses\EinlegeplatteEntityConfiguration.cs" />
-    <Compile Include="Main\Db_supportClasses\GrundplatteEntityConfiguration.cs" />
-    <Compile Include="Main\Db_supportClasses\KernEntityConfiguration.cs" />
+    <Compile Include="Main\Db_supportClasses\InsertPlateEntityConfiguration.cs" />
+    <Compile Include="Main\Db_supportClasses\BaseplateEntityConfiguration.cs" />
+    <Compile Include="Main\Db_supportClasses\CoreEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\ProduktCupEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\ProduktDiscEntityConfiguration.cs" />
     <Compile Include="Main\Db_supportClasses\RingEntityConfiguration.cs" />
-    <Compile Include="Main\Db_molds\Gießform.cs" />
-    <Compile Include="Main\Db_molds\MGießform.cs" />
-    <Compile Include="Main\Db_molds\EGießform.cs" />
+    <Compile Include="Main\Db_molds\Mold.cs" />
+    <Compile Include="Main\Db_molds\ModularMold.cs" />
+    <Compile Include="Main\Db_molds\SingleMold.cs" />
     <Compile Include="Main\Logic\CombinationRule.cs" />
     <Compile Include="Main\Logic\CombinationRuleset.cs" />
+    <Compile Include="Main\Logic\CompareObject.cs" />
     <Compile Include="Main\Logic\CompareRule.cs" />
     <Compile Include="Main\Logic\CompareRuleset.cs" />
     <Compile Include="Main\Logic\CombinationJob.cs" />
@@ -114,11 +115,74 @@
     <Compile Include="Migrations\202108121423106_initial.Designer.cs">
       <DependentUpon>202108121423106_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108231353122_Change Toleranz into varchar.cs" />
+    <Compile Include="Migrations\202108231353122_Change Toleranz into varchar.Designer.cs">
+      <DependentUpon>202108231353122_Change Toleranz into varchar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108231355347_toleranz ring auf varchar geaendert.cs" />
+    <Compile Include="Migrations\202108231355347_toleranz ring auf varchar geaendert.Designer.cs">
+      <DependentUpon>202108231355347_toleranz ring auf varchar geaendert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108260852367_Removed %27ohne Konusfuehrung%27 from Ring.cs" />
+    <Compile Include="Migrations\202108260852367_Removed %27ohne Konusfuehrung%27 from Ring.Designer.cs">
+      <DependentUpon>202108260852367_Removed %27ohne Konusfuehrung%27 from Ring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108301321048_renaming.cs" />
+    <Compile Include="Migrations\202108301321048_renaming.Designer.cs">
+      <DependentUpon>202108301321048_renaming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108301321535_renaming1.cs" />
+    <Compile Include="Migrations\202108301321535_renaming1.Designer.cs">
+      <DependentUpon>202108301321535_renaming1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108301347126_renaming2.cs" />
+    <Compile Include="Migrations\202108301347126_renaming2.Designer.cs">
+      <DependentUpon>202108301347126_renaming2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108301520381_added Lochkreise to insertplates.cs" />
+    <Compile Include="Migrations\202108301520381_added Lochkreise to insertplates.Designer.cs">
+      <DependentUpon>202108301520381_added Lochkreise to insertplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108311101114_smaller fixes to datatypes.cs" />
+    <Compile Include="Migrations\202108311101114_smaller fixes to datatypes.Designer.cs">
+      <DependentUpon>202108311101114_smaller fixes to datatypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109011701589_renaming product tables.cs" />
+    <Compile Include="Migrations\202109011701589_renaming product tables.Designer.cs">
+      <DependentUpon>202109011701589_renaming product tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202108121423106_initial.resx">
       <DependentUpon>202108121423106_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231353122_Change Toleranz into varchar.resx">
+      <DependentUpon>202108231353122_Change Toleranz into varchar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231355347_toleranz ring auf varchar geaendert.resx">
+      <DependentUpon>202108231355347_toleranz ring auf varchar geaendert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108260852367_Removed %27ohne Konusfuehrung%27 from Ring.resx">
+      <DependentUpon>202108260852367_Removed %27ohne Konusfuehrung%27 from Ring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108301321048_renaming.resx">
+      <DependentUpon>202108301321048_renaming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108301321535_renaming1.resx">
+      <DependentUpon>202108301321535_renaming1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108301347126_renaming2.resx">
+      <DependentUpon>202108301347126_renaming2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108301520381_added Lochkreise to insertplates.resx">
+      <DependentUpon>202108301520381_added Lochkreise to insertplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108311101114_smaller fixes to datatypes.resx">
+      <DependentUpon>202108311101114_smaller fixes to datatypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109011701589_renaming product tables.resx">
+      <DependentUpon>202109011701589_renaming product tables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

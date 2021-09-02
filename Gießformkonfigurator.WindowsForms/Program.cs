@@ -33,20 +33,26 @@ namespace Gießformkonfigurator.WindowsForms
         public static void Main()
         {
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
-            List<MGießform> mGießformenFinal = new List<MGießform>();
+            List<ModularMold> mGießformenFinal = new List<ModularMold>();
 
-            CombinationJob co = new CombinationJob(null);
-            //co.FiltereDiscDB();
-            co.ArraysTestData();
+            CombinationJob co = new CombinationJob(0);
+            co.FiltereDiscDB();
+            //co.ArraysTestData();
             mGießformenFinal = co.KombiniereMGießformen();
 
-            foreach (MGießform mGießform in mGießformenFinal)
+            foreach (ModularMold mGießform in mGießformenFinal)
             {
                 Console.Write(mGießform.Grundplatte?.Bezeichnung_RoCon + " + ");
                 Console.Write(mGießform.Einlegeplatte?.Bezeichnung_RoCon + " + ");
                 Console.Write(mGießform.Fuehrungsring?.Bezeichnung_RoCon + " + ");
-                Console.Write(mGießform.ListInnerRings[0].Bezeichnung_RoCon + " + ");
-                Console.Write(mGießform.ListInnerRings[1].Bezeichnung_RoCon + " + ");
+                if (mGießform.ListInnerRings.Count > 0)
+                {
+                    for (int i = 0; i < mGießform.ListInnerRings.Count; i++)
+                    {
+                        Console.Write(mGießform.ListInnerRings[i]?.Bezeichnung_RoCon + " + ");
+                    }
+                }
+
                 Console.WriteLine(mGießform.Innenkern?.Bezeichnung_RoCon);
             }
 

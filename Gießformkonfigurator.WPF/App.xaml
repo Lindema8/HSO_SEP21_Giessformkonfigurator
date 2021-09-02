@@ -1,0 +1,77 @@
+﻿<Application x:Class="Gießformkonfigurator.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Gießformkonfigurator.WPF"
+             xmlns:viewModel="clr-namespace:Gießformkonfigurator.WPF.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Gießformkonfigurator.WPF.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SuchenViewModel}">
+                <view:AnsichtZwei/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:HinzufuegenViewModel}">
+                <view:HinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FormHinzufuegenViewModel}">
+                <view:FormHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ScheibeHinzufuegenViewModel}">
+                <view:ScheibeHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CupHinzufuegenViewModel}">
+                <view:CupHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:BausatzHinzufuegenViewModel}">
+                <view:BausatzHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:BauteilHinzufuegenViewModel}">
+                <view:BauteileHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:GrundplatteHinzufuegenViewModel}">
+                <view:GrundplatteHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EinlegeplatteHinzufuegenViewModel}">
+                <view:EinlegeplatteHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:StehbolzenHinzufuegenViewModel}">
+                <view:StehbolzenHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FuehrungsringHinzufuegenViewModel}">
+                <view:FuehrungsringHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:InnenringHinzufuegenViewModel}">
+                <view:InnenringHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:InnenkernHinzufuegenViewModel}">
+                <view:InnenkernHinzufuegenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:KernringHinzufuegenViewModel}">
+                <view:KernringHinzufuegenView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

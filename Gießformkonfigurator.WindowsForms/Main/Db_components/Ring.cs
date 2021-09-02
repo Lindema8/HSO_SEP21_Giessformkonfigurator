@@ -22,7 +22,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_components
 
         public decimal Außendurchmesser { get; set; }
 
-        public decimal? Toleranz_Außendurchmesser { get; set; }
+        public string Toleranz_Außendurchmesser { get; set; }
 
         public decimal Innendurchmesser { get; set; }
 
@@ -42,7 +42,5 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_components
         public decimal? Konus_Winkel { get; set; }
 
         public decimal? Konus_Hoehe { get; set; }
-
-        public bool ohne_Konusfuehrung { get; set; }
     }
 }

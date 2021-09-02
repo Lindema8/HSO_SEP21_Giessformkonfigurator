@@ -19,7 +19,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
                 .HasPrecision(10, 2);
 
             this.Property(e => e.Toleranz_Außendurchmesser)
-                .HasPrecision(10, 2);
+                .IsUnicode(false);
 
             this.Property(e => e.Innendurchmesser)
                 .HasPrecision(10, 2);
@@ -40,7 +40,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
                 .HasPrecision(10, 2);
 
             this.Property(e => e.Konus_Winkel)
-                .HasPrecision(10, 2);
+                .HasPrecision(5, 2);
 
             this.Property(e => e.Konus_Hoehe)
                 .HasPrecision(10, 2);

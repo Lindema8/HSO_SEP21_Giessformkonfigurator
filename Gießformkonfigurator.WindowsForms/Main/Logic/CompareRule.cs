@@ -12,7 +12,7 @@ namespace Gieﬂformkonfigurator.WindowsForms.Main.Logik
 
         public virtual bool Akzeptiert(Type teilTyp)
         {
-            if (!teilTyp.IsSubclassOf(typeof(Produkt)) || !teilTyp.IsSubclassOf(typeof(Gieﬂform)))
+            if (!teilTyp.IsSubclassOf(typeof(Produkt)) || !teilTyp.IsSubclassOf(typeof(Mold)))
             {
                 return false;
             }
@@ -20,19 +20,19 @@ namespace Gieﬂformkonfigurator.WindowsForms.Main.Logik
             return this.Typen.Contains(teilTyp);
         }
 
-        public abstract bool Compare(Produkt a, Gieﬂform b);
+        public abstract bool Compare(Produkt a, Mold b);
     }
 
     // TODO: Not finished
     class ProduktCupCompare : CompareRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Gieﬂform) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Mold) };
 
-        public override bool Compare(Produkt a, Gieﬂform b)
+        public override bool Compare(Produkt a, Mold b)
         {
             object[] compareElements = new object[] { a, b };
             var product = compareElements.OfType<ProduktCup>().Single();
-            var gieﬂform = compareElements.OfType<MGieﬂform>().Single();
+            var gieﬂform = compareElements.OfType<ModularMold>().Single();
 
             // TODO: Cup hinzuf¸gen
             /*return product.Grund_Cup == cup.Grund_Cup
@@ -46,13 +46,13 @@ namespace Gieﬂformkonfigurator.WindowsForms.Main.Logik
     // TODO: Not finished
     class ProduktDiscCompare : CompareRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Gieﬂform) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Produkt), typeof(Mold) };
 
-        public override bool Compare(Produkt a, Gieﬂform b)
+        public override bool Compare(Produkt a, Mold b)
         {
             object[] compareElements = new object[] { a, b };
             var product = compareElements.OfType<ProduktDisc>().Single();
-            var gieﬂform = compareElements.OfType<MGieﬂform>().Single();
+            var gieﬂform = compareElements.OfType<ModularMold>().Single();
 
             // TODO: Innenring als Attribut hinzuf¸gen
             //if (gieﬂform.Innenring == null)

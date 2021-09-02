@@ -18,7 +18,7 @@ namespace Gießformkonfigurator.WindowsForms.Main.Logik
                     };
         }
 
-        public bool Compare(Produkt a, Gießform b)
+        public bool Compare(Produkt a, Mold b)
         {
             var passendeKombinationen = this.CompareRules.Where(k => k.Akzeptiert(a.GetType()) && k.Akzeptiert(b.GetType()));
 

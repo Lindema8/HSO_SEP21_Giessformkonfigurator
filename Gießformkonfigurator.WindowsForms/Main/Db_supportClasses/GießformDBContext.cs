@@ -24,37 +24,37 @@ namespace Gießformkonfigurator.WindowsForms.Main.Db_supportClasses
             this.Configuration.ProxyCreationEnabled = false;
         }
 
-        public virtual DbSet<Bolzen> Bolzen { get; set; }
+        public virtual DbSet<Bolt> Bolts { get; set; }
 
-        public virtual DbSet<Einlegeplatte> Einlegeplatten { get; set; }
+        public virtual DbSet<InsertPlate> InsertPlates { get; set; }
 
-        public virtual DbSet<Grundplatte> Grundplatten { get; set; }
+        public virtual DbSet<Baseplate> Baseplates { get; set; }
 
-        public virtual DbSet<Kern> Innenkerne { get; set; }
+        public virtual DbSet<Core> Cores { get; set; }
 
-        public virtual DbSet<ProduktCup> ProduktCups { get; set; }
+        public virtual DbSet<ProduktCup> ProductCups { get; set; }
 
-        public virtual DbSet<ProduktDisc> ProduktDiscs { get; set; }
+        public virtual DbSet<ProduktDisc> ProductDiscs { get; set; }
 
-        public virtual DbSet<Ring> Ringe { get; set; }
+        public virtual DbSet<Ring> Rings { get; set; }
 
-        public virtual DbSet<Cupform> Cupform { get; set; }
+        public virtual DbSet<Cupform> Cupforms { get; set; }
 
-        public virtual DbSet<BoltCircleType> BoltCircleType { get; set; }
+        public virtual DbSet<BoltCircleType> BoltCircleTypes { get; set; }
 
         /// <summary>
         /// Initialisiert die EntityConfigurations für alle DB-Objekte.
         /// </summary>
-        /// <param name="modelBuilder"></param>
+        /// <param name="modelBuilder">tbd.</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new GrundplatteEntityConfiguration());
+            modelBuilder.Configurations.Add(new BaseplateEntityConfiguration());
 
-            modelBuilder.Configurations.Add(new EinlegeplatteEntityConfiguration());
+            modelBuilder.Configurations.Add(new InsertPlateEntityConfiguration());
 
-            modelBuilder.Configurations.Add(new BolzenEntityConfiguration());
+            modelBuilder.Configurations.Add(new BoltEntityConfiguration());
 
-            modelBuilder.Configurations.Add(new KernEntityConfiguration());
+            modelBuilder.Configurations.Add(new CoreEntityConfiguration());
 
             modelBuilder.Configurations.Add(new ProduktCupEntityConfiguration());
 

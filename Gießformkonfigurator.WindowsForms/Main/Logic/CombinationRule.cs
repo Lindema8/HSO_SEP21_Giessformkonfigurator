@@ -9,14 +9,15 @@
     {
         protected abstract IEnumerable<Type> Typen { get; }
 
-        public virtual bool Akzeptiert(Type teilTyp)
+        public virtual bool Akzeptiert(Type teilTyp1, Type teilTyp2)
         {
-            if (!teilTyp.IsSubclassOf(typeof(Component)))
+            if (!teilTyp1.IsSubclassOf(typeof(Component)) || !teilTyp2.IsSubclassOf(typeof(Component)))
             {
                 return false;
             }
 
-            return this.Typen.Contains(teilTyp);
+            return this.Typen.ElementAt(0) == teilTyp1
+                && this.Typen.ElementAt(1) == teilTyp2;
         }
 
         public abstract bool Combine(Component a, Component b);
@@ -27,13 +28,13 @@
     /// </summary>
     class BaseplateCoreCombination : CombinationRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Grundplatte), typeof(Kern) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Baseplate), typeof(Core) };
 
         public override bool Combine(Component a, Component b)
         {
             var components = new[] { a, b };
-            var baseplate = components.OfType<Grundplatte>().Single();
-            var core = components.OfType<Kern>().Single();
+            var baseplate = components.OfType<Baseplate>().Single();
+            var core = components.OfType<Core>().Single();
             if (baseplate.Mit_Konusfuehrung)
             {
                 return core.Mit_Konusfuehrung == true
@@ -66,13 +67,13 @@
 
     class BaseplateInsertPlateCombination : CombinationRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Grundplatte), typeof(Einlegeplatte) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Baseplate), typeof(InsertPlate) };
 
         public override bool Combine(Component a, Component b)
         {
             var components = new[] { a, b };
-            var baseplate = components.OfType<Grundplatte>().Single();
-            var insertPlate = components.OfType<Einlegeplatte>().Single();
+            var baseplate = components.OfType<Baseplate>().Single();
+            var insertPlate = components.OfType<InsertPlate>().Single();
 
             if (baseplate.Mit_Lochfuehrung && insertPlate.Konus_Außen_Max == 0)
             {
@@ -97,12 +98,12 @@
 
     class BaseplateRingCombination : CombinationRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Grundplatte), typeof(Ring) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(Baseplate), typeof(Ring) };
 
         public override bool Combine(Component a, Component b)
         {
             var components = new[] { a, b };
-            var baseplate = components.OfType<Grundplatte>().Single();
+            var baseplate = components.OfType<Baseplate>().Single();
             var ring = components.OfType<Ring>().Single();
 
             return ring.Konus_Min > baseplate.Konus_Außen_Min
@@ -115,13 +116,13 @@
 
     class InsertPlateCoreCombination : CombinationRule
     {
-        protected override IEnumerable<Type> Typen => new[] { typeof(Einlegeplatte), typeof(Kern) };
+        protected override IEnumerable<Type> Typen => new[] { typeof(InsertPlate), typeof(Core) };
 
         public override bool Combine(Component a, Component b)
         {
             var components = new[] { a, b };
-            var insertPlate = components.OfType<Einlegeplatte>().Single();
-            var core = components.OfType<Kern>().Single();
+            var insertPlate = components.OfType<InsertPlate>().Single();
+            var core = components.OfType<Core>().Single();
 
             if (insertPlate.Mit_Konusfuehrung)
             {
@@ -153,8 +154,8 @@
         public override bool Combine(Component a, Component b)
         {
             var components = new[] { a, b };
-            var fuehrungsring = components.OfType<Ring>().Single();
-            var innerRing = components.OfType<Ring>().Single();
+            var fuehrungsring = components.OfType<Ring>().ElementAt(0);
+            var innerRing = components.OfType<Ring>().ElementAt(1);
 
             // Der Innenring darf nicht zu groß und nicht zu klein sein.
             return innerRing.Außendurchmesser <= fuehrungsring.Innendurchmesser - 0.1m

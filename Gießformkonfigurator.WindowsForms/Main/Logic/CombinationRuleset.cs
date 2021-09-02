@@ -23,7 +23,7 @@
 
         public bool Combine(Component a, Component b)
         {
-            var passendeKombinationen = this.CombinationRules.Where(k => k.Akzeptiert(a.GetType()) && k.Akzeptiert(b.GetType()));
+            var passendeKombinationen = this.CombinationRules.Where(k => k.Akzeptiert(a.GetType(), b.GetType()));
 
             if (!passendeKombinationen.Any())
             {
