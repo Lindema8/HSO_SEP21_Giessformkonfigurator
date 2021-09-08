@@ -192,6 +192,39 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
                     }
                 }
             }
+
+            // Mehrteilige Gießformen --> Cupform + Kern
+            this.Index = mGießformenTemp01.Count;
+            for (int iTemp = 0; iTemp < this.Index; iTemp++)
+            {
+                for (int iKerne = 0; iKerne < this.listCores.Count; iKerne++)
+                {
+                    // Kern vorhanden
+                    if (mGießformenTemp01[iTemp].Innenkern != null)
+                    {
+                        // Cupform mit Konusfuehrung
+                        if (mGießformenTemp01[iTemp].Cupform.Mit_Konusfuehrung == true && combinationRuleSet.Combine(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]))
+                        {
+                            mGießformenTemp02.Add(new ModularMold(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]));
+                        }
+
+                        // Cupform mit Lochfuehrung
+                        else if (mGießformenTemp01[iTemp].Cupform.Mit_Lochfuehrung == true && combinationRuleSet.Combine(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]))
+                        {
+                            mGießformenTemp02.Add(new ModularMold(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]));
+                        }
+
+                        // Cupform mit Fuehrungstift
+                        else if (mGießformenTemp01[iTemp].Cupform.Mit_Fuehrungsstift == true && combinationRuleSet.Combine(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]))
+                        {
+                            mGießformenTemp02.Add(new ModularMold(mGießformenTemp01[iTemp].Cupform, this.listCores[iKerne]));
+                        }
+                    }
+
+
+                }
+            }
+
             combinationOutput = new ObservableCollection<ModularMold>(mGießformenTemp02);
             return combinationOutput;
         }

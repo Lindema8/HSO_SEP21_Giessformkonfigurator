@@ -35,7 +35,7 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_molds
             this.Innenkern = ik;
         }
 
-        public ModularMold(Cupform cf, Core ik, Bolt bl)
+        public ModularMold(Cupform cf, Core ik)
         {
             this.type = "MGießform Cup";
             this.Cupform = cf;

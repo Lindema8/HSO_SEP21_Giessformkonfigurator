@@ -37,6 +37,12 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_components
 
         public bool Mit_Konusfuehrung { get; set; }
 
+        public decimal? Konus_Innen_Max { get; set; }
+
+        public decimal? Konus_Innen_Min { get; set; }
+
+        public decimal? Konus_Innen_Winkel { get; set; }
+
         public bool Mit_Lochfuehrung { get; set; }
 
         public bool Mit_Innenkern { get; set; }

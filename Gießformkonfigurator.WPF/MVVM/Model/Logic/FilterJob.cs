@@ -19,6 +19,8 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
         public List<InsertPlate> listInsertPlates { get; set; } = new List<InsertPlate>();
         public List<Core> listCores { get; set; } = new List<Core>();
         public List<Bolt> listBolts { get; set; } = new List<Bolt>();
+
+        public List<Cupform> listCupforms { get; set; } = new List<Cupform>();
         public ProductDisc productDisc { get; set; }
         public ProductCup productCup { get; set; }
 
@@ -107,6 +109,22 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
                             Console.WriteLine("Bolzen " + bolzen + " removed.");
                         }
                     }
+
+                    foreach (var cupform in db.Cupforms)
+                    {
+                        // TODO: Abgleich hinzufügen. Produkt besitzt aktuell nur das Attribut Lochkreis, welches keine Vergleichseigenschaft besitzt. Durchmesser der Löcher benötigt.
+                        if (cupform.Innendurchmesser <= this.productCup.Innendurchmesser
+                            //|| cupform.LK <= this.produktCup.LK
+                            )
+                        {
+                            this.listCupforms.Add(cupform);
+                            Console.WriteLine("Cupform " + cupform + " added to the filter.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Cupform " + cupform + " removed.");
+                        }
+                    }
                 }
             }
             else
@@ -137,6 +155,11 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
                     foreach (var bolzen in db.Bolts)
                     {
                         this.listBolts.Add(bolzen);
+                    }
+
+                    foreach (var cupform in db.Cupforms)
+                    {
+                        this.listCupforms.Add(cupform);
                     }
                 }
             }

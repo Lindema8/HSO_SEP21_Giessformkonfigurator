@@ -151,6 +151,14 @@
     <Compile Include="Migrations\202109011701589_renaming product tables.Designer.cs">
       <DependentUpon>202109011701589_renaming product tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109081003158_fixes.cs" />
+    <Compile Include="Migrations\202109081003158_fixes.Designer.cs">
+      <DependentUpon>202109081003158_fixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109081005493_adding attributes to cupform.cs" />
+    <Compile Include="Migrations\202109081005493_adding attributes to cupform.Designer.cs">
+      <DependentUpon>202109081005493_adding attributes to cupform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109011701589_renaming product tables.resx">
       <DependentUpon>202109011701589_renaming product tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109081003158_fixes.resx">
+      <DependentUpon>202109081003158_fixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109081005493_adding attributes to cupform.resx">
+      <DependentUpon>202109081005493_adding attributes to cupform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

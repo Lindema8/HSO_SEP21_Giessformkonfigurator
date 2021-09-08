@@ -162,4 +162,48 @@
                 && innerRing.Außendurchmesser >= fuehrungsring.Innendurchmesser - 0.5m;
         }
     }
+
+    class CupformCoreCombination : CombinationRule
+    {
+        protected override IEnumerable<Type> Typen => new[] { typeof(Cupform), typeof(Core) };
+
+        public override bool Combine(Component a, Component b)
+        {
+            var components = new[] { a, b };
+            var cupform = components.OfType<Cupform>().Single();
+            var core = components.OfType<Core>().Single();
+
+            if (cupform.Mit_Konusfuehrung)
+            {
+                return core.Mit_Konusfuehrung == true
+                            && cupform.Konus_Innen_Max > core.Konus_Außen_Max
+                            && (cupform.Konus_Innen_Max - 1) <= core.Konus_Außen_Max
+                            && cupform.Konus_Innen_Min > core.Konus_Außen_Min
+                            && (cupform.Konus_Innen_Min - 1) <= core.Konus_Außen_Min
+                            && cupform.Konus_Innen_Winkel == core.Konus_Außen_Winkel;
+            }
+            else if (cupform.Mit_Lochfuehrung)
+            {
+                return core.Mit_Fuehrungsstift == true
+                    && cupform.Innendurchmesser == core.Durchmesser_Fuehrung;
+            }
+            else if (cupform.Mit_Innenkern)
+            {
+                return false;
+            }
+            else if (cupform.Mit_Fuehrungsstift)
+            {
+                return core.Mit_Lochfuehrung == true
+                    && core.Außendurchmesser == cupform.Innendurchmesser;
+            }
+            else if (cupform.Mit_Innengewinde)
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }

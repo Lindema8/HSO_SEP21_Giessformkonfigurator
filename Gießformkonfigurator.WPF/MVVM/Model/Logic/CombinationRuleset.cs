@@ -18,6 +18,7 @@
                     new BaseplateRingCombination(),
                     new InsertPlateCoreCombination(),
                     new InnerRingAddition(),
+                    new CupformCoreCombination()
                     };
         }
 

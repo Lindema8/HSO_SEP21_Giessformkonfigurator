@@ -34,17 +34,20 @@ namespace Gieﬂformkonfigurator.WPF.MVVM.Model.Logic
             var product = compareElements.OfType<ProductCup>().Single();
             var gieﬂform = compareElements.OfType<ModularMold>().Single();
 
-            // TODO: Cup hinzuf¸gen
-            /*return product.Grund_Cup == cup.Grund_Cup
-                        && (product.Innendurchmesser + 1) <= cup.Innendurchmesser
-                        && product.Innendurchmesser > cup.Innendurchmesser
-                        && product.LK == cup.LK;*/
-            return false;
+            if (product.LK != null)
+            {
+                return product.Innendurchmesser > gieﬂform.Innenkern.Auﬂendurchmesser
+                    && (product.Innendurchmesser + 1) < gieﬂform.Innenkern.Auﬂendurchmesser
+                    && product.Grund_Cup == gieﬂform.Cupform.Cup_Typ;
+            }
+            else
+            {
+                return false;
+            }
         }
-    }
 
-    // TODO: Not finished
-    class ProduktDiscCompare : CompareRule
+        // TODO: Not finished
+        class ProduktDiscCompare : CompareRule
     {
         protected override IEnumerable<Type> Typen => new[] { typeof(Product), typeof(Mold) };
 
@@ -57,7 +60,7 @@ namespace Gieﬂformkonfigurator.WPF.MVVM.Model.Logic
             // TODO: Innenring als Attribut hinzuf¸gen
             //if (gieﬂform.Innenring == null)
             //{
-                if (product.Lk1Durchmesser != null)
+                if (product.Lk1Durchmesser != 0.0m)
                 {
                     return product.Auﬂendurchmesser <= gieﬂform.Fuehrungsring.Innendurchmesser
                         && (product.Auﬂendurchmesser + 1) > gieﬂform.Fuehrungsring.Innendurchmesser
