@@ -7,13 +7,14 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Db_molds
 {
     using Gießformkonfigurator.WPF.MVVM.Model.Db_components;
     using System.Collections.Generic;
+    using System.ComponentModel;
 
-    public class ModularMold : Mold
+    class ModularMold : Mold
     {
         private ModularMold mGießform;
         private string type;
 
-        public Baseplate Grundplatte{ get; set; }
+        public Baseplate Grundplatte { get; set; }
 
         public Ring Fuehrungsring { get; set; }
 

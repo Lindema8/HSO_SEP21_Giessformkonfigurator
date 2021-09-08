@@ -3,10 +3,12 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+using Gießformkonfigurator.WPF.Core;
+
 namespace Gießformkonfigurator.WPF.MVVM.Model.Db_molds
 {
-    public abstract class Mold
+    abstract class Mold : ObservableObject
     {
-
+        
     }
 }

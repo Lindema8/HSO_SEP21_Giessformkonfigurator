@@ -25,18 +25,17 @@
                    Foreground="Black" FontSize="15"
                    Grid.Row="0"/>
 
-
         <TextBox x:Name="ProduktIDTextBox" 
+                 Text="{Binding productId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}"
                  Width="200" Height="40"
                  VerticalAlignment="Center" HorizontalAlignment="left"
                  VerticalContentAlignment="Center"
                  Margin="5"
                  Grid.Row="0" Grid.Column="1"
                  Foreground="Black" FontSize="15" Background="White">
-
         </TextBox>
 
-        <TextBlock Text="Angabe:"
+        <TextBlock Text="Listengröße:"
                    HorizontalAlignment="Right" VerticalAlignment="Center"
                    Margin="0,0,10,0"
                    Foreground="Black" FontSize="15"
@@ -61,10 +60,18 @@
                 Grid.Column="1"
                 Command="{Binding searchCommand}">
         </Button>
+        
         <Grid Grid.Row="2" Grid.Column="2" Margin="0,0,0,0">
-            <DataGrid Name="combinationJobOutput" IsReadOnly="True" ItemsSource="{Binding mGießformenFinal, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" >
-                
+            <DataGrid Name="combinationJobOutput" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding mGießformenFinal, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Grundplatte" Width="*" Binding="{Binding Grundplatte}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Einlegeplatte" Width="*" Binding="{Binding Einlegeplatte}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Fuehrungsring" Width="*" Binding="{Binding Fuehrungsring}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Innenkern" Width="*" Binding="{Binding Innenkern}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Cupform" Width="*" Binding="{Binding Cupform}"></DataGridTextColumn>
+                </DataGrid.Columns>
             </DataGrid>
         </Grid>
+        <Label Content="{Binding listSize, Mode=Oneway, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Margin="28,27.8,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="Black" FontSize="15"/>
     </Grid>
 </UserControl>

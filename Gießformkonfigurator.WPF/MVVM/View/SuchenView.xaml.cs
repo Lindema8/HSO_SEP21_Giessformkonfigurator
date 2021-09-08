@@ -2,8 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Data;
     using Gießformkonfigurator.WPF.MVVM.ViewModel;
 
     /// <summary>
@@ -11,19 +13,18 @@
     /// </summary>
     public partial class AnsichtZwei : UserControl
     {
-        private SuchenViewModel swm;
+        private SuchenViewModel ViewModel { get; set; }
 
         public AnsichtZwei()
         {
             InitializeComponent();
-            //DataContext = new SuchenViewModel();
-            swm = new SuchenViewModel();
+            this.DataContext = new SuchenViewModel();
         }
 
-        public void populateGrid(object sender, RoutedEventArgs e)
+        /*private void ProduktID_Click(object sender, RoutedEventArgs e)
         {
-            swm.findCombinations();
-            combinationJobOutput.Items.Refresh();
-        }
+            this.ViewModel.findCombinations();
+            combinationJobOutput.CommitEdit();
+        }*/
     }
 }

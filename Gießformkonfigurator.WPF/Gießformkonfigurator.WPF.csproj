@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\addProductCommand.cs" />
     <Compile Include="Core\SearchCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -181,7 +182,9 @@
     <Compile Include="MVVM\Model\Logic\CompareObject.cs" />
     <Compile Include="MVVM\Model\Logic\CompareRule.cs" />
     <Compile Include="MVVM\Model\Logic\CompareRuleset.cs" />
+    <Compile Include="MVVM\Model\Logic\FilterJob.cs" />
     <Compile Include="MVVM\Model\Logic\RankingJob.cs" />
+    <Compile Include="MVVM\Model\Logic\ProgramLogic.cs" />
     <Compile Include="MVVM\ViewModel\BaseViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BausatzHinzufuegenViewModel.cs" />
     <Compile Include="MVVM\ViewModel\BauteilHinzufuegenViewModel.cs" />

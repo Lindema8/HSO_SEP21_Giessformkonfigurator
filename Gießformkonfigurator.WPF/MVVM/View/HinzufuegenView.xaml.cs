@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gießformkonfigurator.WPF.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,35 +29,22 @@ namespace Gießformkonfigurator.WPF.MVVM.View
         public HinzufuegenView()
         {
             InitializeComponent();
+            this.DataContext = new HinzufuegenViewModel();
         }
 
         private void Hinzufuegen_Click(object sender, RoutedEventArgs e)
         {
             //Read Values
             aussendurchmesser = AussendurchmesserTextBox.Text;
-            AussendurchmesserAusgabe.Content = aussendurchmesser;
 
             innendurchmesser = InnendurchmesserTextBox.Text;
-            InnendruchmeserAusgabe.Content = innendurchmesser;
 
             hoehe = HoeheTextBox.Text;
-            HoeheAusgabe.Content = hoehe;
 
-            freierParameter = FreierParameterTextBox.Text;
-            FreierParameterAusgabe.Content = freierParameter;
+            freierParameter = descriptionTextBox.Text;
 
             bohrungen = BohrungenTextBox.Text;
             int value = int.Parse(bohrungen);
-            BohrungenAusgabe.Content = value;
-
-            if ((bool)KunststoffA.IsChecked)
-            {
-                KunststoffAusgabe.Content = "Kunststoff A";
-            }
-            else
-            {
-                KunststoffAusgabe.Content = "Kunststoff B";
-            }
 
             //Test MessageBox
             MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie das Produkt hinzufügen wollen?", "Gießformkonfigurator", MessageBoxButton.YesNo);
@@ -67,7 +55,7 @@ namespace Gießformkonfigurator.WPF.MVVM.View
                     AussendurchmesserTextBox.Text = "";
                     InnendurchmesserTextBox.Text = "";
                     HoeheTextBox.Text = "";
-                    FreierParameterTextBox.Text = "";
+                    descriptionTextBox.Text = "";
                     BohrungenTextBox.Text = "0";
                     break;
 

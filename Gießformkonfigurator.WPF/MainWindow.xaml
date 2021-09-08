@@ -18,63 +18,68 @@
         
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="400"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="15"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
                 <RowDefinition Height="200"/>
                 <RowDefinition/>
+                <RowDefinition Height="15"/>
             </Grid.RowDefinitions>
 
-            <Border BorderThickness="1" BorderBrush="Gray" Grid.Column="2">
+            <Grid Grid.Column="2" Grid.Row="1">
                 <TextBlock Text="Gießformkonfigurator"
-                       VerticalAlignment="center" HorizontalAlignment="Center"
-                       Foreground="black" FontSize="40"
-                       Margin="20,0,0,0"
-                       />
-            </Border>
+                               VerticalAlignment="center" HorizontalAlignment="Center"
+                               Foreground="Gray" FontSize="50" FontWeight="Medium"
+                               Margin="20,0,0,0"/>
+            </Grid>
 
-            <Border BorderThickness="1" BorderBrush="Gray">
-                <Image Width="360" Height="200" 
-                   Source="/Images/rosen.png"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Border>
+            <Grid Grid.Column="1" Grid.Row="1" >
+                <Border BorderBrush="#144F9B">
+                    <Image Width="360" Height="200" Source="/Images/rosen.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
 
-            <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1">
-                <StackPanel >
-                    <RadioButton Content="Produktsuche"
-                                 Height="50"
-                                 Foreground="Black" FontSize="20"
-                                 Style="{StaticResource MenuButtonTheme}"
-                                 IsChecked="True"
-                                 Command="{Binding SuchenViewCommand}" />
+            <Grid Grid.Row="2" Grid.Column="1" Margin="0, 0, 10, 0" Background="White">
+                <Border BorderThickness="1" BorderBrush="#144F9B" CornerRadius="4">
+                    <StackPanel >
+                        <RadioButton Content="Produktsuche"
+                                     Height="50"
+                                     FontSize="20"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     IsChecked="True"
+                                     Command="{Binding SuchenViewCommand}" />
 
-                    <RadioButton Content="Produkt hinzufügen"
-                                 Height="50" 
-                                 Foreground="Black" FontSize="20"
-                                 Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding HinzufuegenViewCommand}" />
+                        <RadioButton Content="Produkt hinzufügen"
+                                     Height="50" 
+                                     FontSize="20"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding HinzufuegenViewCommand}" />
 
-                    <RadioButton Content="Gießform hinzufügen"
-                                 Height="50"
-                                 Foreground="black" FontSize="20"
-                                 Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding FormHinzufuegenViewCommand}" />
+                        <RadioButton Content="Gießform hinzufügen"
+                                     Height="50"
+                                     FontSize="20"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding FormHinzufuegenViewCommand}" />
 
-                    <RadioButton Content="Bauteile hinufügen"
-                                 Height="50"
-                                 Foreground="black" FontSize="20"
-                                 Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding BauteilHinzufuegenViewCommand}"/>
-                </StackPanel>
-            </Border>
+                        <RadioButton Content="Bauteile hinufügen"
+                                     Height="50"
+                                     FontSize="20"
+                                     Style="{StaticResource MenuButtonTheme}"
+                                     Command="{Binding BauteilHinzufuegenViewCommand}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
 
-            <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.Column="1">
-                <ContentControl 
-                                Margin="10"
-                                Content="{Binding CurrentView}"/>
-            </Border>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Border>
+                    <ContentControl Content="{Binding CurrentView}"/>
+                </Border>
+            </Grid>
         </Grid>
     </Border>
 </Window>

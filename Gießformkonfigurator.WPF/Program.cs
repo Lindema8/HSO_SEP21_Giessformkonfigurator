@@ -36,10 +36,10 @@ namespace Gießformkonfigurator.WPF
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
             List<ModularMold> mGießformenFinal = new List<ModularMold>();
 
-            CombinationJob co = new CombinationJob(0);
-            co.FiltereDiscDB();
+            //CombinationJob co = new CombinationJob(0);
+            //co.FiltereDiscDB();
             //co.ArraysTestData();
-            mGießformenFinal = co.KombiniereMGießformen();
+            //mGießformenFinal = co.KombiniereMGießformen();
 
             foreach (ModularMold mGießform in mGießformenFinal)
             {

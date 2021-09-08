@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
 {
-    public class CompareJob
+    class CompareJob
     {
 
     }

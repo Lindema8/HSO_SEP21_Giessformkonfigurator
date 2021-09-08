@@ -9,16 +9,16 @@ using System.Windows.Input;
 
 namespace Gießformkonfigurator.WPF.Core
 {
-    internal class SearchCommand : ICommand
+    internal class addProductCommand : ICommand
     {
         #region Constructors
 
-        public SearchCommand(SuchenViewModel viewModel)
+        public addProductCommand(HinzufuegenViewModel viewModel)
         {
             _viewModel = viewModel;
         }
 
-        private SuchenViewModel _viewModel;
+        private HinzufuegenViewModel _viewModel;
 
         #endregion Constructors
 
@@ -37,7 +37,7 @@ namespace Gießformkonfigurator.WPF.Core
 
         public void Execute(object parameter)
         {
-            _viewModel.findMatchingMolds();
+            _viewModel.addProductToDb();
         }
 
         #endregion ICommand Members

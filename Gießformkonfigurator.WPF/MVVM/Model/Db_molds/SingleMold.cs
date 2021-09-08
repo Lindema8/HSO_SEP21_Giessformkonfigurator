@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------
 namespace Gießformkonfigurator.WPF.MVVM.Model.Db_molds
 {
-    public class SingleMold : Mold
+    class SingleMold : Mold
     {
     }
 }

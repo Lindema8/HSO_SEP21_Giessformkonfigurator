@@ -8,7 +8,7 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
     using Gießformkonfigurator.WPF.MVVM.Model.Db_molds;
     using Gießformkonfigurator.WPF.MVVM.Model.Db_products;
 
-    public class CompareObject
+    class CompareObject
     {
         public CompareObject(Mold gf, Product pr)
         {

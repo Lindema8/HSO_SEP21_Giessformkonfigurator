@@ -9,6 +9,7 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
 #pragma warning disable SA1623 // Property summary documentation should match accessors
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
     using Gießformkonfigurator.WPF.MVVM.Model.Db_components;
@@ -19,32 +20,31 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
     /// <summary>
     /// Objekt zur Kombination der Komponenten zur Erstellung der mehrteiligen Gießformen (MGießformen).
     /// </summary>
-    public class CombinationJob
+    class CombinationJob
     {
-        private List<Baseplate> listBaseplates = new List<Baseplate>();
-        private List<Ring> listRings = new List<Ring>();
-        private List<InsertPlate> listInsertPlates = new List<InsertPlate>();
-        private List<Core> listCores = new List<Core>();
-        private List<Bolt> listBolts = new List<Bolt>();
-
         // Frage: Wie kann man das universell umsetzen?
-        private ProductDisc produktDisc;
-        private Product produktCup;
+        public ProductDisc produktDisc { get; set; }
+        public ProductCup produktCup { get; set; }
+        public List<Baseplate> listBaseplates { get; set; } = new List<Baseplate>();
+        public List<Ring> listRings { get; set; } = new List<Ring>();
+        public List<InsertPlate> listInsertPlates { get; set; } = new List<InsertPlate>();
+        public List<Core> listCores { get; set; } = new List<Core>();
+        public List<Bolt> listBolts { get; set; } = new List<Bolt>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CombinationJob"/> class.
         /// </summary>
         /// <param name="produktParam">Das ausgewählte Produkt wird übergeben.
         /// <param name="sapnr">PK in der DB.</param>
-        public CombinationJob(int sapnr)
+        public CombinationJob(Product product, FilterJob filterJob)
         {
-            // TODO: Konstruktur universell für ProduktDisc und ProduktCup gestalten.
-            using (var db = new GießformDBContext())
-            {
-                this.produktDisc = db.ProductDiscs.Find(sapnr);
-                Console.WriteLine(sapnr);
-                Console.WriteLine("Produkt: " + this.produktDisc);
-            }
+            this.produktDisc = (ProductDisc) product;
+
+            listBaseplates = new List<Baseplate>(filterJob.listBaseplates);
+            listRings = new List<Ring>(filterJob.listRings);
+            listInsertPlates = new List<InsertPlate>(filterJob.listInsertPlates);
+            listCores = new List<Core>(filterJob.listCores);
+            listBolts = new List<Bolt>(filterJob.listBolts);
         }
 
         /// <summary>
@@ -66,128 +66,20 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
             this.listCores.Add(new Core() { Bezeichnung_RoCon = "Einsatz fuer Innendurchmesser d=82", Außendurchmesser = 84.1m, Hoehe = 40.6m, Konus_Hoehe = 15.00m, Durchmesser_Fuehrung = 15.00m, Gießhoehe_Max = 25.6m, Hoehe_Fuehrung = 20.00m, Mit_Fuehrungsstift = true });
         }
 
-        /// <summary>
-        /// Stellt eine Verbindung zur Datenbank her und speichert die Komponenten in einer lokalen Objektliste. Die Komponenten werden über die Produktparameter vorgefiltert.
-        /// </summary>
-        public void FiltereDiscDB()
-        {
-            if (this.produktDisc != null)
-            {
-                using (var db = new GießformDBContext())
-                {
-                    foreach (var grundplatte in db.Baseplates)
-                    {
-                        if (this.produktDisc.Außendurchmesser < grundplatte.Außendurchmesser)
-                        {
-                            this.listBaseplates.Add(grundplatte);
-                            Console.WriteLine("Grundplatte " + grundplatte + " added to the filter.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Grundplatte " + grundplatte + " removed.");
-                        }
-                    }
-
-                    foreach (var ring in db.Rings)
-                    {
-                        if ((ring.mit_Konusfuehrung == false && this.produktDisc.Innendurchmesser > ring.Außendurchmesser && this.produktDisc.Außendurchmesser < ring.Außendurchmesser)
-                            || (ring.mit_Konusfuehrung && this.produktDisc.Außendurchmesser < ring.Außendurchmesser))
-                        {
-                            this.listRings.Add(ring);
-                            Console.WriteLine("Ring " + ring + " added to the filter.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Ring " + ring + " removed.");
-                        }
-                    }
-
-                    // no filter for insertplates
-                    foreach (var einlegeplatte in db.InsertPlates)
-                    {
-                        this.listInsertPlates.Add(einlegeplatte);
-                        Console.WriteLine("Einlegeplatte " + einlegeplatte + " added to the filter.");
-                    }
-
-                    foreach (var innenkern in db.Cores)
-                    {
-                        if (this.produktDisc.Innendurchmesser > innenkern.Außendurchmesser)
-                        {
-                            this.listCores.Add(innenkern);
-                            Console.WriteLine("Innenkern " + innenkern + " added to the filter.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Innenkern " + innenkern + " removed.");
-                        }
-                    }
-
-                    foreach (var bolzen in db.Bolts)
-                    {
-                        // TODO: Abgleich hinzufügen. Produkt besitzt aktuell nur das Attribut Lochkreis, welches keine Vergleichseigenschaft besitzt. Durchmesser der Löcher benötigt.
-                        if (bolzen.Außendurchmesser <= this.produktDisc.Lk1Durchmesser
-                            || bolzen.Außendurchmesser <= this.produktDisc.Lk2Durchmesser
-                            || bolzen.Außendurchmesser <= this.produktDisc.Lk3Durchmesser)
-                        {
-                            this.listBolts.Add(bolzen);
-                            Console.WriteLine("Bolzen " + bolzen + " added to the filter.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Bolzen " + bolzen + " removed.");
-                        }
-                    }
-
-                    Console.WriteLine("Baseplates after filter: " + this.listBaseplates.Count());
-                    Console.WriteLine("Insertplates after filter: " + this.listInsertPlates.Count());
-                    Console.WriteLine("Cores after filter: " + this.listCores.Count());
-                    Console.WriteLine("Rings after filter: " + this.listRings.Count());
-                    Console.WriteLine("Bolts after filter: " + this.listBolts.Count());
-                }
-            }
-            else
-            {
-                // TODO: Prüfen ob dieser Teil relevant ist. Soll das Szenario abfangen, dass kein Produkt vorhanden ist und man den Kombinationsalgorithmus trotzdem ausführen möchte.
-                using (var db = new GießformDBContext())
-                {
-                    foreach (var grundplatte in db.Baseplates)
-                    {
-                        this.listBaseplates.Add(grundplatte);
-                    }
-
-                    foreach (var ring in db.Rings)
-                    {
-                        this.listRings.Add(ring);
-                    }
-
-                    foreach (var einlegeplatte in db.InsertPlates)
-                    {
-                        this.listInsertPlates.Add(einlegeplatte);
-                    }
-
-                    foreach (var innenkern in db.Cores)
-                    {
-                        this.listCores.Add(innenkern);
-                    }
-
-                    foreach (var bolzen in db.Bolts)
-                    {
-                        this.listBolts.Add(bolzen);
-                    }
-                }
-            }
-        }
+        
+        
 
         /// <summary>
         /// Nutzt die vorgefilterte Datenbank um alle möglichen Gieformkombinationen zu finden.
         /// </summary>
         /// <returns>List MGießformenFinal.</returns>
         [STAThread]
-        public List<ModularMold> KombiniereMGießformen()
+        public ObservableCollection<ModularMold> CombineMoldComponents()
         {
             // Listen, welche zur Zwischenspeicherung der mehrteiligen Gießformen genutzt werden, bevor sie vervollständigt wurden und ausgegeben werden können.
             List<ModularMold> mGießformenTemp01 = new List<ModularMold>();
             List<ModularMold> mGießformenTemp02 = new List<ModularMold>();
+            ObservableCollection<ModularMold> combinationOutput;
             var combinationRuleSet = new CombinationRuleset();
 
             // Grundplatten --> Fuehrungsringe
@@ -300,8 +192,8 @@ namespace Gießformkonfigurator.WPF.MVVM.Model.Logic
                     }
                 }
             }
-
-            return mGießformenTemp02;
+            combinationOutput = new ObservableCollection<ModularMold>(mGießformenTemp02);
+            return combinationOutput;
         }
     }
 }
